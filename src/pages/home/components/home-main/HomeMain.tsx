@@ -33,7 +33,7 @@ const HomeMain: React.FC = () => {
                 <div className={styles.home__blocks_item}>
                   <div className={styles.home__blocks_wrapper}>
                     <span className={styles.home__item_text}>
-                      Lorem, ipsum.
+                      Lorem, ipsums.
                     </span>
                     <h2 className={styles.home__item_title}>592</h2>
                   </div>
