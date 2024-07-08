@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./HomeTable.module.css";
+import Button from "../../../../components/UI/button/Button";
 
 const HomeTable: React.FC = () => {
   return (
@@ -97,6 +98,7 @@ const HomeTable: React.FC = () => {
               </tbody>
             </table>
           </div>
+          <Button buttonText={"lorem dolor asit"} type={"button"} />
         </div>
       </div>
     </section>
