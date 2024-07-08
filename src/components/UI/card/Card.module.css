@@ -1,0 +1,35 @@
+.card__block {
+  width: 100%;
+  border-radius: 30px;
+  background: var(--card-gray);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card__block h3 {
+  color: var(--dark);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.card__block p {
+  color: var(--dark);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@media (max-width: 600px) {
+  .card__block {
+    border-radius: 20px;
+    padding: 24px;
+    gap: 10px;
+  }
+
+  .card__block p {
+    line-height: 22px;
+  }
+}

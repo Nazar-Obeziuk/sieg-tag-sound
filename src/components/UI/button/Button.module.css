@@ -1,0 +1,18 @@
+.home__about_button {
+  width: fit-content;
+  padding: 16px 32px;
+  background: var(--primary);
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  box-shadow: 0 4px 16px 0 var(--primary);
+  transition: 0.4s;
+}
+
+.home__about_button:hover {
+  transform: scale(1.05);
+}
