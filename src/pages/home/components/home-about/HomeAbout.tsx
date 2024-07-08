@@ -21,20 +21,21 @@ const HomeAbout: React.FC = () => {
               <div className={styles.home__banner_card}>
                 <Card>
                   <p className={styles.home__about_text}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Sed nihil dolore rem ducimus? Dolorem officiis
+                    Sieg TagSound - это студия звукозаписи с более чем 13-летним
+                    опытом в области профессионального мастеринга и сведения
+                    музыки.
                   </p>
                   <p className={styles.home__about_text}>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Reprehenderit neque, nemo mollitia sequi dolorem maiores,
-                    aperiam qui totam velit necessitatibus quas laudantium
-                    voluptate ut voluptatem cum vero recusandae ipsa iste
+                    музыки. Наша команда экспертов работает со всеми
+                    музыкальными жанрами - от классической до современной
+                    электронной музыки.
                   </p>
                   <p className={styles.home__about_text}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Obcaecati, voluptate non fugiat corporis tenetur explicabo
-                    dolor quibusdam consectetur inventore, minima sapiente earum
-                    enim doloribus.
+                    Используя новейшее оборудование и самые передовые
+                    технологии, мы поможем вам добиться идеального звучания
+                    вашего трека или альбома. Мы гордимся своей репутацией
+                    надежного и профессионального партнера для артистов,
+                    продюсеров и звукозаписывающих компаний по всему миру.
                   </p>
                 </Card>
               </div>

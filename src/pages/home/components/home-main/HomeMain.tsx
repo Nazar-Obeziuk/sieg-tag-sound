@@ -27,7 +27,7 @@ const HomeMain: React.FC = () => {
                     <span className={styles.home__item_text}>
                       Lorem ipsum dolor sit.
                     </span>
-                    <h2 className={styles.home__item_title}>21 240</h2>
+                    <h2 className={styles.home__item_title}>21 240+</h2>
                   </div>
                 </div>
                 <div className={styles.home__blocks_item}>
@@ -35,7 +35,7 @@ const HomeMain: React.FC = () => {
                     <span className={styles.home__item_text}>
                       Lorem, ipsums.
                     </span>
-                    <h2 className={styles.home__item_title}>592</h2>
+                    <h2 className={styles.home__item_title}>592+</h2>
                   </div>
                 </div>
               </div>

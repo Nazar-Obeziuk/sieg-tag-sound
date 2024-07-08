@@ -8,7 +8,7 @@ const HomeServices: React.FC = () => {
       <div className="container">
         <div className={styles.home__services_wrapper}>
           <div className={styles.home__services_heading}>
-            <h2 className={styles.home__services_title}>Наші Послуги</h2>
+            <h2 className={styles.home__services_title}>Наши Услуги</h2>
             <p className={styles.home__services_subtitle}>
               Наша компанія надає найкращі послуги на ринку
             </p>
@@ -19,12 +19,11 @@ const HomeServices: React.FC = () => {
                 <span className={styles.home__circle_text}>1</span>
               </div>
               <Card>
-                <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                <h3>Мастеринг музыкальных треков</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptatibus quo rerum et, eum architecto quam iste quas
-                  voluptas reprehenderit ipsa consectetur similique esse iusto
-                  eos provident. Minus neque veritatis cumque!
+                  Наши эксперты используют передовые технологии и оборудование
+                  для придания вашему треку профессионального, сбалансированного
+                  звучания.
                 </p>
               </Card>
             </li>
@@ -33,13 +32,11 @@ const HomeServices: React.FC = () => {
                 <span className={styles.home__circle_text}>2</span>
               </div>
               <Card>
-                <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                <h3>Сведение мультитрековых записей</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                  fugit autem tempora? Blanditiis, cum! Recusandae soluta nam
-                  enim iste quae sint odio. Quo, aperiam facilis quas
-                  praesentium neque magnam sunt. Aperiam, accusamus. Eveniet
-                  neque, quaerat a quos facilis consequatur. Laboriosam!
+                  Наши звукоинженеры выполнят высококачественное сведение вашей
+                  композиции, сохраняя ее творческий замысел и подчеркивая
+                  лучшие аспекты каждого элемента.
                 </p>
               </Card>
             </li>
@@ -48,12 +45,11 @@ const HomeServices: React.FC = () => {
                 <span className={styles.home__circle_text}>3</span>
               </div>
               <Card>
-                <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                <h3>Микширование и обработка звука</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Officia doloribus corporis, voluptates, temporibus provident
-                  rem facere modi numquam ratione veritatis nihil vel soluta
-                  rerum reprehenderit?
+                  Мы предлагаем услуги по микшированию вокала, инструментов и
+                  ритм-секции, а также по применению различных звуковых эффектов
+                  для достижения желаемого звучания.
                 </p>
               </Card>
             </li>
