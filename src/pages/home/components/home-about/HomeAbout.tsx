@@ -58,7 +58,7 @@ const HomeAbout: React.FC = () => {
               </p>
             </Card>
           </div>
-          <Button buttonText={"Lorem ipsum dolor sit."} type="button"></Button>
+          <Button type="button">Lorem ipsum dolor sit.</Button>
         </div>
       </div>
     </section>

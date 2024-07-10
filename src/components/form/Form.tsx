@@ -202,7 +202,7 @@ const Form: React.FC = () => {
                 </span>{" "}
               </p>
             </div>
-            <Button buttonText={"Buy service"} type={"submit"}></Button>
+            <Button type={"submit"}>Buy service</Button>
           </div>
         </form>
       </div>

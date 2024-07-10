@@ -3,6 +3,7 @@
   background: var(--white);
   border-radius: 20px;
   position: relative;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 .form__block::before {
   content: "";
