@@ -3,6 +3,7 @@ import styles from "./Form.module.css";
 import Button from "../UI/button/Button";
 import Select from "react-select";
 import { useDropzone } from "react-dropzone";
+import { useTranslation } from "react-i18next";
 
 const customStyles = {
   control: (provided: any) => ({
@@ -21,6 +22,8 @@ const customStyles = {
 };
 
 const Form: React.FC = () => {
+  const { t } = useTranslation();
+
   const options = [
     { value: "track", label: "mixing&mastering" },
     { value: "ep", label: "Mixing" },
@@ -36,7 +39,7 @@ const Form: React.FC = () => {
     <div className={styles.form__block}>
       <div className={styles.form__block_wrapper}>
         <div className={styles.form__wrapper_info}>
-          <h3 className={styles.form__info_title}>Заполните форму</h3>
+          <h3 className={styles.form__info_title}>{t("form.formTitle")}</h3>
         </div>
         <form className={styles.form__wrapper_item}>
           <div className={styles.form__item_fields}>
@@ -61,7 +64,7 @@ const Form: React.FC = () => {
                 <input
                   type="text"
                   className={styles.form__control_input}
-                  placeholder="Имя"
+                  placeholder={t("form.firstName")}
                 />
               </div>
               <div className={styles.form__fields_control}>
@@ -80,7 +83,7 @@ const Form: React.FC = () => {
                 <input
                   type="text"
                   className={styles.form__control_input}
-                  placeholder="Номер телефона"
+                  placeholder={t("form.phone")}
                 />
               </div>
             </div>
@@ -104,7 +107,7 @@ const Form: React.FC = () => {
               <input
                 type="text"
                 className={styles.form__control_input}
-                placeholder="Электронная почта"
+                placeholder={t("form.email")}
               />
             </div>
             <div className={styles.form__fields_control}>
@@ -143,7 +146,7 @@ const Form: React.FC = () => {
                 <input
                   type="text"
                   className={styles.form__control_input}
-                  placeholder="Ссылка на драйв"
+                  placeholder={t("form.linkOnDrive")}
                 />
               </div>
               <div className={styles.form__fields_control}>
@@ -162,7 +165,7 @@ const Form: React.FC = () => {
                 <input
                   type="text"
                   className={styles.form__control_input}
-                  placeholder="Промо код"
+                  placeholder={t("form.promoCode")}
                 />
               </div>
             </div>
@@ -182,9 +185,9 @@ const Form: React.FC = () => {
               <div {...getRootProps()} className={styles.form__control_file}>
                 <input {...getInputProps()} />
                 {isDragActive ? (
-                  <p>Загрузите файлы здесь...</p>
+                  <p>{t("form.uploadFiles")}...</p>
                 ) : (
-                  <p>Загрузите файлы здесь</p>
+                  <p>{t("form.uploadFiles")}</p>
                 )}
               </div>
             </div>
@@ -199,7 +202,7 @@ const Form: React.FC = () => {
                 </span>{" "}
               </p>
             </div>
-            <Button type={"submit"}>Заказать услугу</Button>
+            <Button type={"submit"}>{t("form.submitText")}</Button>
           </div>
         </form>
       </div>

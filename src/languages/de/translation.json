@@ -1,8 +1,33 @@
 {
-  "companyTitle": "Germany SiegTagSound",
-  "description1": "Sieg TagSound is a recording studio with over 13 years of experience in professional mastering and mixing music.",
-  "description2": "Our team of experts works with all musical genres, from classical to modern electronic music.",
-  "description3": "Using the latest equipment and cutting-edge technology, we help you achieve the perfect sound for your track or album. We pride ourselves on our reputation as a reliable and professional partner for artists, producers, and record companies worldwide.",
-  "subtitle": "Lorem ipsum dolor sit.",
-  "buttonText": "Lorem ipsum dolor sit."
+  "form": {
+    "formTitle": "Füllen Sie das Formular aus",
+    "firstName": "Vorname",
+    "phone": "Rufnummer",
+    "email": "E-Mail",
+    "linkOnDrive": "Link auf dem Laufwerk",
+    "promoCode": "Promo-Code",
+    "uploadFiles": "Laden Sie die Dateien hier herunter",
+    "checkboxText": "",
+    "submitText": "Bestellung einer Dienstleistung"
+  },
+  "home": {
+    "homeMain": {
+      "homeMainTitle": "SiegTagSound - Professionelles Mastering und Abmischen von Musik",
+      "homeMainText": "Wir bieten eine breite Palette von Mastering- und Mixing-Diensten für alle Musikrichtungen, von klassischer bis zu zeitgenössischer Musik. Mit unserer Erfahrung von über 6 Jahren können wir Ihnen helfen, den perfekten Sound für Ihren Track oder Ihr Album zu erreichen.",
+      "homeMainSubtext": "",
+      "homeMainMadeTracks": "Erstellte Spuren",
+      "homeMainHappyClients": "Zufriedene Kunden"
+    },
+    "homeAbout": {
+      "homeAboutTitle": "Über SiegTagSound",
+      "homeAboutFirstText": "Sieg TagSound ist ein Aufnahmestudio mit über 6 Jahren Erfahrung im professionellen Mastering und Mixing von Musik.",
+      "homeAboutSecondText": "Unser Expertenteam arbeitet mit allen Musikrichtungen, von der klassischen bis zur zeitgenössischen elektronischen Musik.",
+      "homeAboutThirdText": "Mit modernstem Equipment und Spitzentechnologie helfen wir Ihnen, den perfekten Sound für Ihren Track oder Ihr Album zu erzielen. Wir sind stolz auf unseren Ruf als zuverlässiger und professioneller Partner für Künstler, Produzenten und Plattenfirmen auf der ganzen Welt.",
+      "homeAboutCardTitle": "Vertrauen Sie auf SiegTagSound.",
+      "homeAboutFourthText": "Wir bei SiegTagSound glauben, dass jede Aufnahme eine einzigartige Geschichte ist, und unser Ziel ist es, Ihnen dabei zu helfen, sie auf die bestmögliche Weise zu erzählen. Unser Studio ist so ausgestattet, dass wir komplexe und hochpräzise Misch- und Masteringarbeiten durchführen können. Wir verfeinern ständig unsere Techniken und setzen nur bewährte Technologien ein, um sicherzustellen, dass Sie die bestmöglichen Ergebnisse erzielen.",
+      "homeAboutFifthText": "Wir bieten auch Eildienste für diejenigen an, die ihre Zeit schätzen und ein schnelles, aber hochwertiges Ergebnis benötigen. Nutzen Sie unsere Erfahrung und Professionalität, damit Ihr Musikprojekt so klingt, wie Sie es sich wünschen.",
+      "homeAboutSixthText": "Wir wissen, wie wichtig jedes Detail bei der Erstellung eines hochwertigen Musikprodukts ist. Unser Studio bietet einen persönlichen Ansatz für jedes Projekt, um die einzigartigen Bedürfnisse und Erwartungen unserer Kunden zu erfüllen. Wir sind bereit, sowohl mit aufstrebenden Musikern als auch mit erfahrenen Profis zusammenzuarbeiten und bieten einen hohen Standard an Service und Unterstützung in allen Phasen der Arbeit.",
+      "homeAboutButtonText": "Dienstleistungen bestellen"
+    }
+  }
 }

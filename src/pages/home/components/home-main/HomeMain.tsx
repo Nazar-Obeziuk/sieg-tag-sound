@@ -11,14 +11,10 @@ const HomeMain: React.FC = () => {
         <div className={styles.home__main_wrapper}>
           <div className={styles.home__wrapper_info}>
             <h1 className={styles.home__info_title}>
-              SiegTagSound - Профессиональный мастеринг и сведение музыки
+              {t("home.homeMain.homeMainTitle")}
             </h1>
-            {/* <h1 className={styles.home__info_title}>{t("companyTitle")}</h1> */}
             <p className={styles.home__info_description}>
-              Мы предлагаем широкий спектр услуг по мастерингу и сведению музыки
-              любых жанров - от классической до современной. С нашим опытом
-              более 6 лет мы поможем вам добиться идеального звучания вашего
-              трека или альбома.
+              {t("home.homeMain.homeMainText")}
             </p>
             <div className={styles.home__info_inner}>
               <span className={styles.home__inner_text}>
@@ -28,7 +24,7 @@ const HomeMain: React.FC = () => {
                 <div className={styles.home__blocks_item}>
                   <div className={styles.home__blocks_wrapper}>
                     <span className={styles.home__item_text}>
-                      Cделанных треков
+                      {t("home.homeMain.homeMainMadeTracks")}
                     </span>
                     <h2 className={styles.home__item_title}>21 240+</h2>
                   </div>
@@ -36,7 +32,7 @@ const HomeMain: React.FC = () => {
                 <div className={styles.home__blocks_item}>
                   <div className={styles.home__blocks_wrapper}>
                     <span className={styles.home__item_text}>
-                      Удовлетворенных клиентов
+                      {t("home.homeMain.homeMainHappyClients")}
                     </span>
                     <h2 className={styles.home__item_title}>1672+</h2>
                   </div>
