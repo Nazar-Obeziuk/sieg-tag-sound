@@ -10,7 +10,7 @@ const HomeUpload: React.FC = () => {
           <div className={styles.home__upload_heading}>
             <h2 className={styles.home__upload_title}>Загрузка файла</h2>
             <p className={styles.home__upload_subtitle}>
-              Lorem ipsum dolor sit, amet consectetur adipisicing.
+              Здесь информация, которую вам нужно знать.
             </p>
           </div>
           <Card>

@@ -42,7 +42,7 @@ const HomePayment: React.FC = () => {
               </p>
             </Card>
           </div>
-          <Button type={"button"}>lorem ipsum dolor</Button>
+          <Button type={"button"}>Заказать услуги</Button>
         </div>
       </div>
     </section>

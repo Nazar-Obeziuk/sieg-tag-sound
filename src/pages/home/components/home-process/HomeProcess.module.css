@@ -22,6 +22,7 @@
   font-weight: 700;
   line-height: 40px;
   text-align: center;
+  user-select: none;
 }
 .home__heading_subtitle {
   color: var(--dark);
@@ -29,6 +30,7 @@
   font-weight: 500;
   line-height: 22px;
   text-align: center;
+  user-select: none;
 }
 .home__process_main {
   width: 100%;

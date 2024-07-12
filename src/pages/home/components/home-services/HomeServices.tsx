@@ -10,7 +10,7 @@ const HomeServices: React.FC = () => {
           <div className={styles.home__services_heading}>
             <h2 className={styles.home__services_title}>Наши Услуги</h2>
             <p className={styles.home__services_subtitle}>
-              Наша компанія надає найкращі послуги на ринку
+              Наша компания надает наилучшие услуги на рынке
             </p>
           </div>
           <ul className={styles.home__services_list}>

@@ -17,8 +17,8 @@ const HomePortfolioItems: React.FC = () => {
           slidesPerView={1}
           spaceBetween={20}
           navigation={{
-            nextEl: ".arrow-right-reviews",
-            prevEl: ".arrow-left-reviews",
+            nextEl: ".arrow-right-portfolio",
+            prevEl: ".arrow-left-portfolio",
           }}
           breakpoints={{
             640: {
@@ -45,13 +45,18 @@ const HomePortfolioItems: React.FC = () => {
                 className={styles.home__portfolio_image}
               />
               <div className={styles.home__portfolio_info}>
+                <span className={styles.home__portfolio_category}>
+                  Категорія: Классическая музыка
+                </span>
                 <h3 className={styles.home__portfolio_name}>
-                  Сольный альбом пианиста
+                  Оркестровая симфония
                 </h3>
                 <p className={styles.home__portfolio_description}>
-                  Наша студия занималась мастерингом сольного фортепианного
-                  альбома известного российского пианиста. Мы добились широкого,
-                  насыщенного звучания.
+                  Недавно мы работали с талантливым композитором, который
+                  доверил нам сведение и мастеринг своей новой оркестровой
+                  симфонии. Проект включал более десяти отдельных записей
+                  инструментов, которые необходимо было гармонично объединить в
+                  единую композицию.
                 </p>
                 <div className={styles.home__info_action}>
                   <Button type={"button"}>Смотреть больше</Button>
@@ -67,13 +72,19 @@ const HomePortfolioItems: React.FC = () => {
                 className={styles.home__portfolio_image}
               />
               <div className={styles.home__portfolio_info}>
+                <span className={styles.home__portfolio_category}>
+                  Категорія: Рок
+                </span>
                 <h3 className={styles.home__portfolio_name}>
-                  Сольный альбом пианиста
+                  Дебютный альбом молодой группы
                 </h3>
                 <p className={styles.home__portfolio_description}>
-                  Наша студия занималась мастерингом сольного фортепианного
-                  альбома известного российского пианиста. Мы добились широкого,
-                  насыщенного звучания.
+                  Молодая рок-группа, готовившая свой дебютный альбом,
+                  обратилась к нам за помощью. Музыканты стремились к мощному и
+                  чистому звучанию, которое передало бы энергию их живых
+                  выступлений. Мы тщательно работали над сведением гитар,
+                  барабанов и вокала, чтобы добиться идеального баланса и
+                  динамики.
                 </p>
                 <div className={styles.home__info_action}>
                   <Button type={"button"}>Смотреть больше</Button>
@@ -89,13 +100,17 @@ const HomePortfolioItems: React.FC = () => {
                 className={styles.home__portfolio_image}
               />
               <div className={styles.home__portfolio_info}>
+                <span className={styles.home__portfolio_category}>
+                  Категорія: Электронная музыка
+                </span>
                 <h3 className={styles.home__portfolio_name}>
-                  Сольный альбом пианиста
+                  Трек для танцевального фестиваля
                 </h3>
                 <p className={styles.home__portfolio_description}>
-                  Наша студия занималась мастерингом сольного фортепианного
-                  альбома известного российского пианиста. Мы добились широкого,
-                  насыщенного звучания.
+                  Популярный диджей доверил нам мастеринг своего нового трека,
+                  который должен был стать хедлайнером на международном
+                  танцевальном фестивале. Наша задача заключалась в том, чтобы
+                  трек звучал мощно и чисто на больших звуковых системах.
                 </p>
                 <div className={styles.home__info_action}>
                   <Button type={"button"}>Смотреть больше</Button>
@@ -111,13 +126,16 @@ const HomePortfolioItems: React.FC = () => {
                 className={styles.home__portfolio_image}
               />
               <div className={styles.home__portfolio_info}>
-                <h3 className={styles.home__portfolio_name}>
-                  Сольный альбом пианиста
-                </h3>
+                <span className={styles.home__portfolio_category}>
+                  Категорія: Джаз
+                </span>
+                <h3 className={styles.home__portfolio_name}>Живой альбом</h3>
                 <p className={styles.home__portfolio_description}>
-                  Наша студия занималась мастерингом сольного фортепианного
-                  альбома известного российского пианиста. Мы добились широкого,
-                  насыщенного звучания.
+                  Известный джазовый коллектив записал живой альбом и доверил
+                  нам его сведение и мастеринг. Наша задача была не из легких:
+                  нужно было сохранить теплую, интимную атмосферу живого
+                  выступления, при этом обеспечив четкость и баланс всех
+                  инструментов.
                 </p>
                 <div className={styles.home__info_action}>
                   <Button type={"button"}>Смотреть больше</Button>
@@ -133,13 +151,17 @@ const HomePortfolioItems: React.FC = () => {
                 className={styles.home__portfolio_image}
               />
               <div className={styles.home__portfolio_info}>
+                <span className={styles.home__portfolio_category}>
+                  Категорія: Поп-музыка
+                </span>
                 <h3 className={styles.home__portfolio_name}>
-                  Сольный альбом пианиста
+                  Сингл для радиоротации
                 </h3>
                 <p className={styles.home__portfolio_description}>
-                  Наша студия занималась мастерингом сольного фортепианного
-                  альбома известного российского пианиста. Мы добились широкого,
-                  насыщенного звучания.
+                  Один из наших клиентов, поп-исполнитель, обратился к нам с
+                  просьбой сделать его новый сингл готовым для радиоротации. Мы
+                  сосредоточились на том, чтобы каждый элемент трека звучал ярко
+                  и привлекательно, от вокала до инструментальных партий.
                 </p>
                 <div className={styles.home__info_action}>
                   <Button type={"button"}>Смотреть больше</Button>
@@ -155,13 +177,19 @@ const HomePortfolioItems: React.FC = () => {
                 className={styles.home__portfolio_image}
               />
               <div className={styles.home__portfolio_info}>
+                <span className={styles.home__portfolio_category}>
+                  Категорія: Хип-хоп
+                </span>
                 <h3 className={styles.home__portfolio_name}>
-                  Сольный альбом пианиста
+                  Микстейп молодого исполнителя
                 </h3>
                 <p className={styles.home__portfolio_description}>
-                  Наша студия занималась мастерингом сольного фортепианного
-                  альбома известного российского пианиста. Мы добились широкого,
-                  насыщенного звучания.
+                  Мы помогли молодому хип-хоп исполнителю подготовить его
+                  микстейп к выпуску. Работа над проектом включала сведение
+                  сложных ритмических структур, усиление басов и создание
+                  мощного звучания. Мы также уделили внимание деталям, таким как
+                  вокальные эффекты и обработка битов, чтобы создать уникальное
+                  и профессиональное звучание.
                 </p>
                 <div className={styles.home__info_action}>
                   <Button type={"button"}>Смотреть больше</Button>
@@ -174,7 +202,7 @@ const HomePortfolioItems: React.FC = () => {
 
       <span
         onClick={() => swiper && swiper.slidePrev()}
-        className={`arrow-left-reviews ${styles.arrow__slide_left} arrow-reviews`}
+        className={`arrow-left-portfolio ${styles.arrow__slide_left} arrow-portfolio`}
       >
         <svg
           width="20"
@@ -192,7 +220,7 @@ const HomePortfolioItems: React.FC = () => {
       </span>
       <span
         onClick={() => swiper && swiper.slideNext()}
-        className={`arrow-right-reviews ${styles.arrow__slide_right} arrow-reviews`}
+        className={`arrow-right-portfolio ${styles.arrow__slide_right} arrow-portfolio`}
       >
         <svg
           width="20"

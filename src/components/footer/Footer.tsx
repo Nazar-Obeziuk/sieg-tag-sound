@@ -16,22 +16,22 @@ const Footer: React.FC = () => {
                 <ul className={styles.footer__nav_list}>
                   <li className={styles.footer__list_item}>
                     <NavLink to={""} className={styles.footer__list_link}>
-                      Головна
+                      Главная
                     </NavLink>
                   </li>
                   <li className={styles.footer__list_item}>
                     <NavLink to={""} className={styles.footer__list_link}>
-                      Про нас
+                      О нас
                     </NavLink>
                   </li>
                   <li className={styles.footer__list_item}>
                     <NavLink to={""} className={styles.footer__list_link}>
-                      Послуги
+                      Услуги
                     </NavLink>
                   </li>
                   <li className={styles.footer__list_item}>
                     <NavLink to={""} className={styles.footer__list_link}>
-                      Портфоліо
+                      Портфолио
                     </NavLink>
                   </li>
                   <li className={styles.footer__list_item}>
@@ -42,7 +42,11 @@ const Footer: React.FC = () => {
                 </ul>
               </nav>
               <div className={styles.footer__header_socials}>
-                <span className={styles.footer__socials_item}>
+                <NavLink
+                  to={"https://t.me/SiegTagSound1"}
+                  target="_blank"
+                  className={styles.footer__socials_item}
+                >
                   <svg
                     width="30"
                     height="30"
@@ -55,8 +59,12 @@ const Footer: React.FC = () => {
                       fill="white"
                     />
                   </svg>
-                </span>
-                <span className={styles.footer__socials_item}>
+                </NavLink>
+                <NavLink
+                  to={"https://www.facebook.com/profile.php?id=61558798857255"}
+                  target="_blank"
+                  className={styles.footer__socials_item}
+                >
                   <svg
                     width="30"
                     height="30"
@@ -69,8 +77,14 @@ const Footer: React.FC = () => {
                       fill="white"
                     />
                   </svg>
-                </span>
-                <span className={styles.footer__socials_item}>
+                </NavLink>
+                <NavLink
+                  to={
+                    "https://www.instagram.com/siegtag_sound?igsh=YXdrb2F3MWxjdDFs"
+                  }
+                  target="_blank"
+                  className={styles.footer__socials_item}
+                >
                   <svg
                     width="30"
                     height="30"
@@ -83,63 +97,57 @@ const Footer: React.FC = () => {
                       fill="white"
                     />
                   </svg>
-                </span>
-                <span className={styles.footer__socials_item}>
+                </NavLink>
+                <NavLink
+                  to={"mailto:siegtagsound@hotmail.com"}
+                  target="_blank"
+                  className={styles.footer__socials_item}
+                >
                   <svg
                     width="30"
-                    height="22"
-                    viewBox="0 0 30 22"
-                    fill="none"
+                    height="23"
+                    viewBox="0 0 30 23"
+                    fill="white"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M29.3739 3.30099C29.0278 1.99927 28.0117 0.977664 26.721 0.631637C24.3812 0 15 0 15 0C15 0 5.61882 0 3.27902 0.631637C1.98828 0.977664 0.972171 1.99927 0.626144 3.30099C0 5.65727 0 10.5676 0 10.5676C0 10.5676 0 15.4778 0.626144 17.8341C0.972171 19.1358 1.98828 20.1135 3.27902 20.4595C5.61882 21.0912 15 21.0912 15 21.0912C15 21.0912 24.3812 21.0912 26.721 20.4595C28.0117 20.1135 29.0278 19.1304 29.3739 17.8341C30 15.4778 30 10.5676 30 10.5676C30 10.5676 30 5.65727 29.3739 3.30099ZM11.9352 15.0275V6.10765L19.773 10.5676L11.9352 15.0275Z"
+                      d="M2.8125 0C1.25977 0 0 1.25977 0 2.8125C0 3.69727 0.416016 4.5293 1.125 5.0625L13.875 14.625C14.543 15.123 15.457 15.123 16.125 14.625L28.875 5.0625C29.584 4.5293 30 3.69727 30 2.8125C30 1.25977 28.7402 0 27.1875 0H2.8125ZM0 6.5625V18.75C0 20.8184 1.68164 22.5 3.75 22.5H26.25C28.3184 22.5 30 20.8184 30 18.75V6.5625L17.25 16.125C15.9141 17.127 14.0859 17.127 12.75 16.125L0 6.5625Z"
                       fill="white"
                     />
                   </svg>
-                </span>
+                </NavLink>
               </div>
             </div>
             <div className={styles.footer__wrapper_main}>
               <p className={styles.footer__main_text}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere
-                vero maiores facilis praesentium nobis similique odio sed. Hic,
-                tempora numquam! Lorem ipsum dolor sit, amet consectetur
-                adipisicing elit. Facere vero maiores facilis praesentium nobis
-                similique odio sed. Hic, tempora numquam!
+                Мы ценим каждого нашего клиента и всегда рады вашему
+                возвращению! Для постоянных клиентов у нас действуют специальные
+                бонусы и скидки.
               </p>
               <p className={styles.footer__main_text}>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Adipisci doloremque quia error excepturi natus, sunt velit. Et
-                cumque reiciendis voluptatibus, id quo eos tenetur, quibusdam
-                praesentium odit explicabo consequatur nulla. Lorem, ipsum dolor
-              </p>
-              <p className={styles.footer__main_text}>
-                Sit amet consectetur adipisicing elit. Adipisci doloremque quia
-                error excepturi natus, sunt velit. Et cumque reiciendis
-                voluptatibus, id quo eos tenetur, quibusdam praesentium odit
-                explicabo consequatur nulla. Sit amet consectetur adipisicing
-                elit. Adipisci doloremque quia error excepturi natus, sunt
-                velit. Et cumque reiciendis voluptatibus, id quo eos tenetur,
-                quibusdam praesentium odit explicabo consequatur nulla.
+                Мы гордимся высоким уровнем обслуживания и гарантируем быстрый и
+                профессиональный ответ на все ваши вопросы. Наша цель – сделать
+                процесс сведения и мастеринга максимально комфортным и превзойти
+                ваши ожидания. Свяжитесь с нами сегодня и убедитесь в качестве
+                нашего сервиса!
               </p>
             </div>
             <div className={styles.footer__wrapper_footer}>
               <p className={styles.footer__security_copyright}>
-                Copyrights © 2024 Всі права захищені компанією{" "}
+                Copyrights © 2024 Все права защищены{" "}
                 <span className={styles.footer__copyright_primary}>
-                  Sieg Tag Sound
+                  SiegTagSound
                 </span>
               </p>
               <ul className={styles.footer__security_list}>
                 <li className={styles.footer__security_item}>
                   <NavLink to={""} className={styles.footer__security_link}>
-                    Політика конфіденційності
+                    Политика использования файлов cookies
                   </NavLink>
                 </li>
                 <li className={styles.footer__security_list}>
                   <NavLink to={""} className={styles.footer__security_link}>
-                    Умови використання
+                    Условия использования
                   </NavLink>
                 </li>
               </ul>

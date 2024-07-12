@@ -10,7 +10,7 @@ const HomeProcess: React.FC = () => {
           <div className={styles.home__process_heading}>
             <h2 className={styles.home__heading_title}>Процесс работы</h2>
             <p className={styles.home__heading_subtitle}>
-              Мы выполнение в течение двух недель
+              Мы выполняем работу в течение двух недель
             </p>
           </div>
           <div className={styles.home__process_main}>

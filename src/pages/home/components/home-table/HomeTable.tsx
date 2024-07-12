@@ -26,21 +26,21 @@ const HomeTable: React.FC = () => {
                   <td>2500-3000</td>
                 </tr>
                 <tr>
-                  <td>Мастеринг</td>
-                  <td>100</td>
-                  <td>400-600</td>
-                  <td>1000-1200</td>
-                </tr>
-                <tr>
                   <td>Сведение и мастеринг вместе</td>
                   <td>300</td>
                   <td>1200-1800</td>
                   <td>3000-3600</td>
                 </tr>
+                <tr>
+                  <td>Мастеринг</td>
+                  <td>100</td>
+                  <td>400-600</td>
+                  <td>1000-1200</td>
+                </tr>
               </tbody>
             </table>
           </div>
-          <Button type={"button"}>lorem dolor asit</Button>
+          <Button type={"button"}>Заказать услуги</Button>
         </div>
       </div>
     </section>

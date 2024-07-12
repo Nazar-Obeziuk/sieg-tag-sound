@@ -8,6 +8,7 @@ import HomePayment from "./components/home-payment/HomePayment";
 import HomeForm from "./components/home-form/HomeForm";
 import HomePortfolio from "./components/home-portfolio/HomePortfolio";
 import HomeProcess from "./components/home-process/HomeProcess";
+import HomeBlog from "./components/home-blog/HomeBlog";
 
 const Home: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const Home: React.FC = () => {
       <HomeForm />
       <HomePortfolio />
       <HomeProcess />
+      <HomeBlog />
     </>
   );
 };

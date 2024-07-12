@@ -14,24 +14,17 @@ const customStyles = {
   }),
   option: (provided: any, state: any) => ({
     ...provided,
-    // borderBottom: "1px solid var(--gray)",
-    // color: state.isSelected ? "var(--white)" : "var(--white)",
-    // backgroundColor: state.isSelected ? "var(--primary)" : "var(--white)",
-    // fontSize: "16px",
-    // fontWeight: "500",
-    // lineHeight: "18px",
-    // borderRadius: "10px",
-    borderBottom: "1px dotted pink",
-    color: state.isSelected ? "white" : "black",
-    backgroundColor: state.isSelected ? "hotpink" : "white",
+    borderBottom: "1px solid var(--border-gray)",
+    color: state.isSelected ? "white" : "red",
+    backgroundColor: state.isSelected ? "var(--input-gray)" : "white",
   }),
 };
 
 const Form: React.FC = () => {
   const options = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
+    { value: "track", label: "mixing&mastering" },
+    { value: "ep", label: "Mixing" },
+    { value: "album", label: "Mastering" },
   ];
 
   const onDrop = useCallback((acceptedFiles: any) => {
@@ -43,7 +36,7 @@ const Form: React.FC = () => {
     <div className={styles.form__block}>
       <div className={styles.form__block_wrapper}>
         <div className={styles.form__wrapper_info}>
-          <h3 className={styles.form__info_title}>Lorem, ipsum dolor.</h3>
+          <h3 className={styles.form__info_title}>Заполните форму</h3>
         </div>
         <form className={styles.form__wrapper_item}>
           <div className={styles.form__item_fields}>
@@ -68,7 +61,7 @@ const Form: React.FC = () => {
                 <input
                   type="text"
                   className={styles.form__control_input}
-                  placeholder="First name"
+                  placeholder="Имя"
                 />
               </div>
               <div className={styles.form__fields_control}>
@@ -87,7 +80,7 @@ const Form: React.FC = () => {
                 <input
                   type="text"
                   className={styles.form__control_input}
-                  placeholder="Phone number"
+                  placeholder="Номер телефона"
                 />
               </div>
             </div>
@@ -111,7 +104,7 @@ const Form: React.FC = () => {
               <input
                 type="text"
                 className={styles.form__control_input}
-                placeholder="E-mail"
+                placeholder="Электронная почта"
               />
             </div>
             <div className={styles.form__fields_control}>
@@ -127,7 +120,11 @@ const Form: React.FC = () => {
                   fill="#A1ADCD"
                 />
               </svg>
-              <Select options={options} styles={customStyles} />
+              <Select
+                defaultValue={options[0]}
+                options={options}
+                styles={customStyles}
+              />
             </div>
             <div className={styles.form__fields_inner}>
               <div className={styles.form__fields_control}>
@@ -146,7 +143,7 @@ const Form: React.FC = () => {
                 <input
                   type="text"
                   className={styles.form__control_input}
-                  placeholder="Link on drive"
+                  placeholder="Ссылка на драйв"
                 />
               </div>
               <div className={styles.form__fields_control}>
@@ -165,7 +162,7 @@ const Form: React.FC = () => {
                 <input
                   type="text"
                   className={styles.form__control_input}
-                  placeholder="Promo code"
+                  placeholder="Промо код"
                 />
               </div>
             </div>
@@ -185,9 +182,9 @@ const Form: React.FC = () => {
               <div {...getRootProps()} className={styles.form__control_file}>
                 <input {...getInputProps()} />
                 {isDragActive ? (
-                  <p>Drop the files here ...</p>
+                  <p>Загрузите файлы здесь...</p>
                 ) : (
-                  <p>Drag 'n' drop files</p>
+                  <p>Загрузите файлы здесь</p>
                 )}
               </div>
             </div>
@@ -202,7 +199,7 @@ const Form: React.FC = () => {
                 </span>{" "}
               </p>
             </div>
-            <Button type={"submit"}>Buy service</Button>
+            <Button type={"submit"}>Заказать услугу</Button>
           </div>
         </form>
       </div>

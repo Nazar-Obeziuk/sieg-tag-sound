@@ -21,14 +21,13 @@ const HomeAbout: React.FC = () => {
               <div className={styles.home__banner_card}>
                 <Card>
                   <p className={styles.home__about_text}>
-                    Sieg TagSound - это студия звукозаписи с более чем 13-летним
+                    Sieg TagSound - это студия звукозаписи с более чем 6-летним
                     опытом в области профессионального мастеринга и сведения
                     музыки.
                   </p>
                   <p className={styles.home__about_text}>
-                    музыки. Наша команда экспертов работает со всеми
-                    музыкальными жанрами - от классической до современной
-                    электронной музыки.
+                    Наша команда экспертов работает со всеми музыкальными
+                    жанрами - от классической до современной электронной музыки.
                   </p>
                   <p className={styles.home__about_text}>
                     Используя новейшее оборудование и самые передовые
@@ -42,23 +41,35 @@ const HomeAbout: React.FC = () => {
             </div>
             <Card>
               <h3 className={styles.home__about_subtitle}>
-                Lorem ipsum dolor sit.
+                Доверие к SiegTagSound.
               </h3>
               <p className={styles.home__about_text}>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Recusandae rem explicabo, aliquid, ducimus quibusdam, distinctio
-                dolorum eligendi maxime similique minus sequi! Quibusdam error
-                natus, voluptatum tenetur odit tempore alias hic?
+                В SiegTagSound мы верим, что каждая запись – это уникальная
+                история, и наша цель – помочь вам рассказать её наилучшим
+                образом. Наша студия оснащена всем необходимым для проведения
+                сложных и высокоточных операций по сведению и мастерингу. Мы
+                постоянно совершенствуем наши методики и используем только
+                проверенные технологии, чтобы гарантировать вам наилучший
+                результат.
               </p>
               <p className={styles.home__about_text}>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Ratione rerum fugiat nihil modi beatae cumque numquam aut
-                pariatur temporibus unde. Voluptatum perferendis dignissimos
-                corrupti ipsam.
+                Мы также предлагаем срочные услуги для тех, кто ценит свое время
+                и нуждается в быстром, но качественном результате.
+                Воспользуйтесь нашим опытом и профессионализмом, чтобы ваш
+                музыкальный проект зазвучал так, как вы мечтаете.
+              </p>
+              <p className={styles.home__about_text}>
+                Мы понимаем, насколько важна каждая деталь в создании
+                качественного музыкального продукта. Наша студия предлагает
+                индивидуальный подход к каждому проекту, чтобы удовлетворить
+                уникальные потребности и ожидания наших клиентов. Мы готовы
+                работать как с начинающими музыкантами, так и с опытными
+                профессионалами, обеспечивая высокий стандарт обслуживания и
+                поддержки на всех этапах работы.
               </p>
             </Card>
           </div>
-          <Button type="button">Lorem ipsum dolor sit.</Button>
+          <Button type="button">Заказать услуги</Button>
         </div>
       </div>
     </section>

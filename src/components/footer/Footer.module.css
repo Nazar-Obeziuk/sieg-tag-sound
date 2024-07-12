@@ -26,6 +26,7 @@
   width: 120px;
   display: block;
   cursor: pointer;
+  user-select: none;
 }
 .footer__header_logo img {
   width: 100%;

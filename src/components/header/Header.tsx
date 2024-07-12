@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
+import { useTranslation } from "react-i18next";
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const { i18n } = useTranslation();
+  const languages = [
+    { code: "en", name: "EN" },
+    { code: "de", name: "DE" },
+    { code: "ru", name: "RU" },
+  ];
 
   const activeHeaderItem = {
     color: "#FFED00",
@@ -87,14 +95,25 @@ const Header: React.FC = () => {
             <div className={styles.header__wrapper_info}>
               <div className={styles.header__info_languages}>
                 <span
+                  onClick={() => i18n.changeLanguage("de")}
                   className={`${styles.header__languages_item} ${styles.header__language_active}`}
                 >
                   DE
                 </span>
                 <span className={styles.header__languages_line}></span>
-                <span className={styles.header__languages_item}>EN</span>
+                <span
+                  onClick={() => i18n.changeLanguage("en")}
+                  className={styles.header__languages_item}
+                >
+                  EN
+                </span>
                 <span className={styles.header__languages_line}></span>
-                <span className={styles.header__languages_item}>RU</span>
+                <span
+                  onClick={() => i18n.changeLanguage("ru")}
+                  className={styles.header__languages_item}
+                >
+                  RU
+                </span>
               </div>
             </div>
 
@@ -121,7 +140,7 @@ const Header: React.FC = () => {
                       to={"/"}
                       className={`${styles.header__item_link} ${styles.header__link_about}`}
                     >
-                      Головна
+                      Главная
                     </NavLink>
                   </li>
                   <li className={styles.header__list_item}>
@@ -129,7 +148,7 @@ const Header: React.FC = () => {
                       to={""}
                       className={`${styles.header__item_link} ${styles.header__link_client}`}
                     >
-                      Про нас
+                      О нас
                     </NavLink>
                   </li>
                   <li className={styles.header__list_item}>
@@ -137,7 +156,7 @@ const Header: React.FC = () => {
                       to={"/"}
                       className={`${styles.header__item_link} ${styles.header__link_order}`}
                     >
-                      Послуги
+                      Услуги
                     </NavLink>
                   </li>
                   <li className={styles.header__list_item}>
@@ -145,7 +164,7 @@ const Header: React.FC = () => {
                       to={"/"}
                       className={`${styles.header__item_link} ${styles.header__link_order}`}
                     >
-                      Портфоліо
+                      Портфолио
                     </NavLink>
                   </li>
                   <li className={styles.header__list_item}>
@@ -162,14 +181,25 @@ const Header: React.FC = () => {
               <div className={styles.header__mobile_info}>
                 <div className={styles.header__info_languages}>
                   <span
+                    onClick={() => i18n.changeLanguage("de")}
                     className={`${styles.header__languages_item} ${styles.header__language_active}`}
                   >
                     DE
                   </span>
                   <span className={styles.header__languages_line}></span>
-                  <span className={styles.header__languages_item}>EN</span>
+                  <span
+                    onClick={() => i18n.changeLanguage("en")}
+                    className={styles.header__languages_item}
+                  >
+                    EN
+                  </span>
                   <span className={styles.header__languages_line}></span>
-                  <span className={styles.header__languages_item}>RU</span>
+                  <span
+                    onClick={() => i18n.changeLanguage("ru")}
+                    className={styles.header__languages_item}
+                  >
+                    RU
+                  </span>
                 </div>
               </div>
             </div>
