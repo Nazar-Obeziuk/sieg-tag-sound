@@ -1,68 +1,57 @@
 import React from "react";
 import styles from "./HomeProcess.module.css";
 import Card from "../../../../components/UI/card/Card";
+import { useTranslation } from "react-i18next";
 
 const HomeProcess: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className={styles.home__process_section}>
       <div className="container">
         <div className={styles.home__process_wrapper}>
           <div className={styles.home__process_heading}>
-            <h2 className={styles.home__heading_title}>Процесс работы</h2>
+            <h2 className={styles.home__heading_title}>
+              {t("home.homeProcess.homeProcessTitle")}
+            </h2>
             <p className={styles.home__heading_subtitle}>
-              Мы выполняем работу в течение двух недель
+              {t("home.homeProcess.homeProcessSubtitle")}
             </p>
           </div>
           <div className={styles.home__process_main}>
             <div className={styles.home__process_inner}>
               <Card>
-                <h3>Прием заказа</h3>
+                <h3>{t("home.homeProcess.homeProcessFirstTitle")}</h3>
                 <div>
                   <img
                     src="../../images/circle-list.svg"
                     alt="circle list icon"
                   />
-                  <p>
-                    Ваш заказ на мастеринг или сведение будет принят нашей
-                    командой в течение 24 часов. Мы внимательно ознакомимся с
-                    вашими требованиями и пожеланиями.
-                  </p>
+                  <p>{t("home.homeProcess.homeProcessFirstText")}</p>
                 </div>
-                <h3>Финальная проверка</h3>
+                <h3>{t("home.homeProcess.homeProcessSecondTitle")}</h3>
                 <div>
                   <img
                     src="../../images/circle-list.svg"
                     alt="circle list icon"
                   />
-                  <p>
-                    Мы тщательно прослушаем и проверим результат, чтобы быть
-                    уверенными, что он полностью соответствует вашим ожиданиям и
-                    готов к отправке.
-                  </p>
+                  <p>{t("home.homeProcess.homeProcessSecondText")}</p>
                 </div>
-                <h3>Обработка файла</h3>
+                <h3>{t("home.homeProcess.homeProcessThirdTitle")}</h3>
                 <div>
                   <img
                     src="../../images/circle-list.svg"
                     alt="circle list icon"
                   />
-                  <p>
-                    Наши опытные саунд-инженеры начнут работу над вашим треком
-                    или альбомом, используя передовое оборудование и технологии
-                    для достижения идеального звучания.
-                  </p>
+                  <p>{t("home.homeProcess.homeProcessThirdText")}</p>
                 </div>
-                <h3>Доставка</h3>
+                <h3>{t("home.homeProcess.homeProcessFourthTitle")}</h3>
                 <div>
                   <img
                     src="../../images/circle-list.svg"
                     alt="circle list icon"
                   />
-                  <p>
-                    В течение двух недель с момента получения заказа мы
-                    предоставим вам мастер-файлы высокого качества. Вы сможете
-                    скачать их в вашем личном кабинете.
-                  </p>
+                  <p>{t("home.homeProcess.homeProcessFourthText")}</p>
                 </div>
               </Card>
             </div>

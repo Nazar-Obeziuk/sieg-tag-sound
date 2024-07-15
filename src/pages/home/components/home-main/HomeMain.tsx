@@ -18,7 +18,7 @@ const HomeMain: React.FC = () => {
             </p>
             <div className={styles.home__info_inner}>
               <span className={styles.home__inner_text}>
-                * Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                * {t("home.homeMain.homeMainSubtext")}
               </span>
               <div className={styles.home__inner_blocks}>
                 <div className={styles.home__blocks_item}>

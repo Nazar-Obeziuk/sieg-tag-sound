@@ -5,16 +5,18 @@ import { useTranslation } from "react-i18next";
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeLanguage, setActiveLanguage] = useState("de");
 
   const { i18n } = useTranslation();
-  const languages = [
-    { code: "en", name: "EN" },
-    { code: "de", name: "DE" },
-    { code: "ru", name: "RU" },
-  ];
+  const { t } = useTranslation();
 
-  const activeHeaderItem = {
-    color: "#FFED00",
+  const changeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+    setActiveLanguage(lang);
+  };
+
+  const activeStyles = {
+    color: "#ee701f",
   };
 
   const handleBurgerMenu = () => {
@@ -52,41 +54,56 @@ const Header: React.FC = () => {
                 <li className={styles.header__list_item}>
                   <NavLink
                     to={"/"}
+                    style={({ isActive }) =>
+                      isActive ? activeStyles : undefined
+                    }
                     className={`${styles.header__item_link} ${styles.header__link_about}`}
                   >
-                    Головна
+                    {t("menu.home-page")}
                   </NavLink>
                 </li>
                 <li className={styles.header__list_item}>
                   <NavLink
-                    to={""}
+                    to={"/about"}
+                    style={({ isActive }) =>
+                      isActive ? activeStyles : undefined
+                    }
                     className={`${styles.header__item_link} ${styles.header__link_client}`}
                   >
-                    Про нас
+                    {t("menu.about-page")}
                   </NavLink>
                 </li>
                 <li className={styles.header__list_item}>
                   <NavLink
-                    to={"/"}
+                    to={"/services"}
+                    style={({ isActive }) =>
+                      isActive ? activeStyles : undefined
+                    }
                     className={`${styles.header__item_link} ${styles.header__link_order}`}
                   >
-                    Послуги
+                    {t("menu.services-page")}
                   </NavLink>
                 </li>
                 <li className={styles.header__list_item}>
                   <NavLink
-                    to={"/"}
+                    to={"/portfolio"}
+                    style={({ isActive }) =>
+                      isActive ? activeStyles : undefined
+                    }
                     className={`${styles.header__item_link} ${styles.header__link_order}`}
                   >
-                    Портфоліо
+                    {t("menu.portfolio-page")}
                   </NavLink>
                 </li>
                 <li className={styles.header__list_item}>
                   <NavLink
-                    to={""}
+                    to={"/blog"}
+                    style={({ isActive }) =>
+                      isActive ? activeStyles : undefined
+                    }
                     className={`${styles.header__item_link} ${styles.header__link_order}`}
                   >
-                    Блог
+                    {t("menu.blog-page")}
                   </NavLink>
                 </li>
               </ul>
@@ -95,22 +112,34 @@ const Header: React.FC = () => {
             <div className={styles.header__wrapper_info}>
               <div className={styles.header__info_languages}>
                 <span
-                  onClick={() => i18n.changeLanguage("de")}
-                  className={`${styles.header__languages_item} ${styles.header__language_active}`}
+                  onClick={() => changeLanguage("de")}
+                  className={`${styles.header__languages_item} ${
+                    activeLanguage === "de"
+                      ? styles.header__language_active
+                      : ""
+                  }`}
                 >
                   DE
                 </span>
                 <span className={styles.header__languages_line}></span>
                 <span
-                  onClick={() => i18n.changeLanguage("en")}
-                  className={styles.header__languages_item}
+                  onClick={() => changeLanguage("en")}
+                  className={`${styles.header__languages_item} ${
+                    activeLanguage === "en"
+                      ? styles.header__language_active
+                      : ""
+                  }`}
                 >
                   EN
                 </span>
                 <span className={styles.header__languages_line}></span>
                 <span
-                  onClick={() => i18n.changeLanguage("ru")}
-                  className={styles.header__languages_item}
+                  onClick={() => changeLanguage("ru")}
+                  className={`${styles.header__languages_item} ${
+                    activeLanguage === "ru"
+                      ? styles.header__language_active
+                      : ""
+                  }`}
                 >
                   RU
                 </span>
@@ -138,41 +167,56 @@ const Header: React.FC = () => {
                   <li className={styles.header__list_item}>
                     <NavLink
                       to={"/"}
+                      style={({ isActive }) =>
+                        isActive ? activeStyles : undefined
+                      }
                       className={`${styles.header__item_link} ${styles.header__link_about}`}
                     >
-                      Главная
+                      {t("menu.home-page")}
                     </NavLink>
                   </li>
                   <li className={styles.header__list_item}>
                     <NavLink
-                      to={""}
+                      to={"/about"}
+                      style={({ isActive }) =>
+                        isActive ? activeStyles : undefined
+                      }
                       className={`${styles.header__item_link} ${styles.header__link_client}`}
                     >
-                      О нас
+                      {t("menu.about-page")}
                     </NavLink>
                   </li>
                   <li className={styles.header__list_item}>
                     <NavLink
-                      to={"/"}
+                      to={"/services"}
+                      style={({ isActive }) =>
+                        isActive ? activeStyles : undefined
+                      }
                       className={`${styles.header__item_link} ${styles.header__link_order}`}
                     >
-                      Услуги
+                      {t("menu.services-page")}
                     </NavLink>
                   </li>
                   <li className={styles.header__list_item}>
                     <NavLink
-                      to={"/"}
+                      to={"/portfolio"}
+                      style={({ isActive }) =>
+                        isActive ? activeStyles : undefined
+                      }
                       className={`${styles.header__item_link} ${styles.header__link_order}`}
                     >
-                      Портфолио
+                      {t("menu.portfolio-page")}
                     </NavLink>
                   </li>
                   <li className={styles.header__list_item}>
                     <NavLink
-                      to={""}
+                      to={"/blog"}
+                      style={({ isActive }) =>
+                        isActive ? activeStyles : undefined
+                      }
                       className={`${styles.header__item_link} ${styles.header__link_order}`}
                     >
-                      Блог
+                      {t("menu.blog-page")}
                     </NavLink>
                   </li>
                 </ul>

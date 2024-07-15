@@ -5,9 +5,11 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Button from "../../../../../components/UI/button/Button";
+import { useTranslation } from "react-i18next";
 
 const HomePortfolioItems: React.FC = () => {
   const swiper = useSwiper();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -59,7 +61,9 @@ const HomePortfolioItems: React.FC = () => {
                   единую композицию.
                 </p>
                 <div className={styles.home__info_action}>
-                  <Button type={"button"}>Смотреть больше</Button>
+                  <Button type={"button"}>
+                    {t("home.homePortfolio.homePortfolioButtonText")}
+                  </Button>
                 </div>
               </div>
             </div>
@@ -87,7 +91,9 @@ const HomePortfolioItems: React.FC = () => {
                   динамики.
                 </p>
                 <div className={styles.home__info_action}>
-                  <Button type={"button"}>Смотреть больше</Button>
+                  <Button type={"button"}>
+                    {t("home.homePortfolio.homePortfolioButtonText")}
+                  </Button>
                 </div>
               </div>
             </div>
@@ -113,7 +119,9 @@ const HomePortfolioItems: React.FC = () => {
                   трек звучал мощно и чисто на больших звуковых системах.
                 </p>
                 <div className={styles.home__info_action}>
-                  <Button type={"button"}>Смотреть больше</Button>
+                  <Button type={"button"}>
+                    {t("home.homePortfolio.homePortfolioButtonText")}
+                  </Button>
                 </div>
               </div>
             </div>
@@ -138,7 +146,9 @@ const HomePortfolioItems: React.FC = () => {
                   инструментов.
                 </p>
                 <div className={styles.home__info_action}>
-                  <Button type={"button"}>Смотреть больше</Button>
+                  <Button type={"button"}>
+                    {t("home.homePortfolio.homePortfolioButtonText")}
+                  </Button>
                 </div>
               </div>
             </div>
@@ -164,7 +174,9 @@ const HomePortfolioItems: React.FC = () => {
                   и привлекательно, от вокала до инструментальных партий.
                 </p>
                 <div className={styles.home__info_action}>
-                  <Button type={"button"}>Смотреть больше</Button>
+                  <Button type={"button"}>
+                    {t("home.homePortfolio.homePortfolioButtonText")}
+                  </Button>
                 </div>
               </div>
             </div>
@@ -192,7 +204,9 @@ const HomePortfolioItems: React.FC = () => {
                   и профессиональное звучание.
                 </p>
                 <div className={styles.home__info_action}>
-                  <Button type={"button"}>Смотреть больше</Button>
+                  <Button type={"button"}>
+                    {t("home.homePortfolio.homePortfolioButtonText")}
+                  </Button>
                 </div>
               </div>
             </div>

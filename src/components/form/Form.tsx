@@ -193,15 +193,6 @@ const Form: React.FC = () => {
             </div>
           </div>
           <div className={styles.form__item_actions}>
-            <div className={styles.form__actions_checkbox}>
-              <input type="checkbox" className={styles.form__checkbox_input} />
-              <p className={styles.form__checkbox_text}>
-                Lorem, ipsum dolor.
-                <span className={styles.form__checkbox_primary}>
-                  Lorem, ipsum. Lorem
-                </span>{" "}
-              </p>
-            </div>
             <Button type={"submit"}>{t("form.submitText")}</Button>
           </div>
         </form>

@@ -1,4 +1,18 @@
 {
+  "menu": {
+    "home-page": "Home",
+    "about-page": "About us",
+    "services-page": "Services",
+    "portfolio-page": "Portfolio",
+    "blog-page": "Blog"
+  },
+  "footer": {
+    "footerFirstText": "We value each of our clients and are always happy to have you back! We have special bonuses and discounts for regular customers.",
+    "footerSecondText": "We pride ourselves on our high level of service and guarantee a quick and professional response to all your questions. Our goal is to make the mixing and mastering process as comfortable as possible and exceed your expectations. Contact us today and see the quality of our service!",
+    "footerCopyrights": "Copyrights © 2024 All rights reserved SiegTagSound",
+    "footerCookies": "Cookie Policy",
+    "footerPrivacyPolicy": "Conditions of Use"
+  },
   "form": {
     "formTitle": "Fill out the form",
     "firstName": "First Name",
@@ -7,14 +21,13 @@
     "linkOnDrive": "Link on drive",
     "promoCode": "Promo code",
     "uploadFiles": "Download the files here",
-    "checkboxText": "",
     "submitText": "Order a service"
   },
   "home": {
     "homeMain": {
       "homeMainTitle": "SiegTagSound - Professional mastering and mixing of music",
       "homeMainText": "We offer a wide range of mastering and mixing services for all genres of music - from classical to contemporary. With our experience of over 6 years we can help you achieve the perfect sound of your track or album.",
-      "homeMainSubtext": "",
+      "homeMainSubtext": "Our performance in figures",
       "homeMainMadeTracks": "Tracks made",
       "homeMainHappyClients": "Satisfied customers"
     },
@@ -28,6 +41,82 @@
       "homeAboutFifthText": "We also offer urgent services for those who value their time and need quick but quality results. Take advantage of our experience and professionalism to make your music project sound the way you dream.",
       "homeAboutSixthText": "We understand how important every detail is in creating a quality music product. Our studio offers a personalized approach to each project to meet the unique needs and expectations of our clients. We are ready to work with both aspiring musicians and experienced professionals, providing a high standard of service and support at all stages of work.",
       "homeAboutButtonText": "Order services"
+    },
+    "homeServices": {
+      "homeServicesTitle": "Our Services",
+      "homeServicesSubtitle": "Our company provides the best services in the market",
+      "homeServicesFirstTitle": "Mastering of music tracks",
+      "homeServicesFirstText": "Our sound engineers will perform high-quality mixing of your composition, preserving its creative intent and emphasizing the best aspects of each element.",
+      "homeServicesSecondTitle": "Mixing multitrack recordings",
+      "homeServicesSecondText": "Our sound engineers will perform high-quality mixing of your composition, preserving its creative intent and emphasizing the best aspects of each element.",
+      "homeServicesThirdTitle": "Sound mixing and processing",
+      "homeServicesThirdText": "We offer mixing services for vocals, instruments and rhythm section, as well as the application of various sound effects to achieve the desired sound."
+    },
+    "homeTable": {
+      "homeTableTitle": "Price comparison",
+      "homeTableRow1": "Service",
+      "homeTableRow2": "Track (€)",
+      "homeTableRow3": "EP (4-6 tracks) (€)",
+      "homeTableRow4": "Album (10-12 tracks) (€)",
+      "homeTableColumn1": "Synopsis and mastering together",
+      "homeTableColumn2": "Synopsis",
+      "homeTableColumn3": "Mastering",
+      "homeTableButtonText": "Order services"
+    },
+    "homeUpload": {
+      "homeUploadTitle": "Uploading a file",
+      "homeUploadSubtitle": "Here is the information you need to know.",
+      "homeUploadFirstTitle": "Simple procedure",
+      "homeUploadFirstText": "Our user interface makes it quick and easy to upload your music file with a single click.",
+      "homeUploadSecondTitle": "Secure transmission",
+      "homeUploadSecondText": "We use a secure SSL connection to ensure the confidentiality and integrity of your data.",
+      "homeUploadThirdTitle": "Status Tracking",
+      "homeUploadThirdText": "You can always ask and manager or add corrections.",
+      "homeUploadFourthTitle": "Individualized instructions",
+      "homeUploadFourthText": "After downloading the file, you will be able to leave your terms of reference and wishes so that we can take your requirements into account.",
+      "homeUploadFifthTitle": "Audio Settings",
+      "homeUploadFifthText": "Before you send the file, make sure the volume is set to zero everywhere and all effects are removed.",
+      "homeUploadSixthTitle": "Customer Communication",
+      "homeUploadSixthText": "We usually contact customers via email, but you can leave any manager or social network to get in touch."
+    },
+    "homePayment": {
+      "homePaymentTitle": "Payment",
+      "homePaymentFirstTitle": "Flexible options",
+      "homePaymentFirstText": "We offer various payment methods so that you can choose the one that is most convenient for you - bank transfer, electronic payment systems or even cryptocurrency.",
+      "homePaymentSecondTitle": "Instant access",
+      "homePaymentSecondText": "After successful payment, you will get instant access to the results of your track or album in high quality.",
+      "homePaymentThirdTitle": "Secure transaction",
+      "homePaymentThirdText": "We use strong encrypted protocols to ensure the privacy of your payment data and the security of your funds.",
+      "homePaymentButtonText": "Order services"
+    },
+    "homeForm": {
+      "homeFormTitle": "SiegTagSound online 24/7",
+      "homeFormSubtitle": "We are ready to provide you with services at any time, just fill out the form!",
+      "homeFormFirstTitle": "Don't put off for tomorrow what can change your music career today",
+      "homeFormFirstText": "Book our services now and see why thousands of artists around the world choose Sieg TagSound for mixing and mastering their tracks.",
+      "homeFormSecondText": "Our clients trust us with their most important projects, knowing that we will do everything we can to achieve their musical goals.",
+      "homeFormThirdText": "Ready to get started? Simply go to order, select the services you need and upload your tracks.",
+      "homeFormFourthText": "We look forward to working with you and helping you create a sound that will win the hearts of listeners."
+    },
+    "homePortfolio": {
+      "homePortfolioTitle": "Portfolio",
+      "homePortfolioButtonText": "See more"
+    },
+    "homeProcess": {
+      "homeProcessTitle": "Work process",
+      "homeProcessSubtitle": "We do the work within two weeks",
+      "homeProcessFirstTitle": "Order Acceptance",
+      "homeProcessFirstText": "Your mastering or mixing order will be received by our team within 24 hours. We will carefully familiarize ourselves with your requirements and wishes.",
+      "homeProcessSecondTitle": "Final check",
+      "homeProcessSecondText": "We will thoroughly listen and check the result to make sure it is completely in line with your expectations and ready to ship.",
+      "homeProcessThirdTitle": "File processing",
+      "homeProcessThirdText": "Our experienced sound engineers will begin work on your track or album, utilizing advanced equipment and technology to achieve the perfect sound.",
+      "homeProcessFourthTitle": "Delivery",
+      "homeProcessFourthText": "Within two weeks of receiving your order, we will provide you with high quality master files. You will be able to download them in your personal account."
+    },
+    "homeBlog": {
+      "homeBlogTitle": "Blog",
+      "homeBlogButtonText": "Read more"
     }
   }
 }

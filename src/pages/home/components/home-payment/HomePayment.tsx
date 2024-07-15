@@ -2,28 +2,25 @@ import React from "react";
 import styles from "./HomePayment.module.css";
 import Card from "../../../../components/UI/card/Card";
 import Button from "../../../../components/UI/button/Button";
+import { useTranslation } from "react-i18next";
 
 const HomePayment: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className={styles.home__payment_section}>
       <div className="container">
         <div className={styles.home__payment_wrapper}>
-          <h2 className={styles.home__payment_title}>Оплата</h2>
+          <h2 className={styles.home__payment_title}>
+            {t("home.homePayment.homePaymentTitle")}
+          </h2>
           <div className={styles.home__payment_main}>
             <div className={styles.home__payment_inner}>
               <Card>
-                <h3>Гибкие варианты</h3>
-                <p>
-                  Мы предлагаем различные способы оплаты, чтобы вы могли выбрать
-                  тот, который наиболее удобен для вас - банковский перевод,
-                  электронные платежные системы или даже криптовалюту.
-                </p>
-                <h3>Мгновенный доступ</h3>
-                <p>
-                  После успешной оплаты вы получите мгновенный доступ к
-                  результатам работы над вашим треком или альбомом в высоком
-                  качестве.
-                </p>
+                <h3>{t("home.homePayment.homePaymentFirstTitle")}</h3>
+                <p>{t("home.homePayment.homePaymentFirstText")}</p>
+                <h3>{t("home.homePayment.homePaymentSecondTitle")}</h3>
+                <p>{t("home.homePayment.homePaymentSecondText")}</p>
               </Card>
               <div className={styles.home__payment_banner}>
                 <img
@@ -34,15 +31,13 @@ const HomePayment: React.FC = () => {
               </div>
             </div>
             <Card>
-              <h3>Безопасная транзакция</h3>
-              <p>
-                Мы используем надежные шифрованные протоколы, чтобы
-                гарантировать конфиденциальность ваших платежных данных и
-                безопасность ваших средств.
-              </p>
+              <h3>{t("home.homePayment.homePaymentThirdTitle")}</h3>
+              <p>{t("home.homePayment.homePaymentThirdText")}</p>
             </Card>
           </div>
-          <Button type={"button"}>Заказать услуги</Button>
+          <Button type={"button"}>
+            {t("home.homePayment.homePaymentButtonText")}
+          </Button>
         </div>
       </div>
     </section>

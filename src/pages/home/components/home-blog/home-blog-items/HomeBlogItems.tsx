@@ -5,9 +5,11 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Button from "../../../../../components/UI/button/Button";
+import { useTranslation } from "react-i18next";
 
 const HomeBlogItems: React.FC = () => {
   const swiper = useSwiper();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -53,7 +55,9 @@ const HomeBlogItems: React.FC = () => {
                   практики.
                 </p>
                 <div className={styles.home__info_action}>
-                  <Button type={"button"}>Читать больше</Button>
+                  <Button type={"button"}>
+                    {t("home.homeBlog.homeBlogButtonText")}
+                  </Button>
                 </div>
               </div>
             </div>
@@ -66,14 +70,17 @@ const HomeBlogItems: React.FC = () => {
                 className={styles.home__blog_image}
               />
               <div className={styles.home__blog_info}>
-                <h3 className={styles.home__blog_name}>Новости индустрии</h3>
+                <h3 className={styles.home__blog_name}>Полезные статьи</h3>
                 <p className={styles.home__blog_description}>
-                  Следите за нашими новостными публикациями, чтобы быть в курсе
-                  последних тенденций в мире звукозаписи, новых технологий и
-                  оборудования.
+                  Мы публикуем информативные статьи на темы музыкального
+                  мастеринга, сведения и аудиопроизводства. Вы найдете здесь
+                  советы от наших экспертов, а также интересные кейсы из нашей
+                  практики.
                 </p>
                 <div className={styles.home__info_action}>
-                  <Button type={"button"}>Читать больше</Button>
+                  <Button type={"button"}>
+                    {t("home.homeBlog.homeBlogButtonText")}
+                  </Button>
                 </div>
               </div>
             </div>
@@ -86,14 +93,17 @@ const HomeBlogItems: React.FC = () => {
                 className={styles.home__blog_image}
               />
               <div className={styles.home__blog_info}>
-                <h3 className={styles.home__blog_name}>Интервью с артистами</h3>
+                <h3 className={styles.home__blog_name}>Полезные статьи</h3>
                 <p className={styles.home__blog_description}>
-                  Мы берем интервью у популярных музыкантов, продюсеров и
-                  звукоинженеров, чтобы поделиться их уникальным опытом и
-                  взглядами на музыкальную индустрию.
+                  Мы публикуем информативные статьи на темы музыкального
+                  мастеринга, сведения и аудиопроизводства. Вы найдете здесь
+                  советы от наших экспертов, а также интересные кейсы из нашей
+                  практики.
                 </p>
                 <div className={styles.home__info_action}>
-                  <Button type={"button"}>Читать больше</Button>
+                  <Button type={"button"}>
+                    {t("home.homeBlog.homeBlogButtonText")}
+                  </Button>
                 </div>
               </div>
             </div>
@@ -106,13 +116,17 @@ const HomeBlogItems: React.FC = () => {
                 className={styles.home__blog_image}
               />
               <div className={styles.home__blog_info}>
-                <h3 className={styles.home__blog_name}>Творческие заметки</h3>
+                <h3 className={styles.home__blog_name}>Полезные статьи</h3>
                 <p className={styles.home__blog_description}>
-                  Читайте вдохновляющие истории о процессе создания музыки,
-                  творческих поисках и музыкальных экспериментах.
+                  Мы публикуем информативные статьи на темы музыкального
+                  мастеринга, сведения и аудиопроизводства. Вы найдете здесь
+                  советы от наших экспертов, а также интересные кейсы из нашей
+                  практики.
                 </p>
                 <div className={styles.home__info_action}>
-                  <Button type={"button"}>Читать больше</Button>
+                  <Button type={"button"}>
+                    {t("home.homeBlog.homeBlogButtonText")}
+                  </Button>
                 </div>
               </div>
             </div>

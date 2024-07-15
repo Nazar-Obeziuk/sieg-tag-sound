@@ -1,4 +1,18 @@
 {
+  "menu": {
+    "home-page": "Hauptseite",
+    "about-page": "Über uns",
+    "services-page": "Dienstleistungen",
+    "portfolio-page": "Portfolio",
+    "blog-page": "Blog"
+  },
+  "footer": {
+    "footerFirstText": "Wir schätzen jeden unserer Kunden und freuen uns immer, wenn Sie wiederkommen! Wir haben spezielle Boni und Rabatte für Stammkunden.",
+    "footerSecondText": "Wir sind stolz auf unser hohes Serviceniveau und garantieren eine schnelle und professionelle Antwort auf alle Ihre Fragen. Unser Ziel ist es, den Mixing- und Mastering-Prozess so angenehm wie möglich zu gestalten und Ihre Erwartungen zu übertreffen. Kontaktieren Sie uns noch heute und überzeugen Sie sich von der Qualität unseres Services!",
+    "footerCopyrights": "Copyrights © 2024 Alle Rechte vorbehalten SiegTagSound",
+    "footerCookies": "Cookie-Politik",
+    "footerPrivacyPolicy": "Bedingungen für die Nutzung"
+  },
   "form": {
     "formTitle": "Füllen Sie das Formular aus",
     "firstName": "Vorname",
@@ -7,14 +21,13 @@
     "linkOnDrive": "Link auf dem Laufwerk",
     "promoCode": "Promo-Code",
     "uploadFiles": "Laden Sie die Dateien hier herunter",
-    "checkboxText": "",
     "submitText": "Bestellung einer Dienstleistung"
   },
   "home": {
     "homeMain": {
       "homeMainTitle": "SiegTagSound - Professionelles Mastering und Abmischen von Musik",
       "homeMainText": "Wir bieten eine breite Palette von Mastering- und Mixing-Diensten für alle Musikrichtungen, von klassischer bis zu zeitgenössischer Musik. Mit unserer Erfahrung von über 6 Jahren können wir Ihnen helfen, den perfekten Sound für Ihren Track oder Ihr Album zu erreichen.",
-      "homeMainSubtext": "",
+      "homeMainSubtext": "Unsere Leistung in Zahlen",
       "homeMainMadeTracks": "Erstellte Spuren",
       "homeMainHappyClients": "Zufriedene Kunden"
     },
@@ -28,6 +41,82 @@
       "homeAboutFifthText": "Wir bieten auch Eildienste für diejenigen an, die ihre Zeit schätzen und ein schnelles, aber hochwertiges Ergebnis benötigen. Nutzen Sie unsere Erfahrung und Professionalität, damit Ihr Musikprojekt so klingt, wie Sie es sich wünschen.",
       "homeAboutSixthText": "Wir wissen, wie wichtig jedes Detail bei der Erstellung eines hochwertigen Musikprodukts ist. Unser Studio bietet einen persönlichen Ansatz für jedes Projekt, um die einzigartigen Bedürfnisse und Erwartungen unserer Kunden zu erfüllen. Wir sind bereit, sowohl mit aufstrebenden Musikern als auch mit erfahrenen Profis zusammenzuarbeiten und bieten einen hohen Standard an Service und Unterstützung in allen Phasen der Arbeit.",
       "homeAboutButtonText": "Dienstleistungen bestellen"
+    },
+    "homeServices": {
+      "homeServicesTitle": "Unsere Dienstleistungen",
+      "homeServicesSubtitle": "Unser Unternehmen bietet die besten Dienstleistungen auf dem Markt",
+      "homeServicesFirstTitle": "Mastering von Musikstücken",
+      "homeServicesFirstText": "Unsere Experten verwenden fortschrittliche Technologien und Geräte, um Ihrem Titel einen professionellen, ausgewogenen Klang zu verleihen.",
+      "homeServicesSecondTitle": "Abmischen von Mehrspuraufnahmen",
+      "homeServicesSecondText": "Unsere Tontechniker mischen Ihre Komposition in hoher Qualität ab, wobei die kreative Absicht erhalten bleibt und die besten Aspekte jedes Elements hervorgehoben werden.",
+      "homeServicesThirdTitle": "Tonmischung und -bearbeitung",
+      "homeServicesThirdText": "Wir bieten Mischdienste für Gesang, Instrumente und Rhythmusgruppe sowie die Anwendung verschiedener Soundeffekte, um den gewünschten Sound zu erreichen."
+    },
+    "homeTable": {
+      "homeTableTitle": "Vergleich der Preise",
+      "homeTableRow1": "Dienst",
+      "homeTableRow2": "Strecke (€)",
+      "homeTableRow3": "EP (4-6 Titel) (€)",
+      "homeTableRow4": "Album (10-12 Titel) (€)",
+      "homeTableColumn1": "Gemeinsames Abmischen und Mastern",
+      "homeTableColumn2": "Versöhnung",
+      "homeTableColumn3": "Mastering",
+      "homeTableButtonText": "Dienstleistungen bestellen"
+    },
+    "homeUpload": {
+      "homeUploadTitle": "Hochladen einer Datei",
+      "homeUploadSubtitle": "Hier sind die Informationen, die Sie wissen müssen.",
+      "homeUploadFirstTitle": "Einfaches Verfahren",
+      "homeUploadFirstText": "Mit unserer Benutzeroberfläche können Sie Ihre Musikdatei schnell und einfach mit einem Klick hochladen.",
+      "homeUploadSecondTitle": "Sichere Übertragung",
+      "homeUploadSecondText": "Wir verwenden eine sichere SSL-Verbindung, um die Vertraulichkeit und Integrität Ihrer Daten zu gewährleisten.",
+      "homeUploadThirdTitle": "Statusverfolgung",
+      "homeUploadThirdText": "Sie können sich jederzeit an den Manager wenden oder Korrekturen vornehmen.",
+      "homeUploadFourthTitle": "Personalisierte Anweisungen",
+      "homeUploadFourthText": "Nach dem Herunterladen der Datei können Sie Ihre Aufgabenstellung und Wünsche hinterlassen, damit wir Ihre Anforderungen berücksichtigen können.",
+      "homeUploadFifthTitle": "Audio-Einstellungen",
+      "homeUploadFifthText": "Vergewissern Sie sich vor dem Senden der Datei, dass die Lautstärke überall auf Null gesetzt ist und alle Effekte entfernt wurden.",
+      "homeUploadSixthTitle": "Kundenkommunikation",
+      "homeUploadSixthText": "Normalerweise kontaktieren wir unsere Kunden per E-Mail, aber Sie können sich auch über einen Manager oder ein soziales Netzwerk mit uns in Verbindung setzen."
+    },
+    "homePayment": {
+      "homePaymentTitle": "Zahlung",
+      "homePaymentFirstTitle": "Flexible Optionen",
+      "homePaymentFirstText": "Wir bieten verschiedene Zahlungsmethoden an, so dass Sie die für Sie bequemste wählen können - Banküberweisung, elektronische Zahlungssysteme oder sogar Kryptowährung.",
+      "homePaymentSecondTitle": "Sofortiger Zugang",
+      "homePaymentSecondText": "Nach erfolgreicher Zahlung erhalten Sie sofortigen Zugriff auf die Ergebnisse Ihres Tracks oder Albums in hoher Qualität.",
+      "homePaymentThirdTitle": "Sichere Transaktion",
+      "homePaymentThirdText": "Wir verwenden starke Verschlüsselungsprotokolle, um die Vertraulichkeit Ihrer Zahlungsdaten und die Sicherheit Ihrer Gelder zu gewährleisten.",
+      "homePaymentButtonText": "Dienstleistungen bestellen"
+    },
+    "homeForm": {
+      "homeFormTitle": "SiegTagSound online 24/7",
+      "homeFormSubtitle": "Wir sind jederzeit bereit, Ihnen unsere Dienste anzubieten, füllen Sie einfach das Formular aus!",
+      "homeFormFirstTitle": "Verschieben Sie nicht auf morgen, was Ihre Musikkarriere heute verändern kann",
+      "homeFormFirstText": "Buchen Sie jetzt unsere Dienste und erfahren Sie, warum Tausende von Künstlern auf der ganzen Welt Sieg TagSound mit dem Mischen und Mastern ihrer Tracks beauftragen.",
+      "homeFormSecondText": "Unsere Kunden vertrauen uns ihre wichtigsten Projekte an und wissen, dass wir alles tun werden, um ihre musikalischen Ziele zu erreichen.",
+      "homeFormThirdText": "Sind Sie bereit, loszulegen? Gehen Sie einfach auf Bestellen, wählen Sie die gewünschten Dienste aus und laden Sie Ihre Tracks hoch.",
+      "homeFormFourthText": "Wir freuen uns darauf, mit Ihnen zusammenzuarbeiten und Ihnen dabei zu helfen, einen Sound zu kreieren, der die Herzen der Hörer erobert."
+    },
+    "homePortfolio": {
+      "homePortfolioTitle": "Portfolio",
+      "homePortfolioButtonText": "Mehr sehen"
+    },
+    "homeProcess": {
+      "homeProcessTitle": "Arbeitsablauf",
+      "homeProcessSubtitle": "Wir erledigen die Arbeit innerhalb von zwei Wochen",
+      "homeProcessFirstTitle": "Annahme der Bestellung",
+      "homeProcessFirstText": "Ihr Mastering- oder Mixing-Auftrag wird innerhalb von 24 Stunden bei unserem Team eingehen. Wir werden Ihre Anforderungen und Wünsche sorgfältig prüfen.      ",
+      "homeProcessSecondTitle": "Endkontrolle",
+      "homeProcessSecondText": "Wir hören uns das Ergebnis sorgfältig an und prüfen es, um sicherzustellen, dass es Ihren Erwartungen entspricht und versandfertig ist.",
+      "homeProcessThirdTitle": "Dateiverarbeitung",
+      "homeProcessThirdText": "Unsere erfahrenen Toningenieure beginnen mit der Arbeit an Ihrem Titel oder Album und setzen dabei modernste Geräte und Technologien ein, um den perfekten Sound zu erzielen.",
+      "homeProcessFourthTitle": "Lieferung",
+      "homeProcessFourthText": "Innerhalb von zwei Wochen nach Eingang Ihrer Bestellung erhalten Sie von uns hochwertige Masterdateien. Sie können diese dann in Ihrem persönlichen Konto herunterladen."
+    },
+    "homeBlog": {
+      "homeBlogTitle": "Blog",
+      "homeBlogButtonText": "Mehr lesen"
     }
   }
 }

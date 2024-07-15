@@ -1,8 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Footer.module.css";
+import { useTranslation } from "react-i18next";
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className={styles.footer}>
       <section className={styles.footer__section}>
@@ -15,28 +18,34 @@ const Footer: React.FC = () => {
               <nav className={styles.footer__header_nav}>
                 <ul className={styles.footer__nav_list}>
                   <li className={styles.footer__list_item}>
-                    <NavLink to={""} className={styles.footer__list_link}>
-                      Главная
+                    <NavLink to={"/"} className={styles.footer__list_link}>
+                      {t("menu.home-page")}
                     </NavLink>
                   </li>
                   <li className={styles.footer__list_item}>
-                    <NavLink to={""} className={styles.footer__list_link}>
-                      О нас
+                    <NavLink to={"/about"} className={styles.footer__list_link}>
+                      {t("menu.about-page")}
                     </NavLink>
                   </li>
                   <li className={styles.footer__list_item}>
-                    <NavLink to={""} className={styles.footer__list_link}>
-                      Услуги
+                    <NavLink
+                      to={"/services"}
+                      className={styles.footer__list_link}
+                    >
+                      {t("menu.services-page")}
                     </NavLink>
                   </li>
                   <li className={styles.footer__list_item}>
-                    <NavLink to={""} className={styles.footer__list_link}>
-                      Портфолио
+                    <NavLink
+                      to={"/portfolio"}
+                      className={styles.footer__list_link}
+                    >
+                      {t("menu.portfolio-page")}
                     </NavLink>
                   </li>
                   <li className={styles.footer__list_item}>
-                    <NavLink to={""} className={styles.footer__list_link}>
-                      Блог
+                    <NavLink to={"/blog"} className={styles.footer__list_link}>
+                      {t("menu.blog-page")}
                     </NavLink>
                   </li>
                 </ul>
@@ -120,34 +129,25 @@ const Footer: React.FC = () => {
             </div>
             <div className={styles.footer__wrapper_main}>
               <p className={styles.footer__main_text}>
-                Мы ценим каждого нашего клиента и всегда рады вашему
-                возвращению! Для постоянных клиентов у нас действуют специальные
-                бонусы и скидки.
+                {t("footer.footerFirstText")}
               </p>
               <p className={styles.footer__main_text}>
-                Мы гордимся высоким уровнем обслуживания и гарантируем быстрый и
-                профессиональный ответ на все ваши вопросы. Наша цель – сделать
-                процесс сведения и мастеринга максимально комфортным и превзойти
-                ваши ожидания. Свяжитесь с нами сегодня и убедитесь в качестве
-                нашего сервиса!
+                {t("footer.footerSecondText")}
               </p>
             </div>
             <div className={styles.footer__wrapper_footer}>
               <p className={styles.footer__security_copyright}>
-                Copyrights © 2024 Все права защищены{" "}
-                <span className={styles.footer__copyright_primary}>
-                  SiegTagSound
-                </span>
+                {t("footer.footerCopyrights")}
               </p>
               <ul className={styles.footer__security_list}>
                 <li className={styles.footer__security_item}>
-                  <NavLink to={""} className={styles.footer__security_link}>
-                    Политика использования файлов cookies
+                  <NavLink to={"/"} className={styles.footer__security_link}>
+                    {t("footer.footerCookies")}
                   </NavLink>
                 </li>
                 <li className={styles.footer__security_list}>
-                  <NavLink to={""} className={styles.footer__security_link}>
-                    Условия использования
+                  <NavLink to={"/"} className={styles.footer__security_link}>
+                    {t("footer.footerPrivacyPolicy")}
                   </NavLink>
                 </li>
               </ul>
