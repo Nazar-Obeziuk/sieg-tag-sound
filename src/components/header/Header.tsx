@@ -64,17 +64,6 @@ const Header: React.FC = () => {
                 </li>
                 <li className={styles.header__list_item}>
                   <NavLink
-                    to={"/about"}
-                    style={({ isActive }) =>
-                      isActive ? activeStyles : undefined
-                    }
-                    className={`${styles.header__item_link} ${styles.header__link_client}`}
-                  >
-                    {t("menu.about-page")}
-                  </NavLink>
-                </li>
-                <li className={styles.header__list_item}>
-                  <NavLink
                     to={"/services"}
                     style={({ isActive }) =>
                       isActive ? activeStyles : undefined
@@ -173,17 +162,6 @@ const Header: React.FC = () => {
                       className={`${styles.header__item_link} ${styles.header__link_about}`}
                     >
                       {t("menu.home-page")}
-                    </NavLink>
-                  </li>
-                  <li className={styles.header__list_item}>
-                    <NavLink
-                      to={"/about"}
-                      style={({ isActive }) =>
-                        isActive ? activeStyles : undefined
-                      }
-                      className={`${styles.header__item_link} ${styles.header__link_client}`}
-                    >
-                      {t("menu.about-page")}
                     </NavLink>
                   </li>
                   <li className={styles.header__list_item}>

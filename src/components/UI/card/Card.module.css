@@ -29,6 +29,25 @@
   line-height: 24px;
 }
 
+.card__block ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 14px;
+}
+
+.card__block ul li {
+  list-style-type: disc;
+  color: var(--dark);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.card__block ul li::marker {
+  color: var(--primary);
+}
+
 @media (max-width: 600px) {
   .card__block {
     border-radius: 20px;

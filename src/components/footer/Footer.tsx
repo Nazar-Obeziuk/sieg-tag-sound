@@ -23,11 +23,6 @@ const Footer: React.FC = () => {
                     </NavLink>
                   </li>
                   <li className={styles.footer__list_item}>
-                    <NavLink to={"/about"} className={styles.footer__list_link}>
-                      {t("menu.about-page")}
-                    </NavLink>
-                  </li>
-                  <li className={styles.footer__list_item}>
                     <NavLink
                       to={"/services"}
                       className={styles.footer__list_link}
