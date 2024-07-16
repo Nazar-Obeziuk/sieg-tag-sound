@@ -23,9 +23,13 @@
 .header__wrapper_logo {
   width: 120px;
   cursor: pointer;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-
+.header__logo_s {
+  height: 20px;
+}
 .header__logo_item {
   width: 100%;
 }

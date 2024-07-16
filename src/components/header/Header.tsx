@@ -42,6 +42,11 @@ const Header: React.FC = () => {
             <div className={styles.header__wrapper_logo}>
               <NavLink to={"/"} className={styles.header__wrapper_logo}>
                 <img
+                  src="../../images/s.svg"
+                  alt=""
+                  className={styles.header__logo_s}
+                />
+                <img
                   src="../../images/logo.svg"
                   alt="header logo"
                   className={styles.header__logo_item}
