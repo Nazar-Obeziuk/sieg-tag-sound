@@ -24,11 +24,11 @@
   width: 120px;
   cursor: pointer;
   display: flex;
-  align-items: center;
-  gap: 8px;
+  /* align-items: center; */
+  gap: 6px;
 }
 .header__logo_s {
-  height: 20px;
+  height: 10px;
 }
 .header__logo_item {
   width: 100%;
