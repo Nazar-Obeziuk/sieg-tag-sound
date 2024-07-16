@@ -118,5 +118,46 @@
       "homeBlogTitle": "Blog",
       "homeBlogButtonText": "Mehr lesen"
     }
+  },
+  "services": {
+    "servicesMain": {
+      "servicesMainTitle": "Dienstleistungen",
+      "servicesMainSubtitle": "Wir möchten Sie gerne näher mit unseren Dienstleistungen vertraut machen",
+      "servicesMainCard1Title1": "Abmischung und Mastering",
+      "servicesMainCard1Text1": "Abmischung und Mastering sind die wichtigsten Schritte bei der Erstellung eines professionellen Musikprodukts. Wir bieten ein umfassendes Angebot an Track-Mixing- und Mastering-Diensten, die eine hohe Klangqualität garantieren und den höchsten Branchenstandards entsprechen.",
+      "servicesMainCard1Text2": "Wir können so selbstbewusst sagen, dass wir Profis sind, nur weil Tausende von Menschen uns vertrauen und Zehntausende von Tracks, denen wir geholfen haben, auf einem neuen Level zu klingen!",
+      "servicesMainCard1Text3": "Und mit jedem Titel werden wir besser und gehen mit dem Strom der Zeit und den Trends.",
+      "servicesMainCard1Text4": "Unsere erfahrenen Techniker verwenden die neueste Technologie und Ausrüstung, um den perfekten Klang zu erzielen.",
+      "servicesMainCard2Title1": "Versöhnung",
+      "servicesMainCard2Text1": "Beim Abmischen werden alle aufgenommenen Spuren zu einer endgültigen stereophonen Spur kombiniert. Unsere Mischdienste umfassen:",
+      "servicesMainCard2Text2": "Pegelausgleich: Passt die Lautstärke der einzelnen Spuren an, um einen harmonischen Klang zu erzielen.",
+      "servicesMainCard2Text3": "Panning: Platzieren von Klängen im Stereofeld, um eine räumliche Wahrnehmung zu erzeugen.",
+      "servicesMainCard2Text4": "Entzerrung: Passt den Frequenzbereich für jede Spur so an, dass alle Elemente der Spur klar und kohärent klingen.",
+      "servicesMainCard2Text5": "Kompression: Steuert den Dynamikbereich für einen ausgewogenen und straffen Klang.",
+      "servicesMainCard2Text6": "Effekte: Fügen Sie Reverb, Delays und andere Effekte hinzu, um die gewünschte Atmosphäre und Textur zu erzeugen.",
+      "servicesMainCard3Title1": "Mastering",
+      "servicesMainCard3Text1": "Das Mastering ist die letzte Phase der Bearbeitung eines Titels, bevor er veröffentlicht wird. Unsere Mastering-Dienste umfassen:",
+      "servicesMainCard3Text2": "Final Equalisation: Feinabstimmung der Frequenzbalance für alle Titel eines Albums oder einer EP.",
+      "servicesMainCard3Text3": "Lautstärkebegrenzung und -maximierung: Sorgt für optimale Lautstärke ohne Verzerrungen.",
+      "servicesMainCard3Text4": "Stereobildverbesserung: Erzeugt eine breitere und tiefere Klangbühne.",
+      "servicesMainCard3Text5": "Formatvorbereitung: Erstellen Sie Masterdateien für verschiedene Plattformen (Streaming, CD, Vinyl usw.).",
+      "servicesMainCard3Text6": "Konsistenz der Tracks: Stellen Sie sicher, dass alle Tracks des Albums konsistent klingen und nahtlos ineinander übergehen.",
+      "servicesMainButtonText": "Dienstleistungen bestellen"
+    },
+    "servicesWork": {
+      "servicesWorkTitle": "Wie wir mit Kunden arbeiten",
+      "servicesWorkCard1Title1": "Erstberatung:",
+      "servicesWorkCard1Text1": "In einem ersten Beratungsgespräch besprechen wir Ihre musikalischen Ziele und Vorlieben, klären Ihre Erwartungen und erfahren mehr über Ihr Projekt.",
+      "servicesWorkCard2Title1": "Weitergabe von Materialien:",
+      "servicesWorkCard2Text1": "Sie senden uns das Quellmaterial (Spuren) in einem für Sie geeigneten Format. Wir akzeptieren die meisten modernen Audiodateiformate.",
+      "servicesWorkCard3Title1": "Der Bleiprozess:",
+      "servicesWorkCard3Text1": "Unsere Techniker mischen unter Berücksichtigung Ihrer Wünsche und Anmerkungen. Wir arbeiten an Balance, Panorama, Dynamik und anderen Aspekten, um einen harmonischen und professionellen Sound zu schaffen.",
+      "servicesWorkCard4Title1": "Rückmeldung:",
+      "servicesWorkCard4Text1": "Nachdem wir die ersten Informationen erhalten haben, senden wir Ihnen eine Demoversion zum Probehören. Ihre Kommentare und Vorschläge sind für uns sehr wichtig.",
+      "servicesWorkCard5Title1": "Änderungen vornehmen:",
+      "servicesWorkCard5Text1": "Auf der Grundlage Ihres Feedbacks nehmen wir die notwendigen Überarbeitungen vor. Der Prozess wird so lange wiederholt, bis Sie mit dem Ergebnis vollkommen zufrieden sind.",
+      "servicesWorkCard6Title1": "Mastering:",
+      "servicesWorkCard6Text1": "In der Mastering-Phase optimieren wir schließlich den Klang des Tracks für verschiedene Formate und Plattformen, um eine hochwertige Wiedergabe auf allen Geräten zu gewährleisten."
+    }
   }
 }

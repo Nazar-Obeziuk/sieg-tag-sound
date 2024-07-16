@@ -118,5 +118,46 @@
       "homeBlogTitle": "Blog",
       "homeBlogButtonText": "Read more"
     }
+  },
+  "services": {
+    "servicesMain": {
+      "servicesMainTitle": "Services",
+      "servicesMainSubtitle": "We would like to familiarize you with our services in more detail",
+      "servicesMainCard1Title1": "Mixing and Mastering",
+      "servicesMainCard1Text1": "Mixing and mastering services are key stages in the creation of a professional music product. We offer a full range of track mixing and mastering services, guaranteeing high quality sound and meeting the highest industry standards.",
+      "servicesMainCard1Text2": "We can so confidently say that we are professionals, only because thousands of people trust us and tens of thousands of tracks we've helped make them sound new!",
+      "servicesMainCard1Text3": "And with each track we get better and so do we go with the flow with the times and trends.",
+      "servicesMainCard1Text4": "Our experienced technicians utilize the latest technology and equipment to achieve the perfect sound.",
+      "servicesMainCard2Title1": "Synopsis",
+      "servicesMainCard2Text1": "Mixing is the process of combining all recorded tracks into one final stereophonic track. Our mixing services include:",
+      "servicesMainCard2Text2": "Level Balancing: Adjusts the volume of each track to achieve a harmonized sound.",
+      "servicesMainCard2Text3": "Panning: Placing sounds in the stereo field to create a spatial perception.",
+      "servicesMainCard2Text4": "Equalization: Adjusts the frequency range for each track so that all elements of the track sound clear and coherent.",
+      "servicesMainCard2Text5": "Compression: Controls the dynamic range for a more balanced and tight sound.",
+      "servicesMainCard2Text6": "Effects: Add reverb, delays and other effects to create the desired ambience and texture.",
+      "servicesMainCard3Title1": "Mastering",
+      "servicesMainCard3Text1": "Mastering is the final stage of processing a track before it is released. Our mastering services include:",
+      "servicesMainCard3Text2": "Final Equalization: Fine-tune the frequency balance for all tracks on an album or EP.",
+      "servicesMainCard3Text3": "Volume Limiting and Maximizing: Provides optimal volume without distortion.",
+      "servicesMainCard3Text4": "Stereo Image Enhancement: Creates a wider and deeper soundstage.",
+      "servicesMainCard3Text5": "Format Preparation: Create master files ready for different platforms (streaming, CD, vinyl, etc.).",
+      "servicesMainCard3Text6": "Track Consistency: Make sure all tracks on the album sound consistent and flow smoothly into each other.",
+      "servicesMainButtonText": "Order services"
+    },
+    "servicesWork": {
+      "servicesWorkTitle": "How We Work with Clients",
+      "servicesWorkCard1Title1": "Initial Counseling:",
+      "servicesWorkCard1Text1": "During the initial consultation, we will discuss your musical goals and preferences, clarify your expectations, and learn more about your project.",
+      "servicesWorkCard2Title1": "Transfer of Materials:",
+      "servicesWorkCard2Text1": "You send us the source material (tracks) in a format that is convenient for you. We accept most modern audio file formats.",
+      "servicesWorkCard3Title1": "The Lead Process:",
+      "servicesWorkCard3Text1": "Our engineers perform mixing, taking into account all your wishes and comments. We work on balance, panorama, dynamics and other aspects to create a harmonious and professional sound.",
+      "servicesWorkCard4Title1": "Feedback:",
+      "servicesWorkCard4Text1": "After the initial information is completed, we send you a demo version for preliminary listening. Your comments and suggestions are very important to us.",
+      "servicesWorkCard5Title1": "Making Amendments:",
+      "servicesWorkCard5Text1": "We make the necessary revisions based on your feedback. The process is repeated until you are completely satisfied with the result.",
+      "servicesWorkCard6Title1": "Mastering:",
+      "servicesWorkCard6Text1": "At the mastering stage, we finally optimize the track's sound for different formats and platforms, ensuring its high-quality playback on all devices."
+    }
   }
 }

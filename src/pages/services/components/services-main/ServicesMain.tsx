@@ -2,16 +2,21 @@ import React from "react";
 import styles from "./ServicesMain.module.css";
 import Card from "../../../../components/UI/card/Card";
 import Button from "../../../../components/UI/button/Button";
+import { useTranslation } from "react-i18next";
 
 const ServicesMain: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className={styles.services__main_section}>
       <div className="container">
         <div className={styles.services__main_wrapper}>
           <div className={styles.services__main_heading}>
-            <h2 className={styles.services__heading_title}>Услуги</h2>
+            <h2 className={styles.services__heading_title}>
+              {t("services.servicesMain.servicesMainTitle")}
+            </h2>
             <p className={styles.services__heading_subtitle}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              {t("services.servicesMain.servicesMainSubtitle")}
             </p>
           </div>
           <div className={styles.services__main_block}>
@@ -23,28 +28,13 @@ const ServicesMain: React.FC = () => {
                     alt="services icon"
                     className={styles.services__card_icon}
                   />
-                  <h3>Сведение и Мастеринг</h3>
-                  <p>
-                    Сведение и мастеринговые услуги – это ключевые этапы в
-                    создании профессионального музыкального продукта. Мы
-                    предлагаем полный спектр услуг по сведению и мастерингу
-                    треков, гарантируя высокое качество звука и соответствие
-                    самым высоким стандартам индустрии.
-                  </p>
+                  <h3>{t("services.servicesMain.servicesMainCard1Title1")}</h3>
+                  <p>{t("services.servicesMain.servicesMainCard1Text1")}</p>
                   <ul>
-                    <li>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Quos quae doloribus quo deserunt eum.
-                    </li>
-                    <li>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Porro!
-                    </li>
+                    <li>{t("services.servicesMain.servicesMainCard1Text2")}</li>
+                    <li>{t("services.servicesMain.servicesMainCard1Text3")}</li>
                   </ul>
-                  <p>
-                    Наши опытные специалисты используют новейшие технологии и
-                    оборудование для достижения идеального звучания.
-                  </p>
+                  <p>{t("services.servicesMain.servicesMainCard1Text4")}</p>
                 </Card>
               </div>
               <div className={styles.services__item_banner}>
@@ -74,34 +64,14 @@ const ServicesMain: React.FC = () => {
                     alt="services icon"
                     className={styles.services__card_icon}
                   />
-                  <h3>Сведение</h3>
-                  <p>
-                    Сведение – это процесс объединения всех записанных дорожек в
-                    одну финальную стереофоническую дорожку. Наши услуги по
-                    сведению включают:
-                  </p>
+                  <h3>{t("services.servicesMain.servicesMainCard2Title1")}</h3>
+                  <p>{t("services.servicesMain.servicesMainCard2Text1")}</p>
                   <ul>
-                    <li>
-                      Балансировка уровней: Регулировка громкости каждой дорожки
-                      для достижения гармоничного звучания.
-                    </li>
-                    <li>
-                      Панорамирование: Размещение звуков в стереополе для
-                      создания пространственного восприятия.
-                    </li>
-                    <li>
-                      Эквализация: Настройка частотного диапазона для каждой
-                      дорожки, чтобы все элементы трека звучали чисто и
-                      слаженно.
-                    </li>
-                    <li>
-                      Компрессия: Управление динамическим диапазоном для более
-                      сбалансированного и плотного звучания.
-                    </li>
-                    <li>
-                      Эффекты: Добавление реверберации, задержек и других
-                      эффектов для создания желаемой атмосферы и текстуры.
-                    </li>
+                    <li>{t("services.servicesMain.servicesMainCard2Text2")}</li>
+                    <li>{t("services.servicesMain.servicesMainCard2Text3")}</li>
+                    <li>{t("services.servicesMain.servicesMainCard2Text4")}</li>
+                    <li>{t("services.servicesMain.servicesMainCard2Text5")}</li>
+                    <li>{t("services.servicesMain.servicesMainCard2Text6")}</li>
                   </ul>
                 </Card>
               </div>
@@ -114,32 +84,14 @@ const ServicesMain: React.FC = () => {
                     alt="services icon"
                     className={styles.services__card_icon}
                   />
-                  <h3>Мастеринг</h3>
-                  <p>
-                    Мастеринг – это финальный этап обработки трека перед его
-                    выпуском. Наши услуги по мастерингу включают:
-                  </p>
+                  <h3>{t("services.servicesMain.servicesMainCard3Title1")}</h3>
+                  <p>{t("services.servicesMain.servicesMainCard3Text1")}</p>
                   <ul>
-                    <li>
-                      Финальная эквализация: Тонкая настройка частотного баланса
-                      для всех треков альбома или EP.
-                    </li>
-                    <li>
-                      Лимитирование и максимизация громкости: Обеспечение
-                      оптимального уровня громкости без искажений.
-                    </li>
-                    <li>
-                      Улучшение стереообраза: Создание более широкой и глубокой
-                      звуковой сцены.
-                    </li>
-                    <li>
-                      Подготовка форматов: Создание мастер-файлов, готовых для
-                      различных платформ (стриминг, CD, винил и др.).
-                    </li>
-                    <li>
-                      Согласование треков: Убедитесь, что все треки альбома
-                      звучат согласованно и плавно переходят друг в друга.
-                    </li>
+                    <li>{t("services.servicesMain.servicesMainCard3Text2")}</li>
+                    <li>{t("services.servicesMain.servicesMainCard3Text3")}</li>
+                    <li>{t("services.servicesMain.servicesMainCard3Text4")}</li>
+                    <li>{t("services.servicesMain.servicesMainCard3Text5")}</li>
+                    <li>{t("services.servicesMain.servicesMainCard3Text6")}</li>
                   </ul>
                 </Card>
               </div>
@@ -152,7 +104,9 @@ const ServicesMain: React.FC = () => {
               </div>
             </div>
           </div>
-          <Button type={"button"}>Заказать услуги</Button>
+          <Button type={"button"}>
+            {t("services.servicesMain.servicesMainButtonText")}
+          </Button>
         </div>
       </div>
     </section>
