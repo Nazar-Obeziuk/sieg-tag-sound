@@ -1,0 +1,36 @@
+.portfolio__work_item {
+  width: 100%;
+  background: var(--card-gray);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--primary);
+  padding: 14px;
+  border-radius: 12px;
+  gap: 14px;
+}
+.portfolio__work_block {
+  width: calc(50% - 7px);
+  padding: 20px;
+  border-radius: 12px;
+  height: 100%;
+  background: #d2d2d2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.portfolio__work_text {
+  color: var(--dark);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.portfolio__work_count {
+  color: var(--primary);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.portfolio__play_icon {
+  cursor: pointer;
+}

@@ -23,6 +23,13 @@
     "uploadFiles": "Laden Sie die Dateien hier herunter",
     "submitText": "Bestellung einer Dienstleistung"
   },
+  "bannerForm": {
+    "bannerFormFirstTitle": "Verschieben Sie nicht auf morgen, was Ihre Musikkarriere heute verändern kann",
+    "bannerFormFirstText": "Buchen Sie jetzt unsere Dienste und erfahren Sie, warum Tausende von Künstlern auf der ganzen Welt Sieg TagSound mit dem Mischen und Mastern ihrer Tracks beauftragen.",
+    "bannerFormSecondText": "Unsere Kunden vertrauen uns ihre wichtigsten Projekte an und wissen, dass wir alles tun werden, um ihre musikalischen Ziele zu erreichen.",
+    "bannerFormThirdText": "Sind Sie bereit, loszulegen? Gehen Sie einfach auf Bestellen, wählen Sie die gewünschten Dienste aus und laden Sie Ihre Tracks hoch.",
+    "bannerFormFourthText": "Wir freuen uns darauf, mit Ihnen zusammenzuarbeiten und Ihnen dabei zu helfen, einen Sound zu kreieren, der die Herzen der Hörer erobert."
+  },
   "home": {
     "homeMain": {
       "homeMainTitle": "SiegTagSound - Professionelles Mastering und Abmischen von Musik",
@@ -40,7 +47,7 @@
       "homeAboutFourthText": "Wir bei SiegTagSound glauben, dass jede Aufnahme eine einzigartige Geschichte ist, und unser Ziel ist es, Ihnen dabei zu helfen, sie auf die bestmögliche Weise zu erzählen. Unser Studio ist so ausgestattet, dass wir komplexe und hochpräzise Misch- und Masteringarbeiten durchführen können. Wir verfeinern ständig unsere Techniken und setzen nur bewährte Technologien ein, um sicherzustellen, dass Sie die bestmöglichen Ergebnisse erzielen.",
       "homeAboutFifthText": "Wir bieten auch Eildienste für diejenigen an, die ihre Zeit schätzen und ein schnelles, aber hochwertiges Ergebnis benötigen. Nutzen Sie unsere Erfahrung und Professionalität, damit Ihr Musikprojekt so klingt, wie Sie es sich wünschen.",
       "homeAboutSixthText": "Wir wissen, wie wichtig jedes Detail bei der Erstellung eines hochwertigen Musikprodukts ist. Unser Studio bietet einen persönlichen Ansatz für jedes Projekt, um die einzigartigen Bedürfnisse und Erwartungen unserer Kunden zu erfüllen. Wir sind bereit, sowohl mit aufstrebenden Musikern als auch mit erfahrenen Profis zusammenzuarbeiten und bieten einen hohen Standard an Service und Unterstützung in allen Phasen der Arbeit.",
-      "homeAboutButtonText": "Dienstleistungen bestellen"
+      "homeAboutButtonText": "Eine Bestellung aufgeben"
     },
     "homeServices": {
       "homeServicesTitle": "Unsere Dienstleistungen",
@@ -87,16 +94,11 @@
       "homePaymentSecondText": "Nach erfolgreicher Zahlung erhalten Sie sofortigen Zugriff auf die Ergebnisse Ihres Tracks oder Albums in hoher Qualität.",
       "homePaymentThirdTitle": "Sichere Transaktion",
       "homePaymentThirdText": "Wir verwenden starke Verschlüsselungsprotokolle, um die Vertraulichkeit Ihrer Zahlungsdaten und die Sicherheit Ihrer Gelder zu gewährleisten.",
-      "homePaymentButtonText": "Dienstleistungen bestellen"
+      "homePaymentButtonText": "Eine Bestellung aufgeben"
     },
     "homeForm": {
       "homeFormTitle": "SiegTagSound online 24/7",
-      "homeFormSubtitle": "Wir sind jederzeit bereit, Ihnen unsere Dienste anzubieten, füllen Sie einfach das Formular aus!",
-      "homeFormFirstTitle": "Verschieben Sie nicht auf morgen, was Ihre Musikkarriere heute verändern kann",
-      "homeFormFirstText": "Buchen Sie jetzt unsere Dienste und erfahren Sie, warum Tausende von Künstlern auf der ganzen Welt Sieg TagSound mit dem Mischen und Mastern ihrer Tracks beauftragen.",
-      "homeFormSecondText": "Unsere Kunden vertrauen uns ihre wichtigsten Projekte an und wissen, dass wir alles tun werden, um ihre musikalischen Ziele zu erreichen.",
-      "homeFormThirdText": "Sind Sie bereit, loszulegen? Gehen Sie einfach auf Bestellen, wählen Sie die gewünschten Dienste aus und laden Sie Ihre Tracks hoch.",
-      "homeFormFourthText": "Wir freuen uns darauf, mit Ihnen zusammenzuarbeiten und Ihnen dabei zu helfen, einen Sound zu kreieren, der die Herzen der Hörer erobert."
+      "homeFormSubtitle": "Wir sind jederzeit bereit, Ihnen unsere Dienste anzubieten, füllen Sie einfach das Formular aus!"
     },
     "homePortfolio": {
       "homePortfolioTitle": "Portfolio",
@@ -142,7 +144,7 @@
       "servicesMainCard3Text4": "Stereobildverbesserung: Erzeugt eine breitere und tiefere Klangbühne.",
       "servicesMainCard3Text5": "Formatvorbereitung: Erstellen Sie Masterdateien für verschiedene Plattformen (Streaming, CD, Vinyl usw.).",
       "servicesMainCard3Text6": "Konsistenz der Tracks: Stellen Sie sicher, dass alle Tracks des Albums konsistent klingen und nahtlos ineinander übergehen.",
-      "servicesMainButtonText": "Dienstleistungen bestellen"
+      "servicesMainButtonText": "Eine Bestellung aufgeben"
     },
     "servicesWork": {
       "servicesWorkTitle": "Wie wir mit Kunden arbeiten",
@@ -158,6 +160,40 @@
       "servicesWorkCard5Text1": "Auf der Grundlage Ihres Feedbacks nehmen wir die notwendigen Überarbeitungen vor. Der Prozess wird so lange wiederholt, bis Sie mit dem Ergebnis vollkommen zufrieden sind.",
       "servicesWorkCard6Title1": "Mastering:",
       "servicesWorkCard6Text1": "In der Mastering-Phase optimieren wir schließlich den Klang des Tracks für verschiedene Formate und Plattformen, um eine hochwertige Wiedergabe auf allen Geräten zu gewährleisten."
+    },
+    "servicesInfo": {
+      "servicesInfoTitle": "Wichtige Informationen",
+      "servicesInfoCard1Title1": "Vor der Bestellung vorbereitet sein",
+      "servicesInfoCard1Text1": "Vorlaufzeit: Die Vorlaufzeit hängt von der Komplexität des Projekts und dem Umfang der Arbeit ab. In der Regel dauert die Abmischung 7-10 Arbeitstage und das Mastering 3-5 Arbeitstage.",
+      "servicesInfoCard1Text2": "Dateiformate: Wir akzeptieren WAV, AIFF, FLAC und andere hochqualitative Audioformate. Bitte vermeiden Sie die Verwendung von MP3 und anderen komprimierten Formaten für Quellmaterial.",
+      "servicesInfoCard1Text3": "Wichtig: Vergewissern Sie sich vor dem Versenden von Dateien, dass die Lautstärke aller Tracks auf Null gestellt und alle Effekte entfernt sind.",
+      "servicesInfoCard1Text4": "Feedback: Wir pflegen eine aktive Kommunikation mit unseren Kunden in allen Phasen der Arbeit, um sicherzustellen, dass wir hohe Qualität liefern und Ihre Erwartungen erfüllen.",
+      "servicesInfoButtonText": "Dienstleistungen bestellen"
+    },
+    "servicesOrder": {
+      "servicesOrderTitle": "Warum es besser ist, Mixing und Mastering zusammen zu buchen?",
+      "servicesOrderSubtitle": "Wenn Sie bei uns Mixing und Mastering in einem Komplex bestellen, haben Sie folgende Vorteile:",
+      "servicesOrderCard1Title1": "Integrität des Klangs:",
+      "servicesOrderCard1Text1": "Wenn ein und derselbe Techniker sowohl die Abmischung als auch das Mastering vornimmt, versteht er die Nuancen und Eigenschaften Ihres Titels besser, was zu einem harmonischeren und ausgewogeneren Klang führt.",
+      "servicesOrderCard2Title1": "Sparen Sie Geld und Zeit:",
+      "servicesOrderCard2Text1": "Wir bieten günstige Rabatte, wenn Sie beide Dienste gleichzeitig bestellen, was einen umfassenden Service erschwinglicher macht. Ein integrierter Ansatz beschleunigt den Prozess, da es nicht notwendig ist, Spuren von einem Spezialisten zum anderen zu übertragen.",
+      "servicesOrderCard3Title1": "Koordinierung und Kohärenz:",
+      "servicesOrderCard3Text1": "Das Risiko von Missverständnissen und Fehlern wird minimiert, da der gesamte Prozess von einem Team gesteuert wird, was ein einheitliches Management, eine klare Aufgabenteilung und eine rasche Lösung auftretender Probleme gewährleistet."
+    },
+    "servicesAdvice": {
+      "servicesAdviceTitle": "Tipps für Kunden",
+      "servicesAdviceCardTitle1": "All diese kleinen Dinge werden uns sehr helfen.",
+      "servicesAdviceCardText1": "Achten Sie darauf, dass alle Spuren sauber und frei von Nebengeräuschen sind. Versuchen Sie, eine übermäßige Klangbearbeitung während der Aufnahmephase zu vermeiden.",
+      "servicesAdviceCardText2": "Schreiben Sie ausführliche Kommentare und Anweisungen für jedes Stück. Je genauer Sie Ihre Wünsche beschreiben, desto schneller und besser kann die Arbeit erledigt werden.",
+      "servicesAdviceCardText3": "Fühlen Sie sich frei, Ihre Wünsche und Kommentare zu äußern. Ihre Meinung ist uns sehr wichtig und wir sind immer bereit, Änderungen vorzunehmen, um das perfekte Ergebnis zu erzielen.",
+      "servicesAdviceCardText4": "Denken Sie daran, dass das Abmischen und Mastern ein kreativer Prozess ist, der Zeit braucht. Vertrauen Sie Profis und seien Sie darauf vorbereitet, dass die Arbeit einige Zeit in Anspruch nehmen kann.",
+      "servicesAdviceCardText5": "Wir sind bestrebt, Ihre Musik perfekt zu machen und freuen uns auf die Zusammenarbeit mit Ihnen! Kontaktieren Sie uns für ein Beratungsgespräch und um eine Zusammenarbeit zu beginnen.",
+      "servicesAdviceCardText6": "Buchen Sie jetzt unsere Dienste und machen Sie Ihre Musik makellos!",
+      "servicesAdviceButtonText": "Eine Bestellung aufgeben"
+    },
+    "servicesForm": {
+      "servicesFormTitle": "SiegTagSound online 24/7",
+      "servicesFormSubtitle": "Wir sind jederzeit bereit, Ihnen unsere Dienste anzubieten, füllen Sie einfach das Formular aus!"
     }
   }
 }

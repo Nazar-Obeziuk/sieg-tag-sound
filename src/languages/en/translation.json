@@ -23,6 +23,13 @@
     "uploadFiles": "Download the files here",
     "submitText": "Order a service"
   },
+  "bannerForm": {
+    "bannerFormFirstTitle": "Don't put off for tomorrow what can change your music career today",
+    "bannerFormFirstText": "Book our services now and see why thousands of artists around the world choose Sieg TagSound for mixing and mastering their tracks.",
+    "bannerFormSecondText": "Our clients trust us with their most important projects, knowing that we will do everything we can to achieve their musical goals.",
+    "bannerFormThirdText": "Ready to get started? Simply go to order, select the services you need and upload your tracks.",
+    "bannerFormFourthText": "We look forward to working with you and helping you create a sound that will win the hearts of listeners."
+  },
   "home": {
     "homeMain": {
       "homeMainTitle": "SiegTagSound - Professional mastering and mixing of music",
@@ -40,7 +47,7 @@
       "homeAboutFourthText": "At SiegTagSound, we believe that every recording is a unique story, and our goal is to help you tell it in the best way possible. Our studio is equipped to handle complex and high-precision mixing and mastering operations. We are constantly refining our techniques and using only proven technologies to ensure you get the best possible results.",
       "homeAboutFifthText": "We also offer urgent services for those who value their time and need quick but quality results. Take advantage of our experience and professionalism to make your music project sound the way you dream.",
       "homeAboutSixthText": "We understand how important every detail is in creating a quality music product. Our studio offers a personalized approach to each project to meet the unique needs and expectations of our clients. We are ready to work with both aspiring musicians and experienced professionals, providing a high standard of service and support at all stages of work.",
-      "homeAboutButtonText": "Order services"
+      "homeAboutButtonText": "Place an order"
     },
     "homeServices": {
       "homeServicesTitle": "Our Services",
@@ -87,16 +94,11 @@
       "homePaymentSecondText": "After successful payment, you will get instant access to the results of your track or album in high quality.",
       "homePaymentThirdTitle": "Secure transaction",
       "homePaymentThirdText": "We use strong encrypted protocols to ensure the privacy of your payment data and the security of your funds.",
-      "homePaymentButtonText": "Order services"
+      "homePaymentButtonText": "Place an order"
     },
     "homeForm": {
       "homeFormTitle": "SiegTagSound online 24/7",
-      "homeFormSubtitle": "We are ready to provide you with services at any time, just fill out the form!",
-      "homeFormFirstTitle": "Don't put off for tomorrow what can change your music career today",
-      "homeFormFirstText": "Book our services now and see why thousands of artists around the world choose Sieg TagSound for mixing and mastering their tracks.",
-      "homeFormSecondText": "Our clients trust us with their most important projects, knowing that we will do everything we can to achieve their musical goals.",
-      "homeFormThirdText": "Ready to get started? Simply go to order, select the services you need and upload your tracks.",
-      "homeFormFourthText": "We look forward to working with you and helping you create a sound that will win the hearts of listeners."
+      "homeFormSubtitle": "We are ready to provide you with services at any time, just fill out the form!"
     },
     "homePortfolio": {
       "homePortfolioTitle": "Portfolio",
@@ -142,7 +144,7 @@
       "servicesMainCard3Text4": "Stereo Image Enhancement: Creates a wider and deeper soundstage.",
       "servicesMainCard3Text5": "Format Preparation: Create master files ready for different platforms (streaming, CD, vinyl, etc.).",
       "servicesMainCard3Text6": "Track Consistency: Make sure all tracks on the album sound consistent and flow smoothly into each other.",
-      "servicesMainButtonText": "Order services"
+      "servicesMainButtonText": "Place an order"
     },
     "servicesWork": {
       "servicesWorkTitle": "How We Work with Clients",
@@ -158,6 +160,40 @@
       "servicesWorkCard5Text1": "We make the necessary revisions based on your feedback. The process is repeated until you are completely satisfied with the result.",
       "servicesWorkCard6Title1": "Mastering:",
       "servicesWorkCard6Text1": "At the mastering stage, we finally optimize the track's sound for different formats and platforms, ensuring its high-quality playback on all devices."
+    },
+    "servicesInfo": {
+      "servicesInfoTitle": "Important Information",
+      "servicesInfoCard1Title1": "Be prepared before ordering ",
+      "servicesInfoCard1Text1": "Lead time: Lead time depends on the complexity of the project and the scope of work. Usually the mixing process takes 7-10 working days, and mastering - 3-5 working days.",
+      "servicesInfoCard1Text2": "File Formats: We accept WAV, AIFF, FLAC and other high quality audio formats. Please avoid using MP3 and other compressed formats for source materials.",
+      "servicesInfoCard1Text3": "Important: Before sending files please make sure that all your tracks have volume set to zero and all effects removed.",
+      "servicesInfoCard1Text4": "Feedback: We maintain active communication with our customers at all stages of the work to ensure that we deliver high quality and meet your expectations.",
+      "servicesInfoButtonText": "Order services"
+    },
+    "servicesOrder": {
+      "servicesOrderTitle": "Why is it Better to Order Mixing and Mastering Together?",
+      "servicesOrderSubtitle": "Ordering mixing and mastering from us in a complex, you get the following advantages:",
+      "servicesOrderCard1Title1": "Integrity of Sound:",
+      "servicesOrderCard1Text1": "When the same technician handles both mixing and mastering, they better understand the nuances and characteristics of your track, resulting in a more harmonious and balanced sound.",
+      "servicesOrderCard2Title1": "Saving Money and Time:",
+      "servicesOrderCard2Text1": "We offer favorable discounts when ordering both services at the same time, which makes comprehensive service more affordable. An integrated approach speeds up the process, as there is no need to transfer tracks from one specialist to another.",
+      "servicesOrderCard3Title1": "Coordination and Consistency:",
+      "servicesOrderCard3Text1": "The risks of miscommunication and errors are minimized, as the entire process is controlled by one team, providing unified management, clear distribution of responsibilities and prompt resolution of arising issues."
+    },
+    "servicesAdvice": {
+      "servicesAdviceTitle": "Tips for Clients",
+      "servicesAdviceCardTitle1": "All these little things will help us a lot",
+      "servicesAdviceCardText1": "Make sure that all tracks are clean and free of extraneous noise. Try to avoid excessive sound processing during the recording stage.",
+      "servicesAdviceCardText2": "Write detailed comments and instructions for each track. The more precisely you describe your wishes, the faster and better the work will be done.",
+      "servicesAdviceCardText3": "Feel free to express your wishes and comments. Your opinion is very important to us and we are always ready to make changes to achieve the perfect result.",
+      "servicesAdviceCardText4": "Remember that mixing and mastering is a creative process that takes time. Trust professionals and be prepared that the work may take some time.",
+      "servicesAdviceCardText5": "We are committed to making your music perfect and look forward to working with you! Contact us for a consultation and to start collaborating.",
+      "servicesAdviceCardText6": "Book our services now and make your music flawless!",
+      "servicesAdviceButtonText": "Place an order"
+    },
+    "servicesForm": {
+      "servicesFormTitle": "SiegTagSound online 24/7",
+      "servicesFormSubtitle": "We are ready to provide you with services at any time, just fill out the form!"
     }
   }
 }
