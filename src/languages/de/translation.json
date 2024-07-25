@@ -195,5 +195,10 @@
       "servicesFormTitle": "SiegTagSound online 24/7",
       "servicesFormSubtitle": "Wir sind jederzeit bereit, Ihnen unsere Dienste anzubieten, füllen Sie einfach das Formular aus!"
     }
+  },
+  "portfolio": {
+    "portfolioTitle": "Beispiele für unsere fertigen Tracks: Vorher und Nachher",
+    "portfolioSubtitle": "Tauchen Sie ein in die Verwandlung des Klangs: Beispiele für professionelles Mischen und Mastern von Musik, die unser Können und unsere Liebe zum Detail demonstrieren.",
+    "portfolioButtonText": ""
   }
 }

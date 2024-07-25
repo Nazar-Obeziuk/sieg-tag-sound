@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid var(--primary);
+  /* border: 1px solid var(--primary); */
   padding: 14px;
   border-radius: 12px;
   gap: 14px;

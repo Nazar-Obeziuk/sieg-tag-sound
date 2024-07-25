@@ -195,5 +195,10 @@
       "servicesFormTitle": "SiegTagSound online 24/7",
       "servicesFormSubtitle": "We are ready to provide you with services at any time, just fill out the form!"
     }
+  },
+  "portfolio": {
+    "portfolioTitle": "Examples of our finished tracks: Before and After",
+    "portfolioSubtitle": "Immerse yourself in the transformation of sound: examples of professional music mixing and mastering, demonstrating our skill and attention to detail.",
+    "portfolioButtonText": ""
   }
 }
