@@ -15,6 +15,12 @@ const Header: React.FC = () => {
     setActiveLanguage(lang);
   };
 
+  const changeLanguageMobile = (lang: string) => {
+    i18n.changeLanguage(lang);
+    setActiveLanguage(lang);
+    handleBurgerMenu();
+  };
+
   const activeStyles = {
     color: "#ee701f",
   };
@@ -155,6 +161,7 @@ const Header: React.FC = () => {
                 <ul className={styles.header__nav_list}>
                   <li className={styles.header__list_item}>
                     <NavLink
+                      onClick={handleBurgerMenu}
                       to={"/"}
                       style={({ isActive }) =>
                         isActive ? activeStyles : undefined
@@ -166,6 +173,7 @@ const Header: React.FC = () => {
                   </li>
                   <li className={styles.header__list_item}>
                     <NavLink
+                      onClick={handleBurgerMenu}
                       to={"/services"}
                       style={({ isActive }) =>
                         isActive ? activeStyles : undefined
@@ -177,6 +185,7 @@ const Header: React.FC = () => {
                   </li>
                   <li className={styles.header__list_item}>
                     <NavLink
+                      onClick={handleBurgerMenu}
                       to={"/portfolio"}
                       style={({ isActive }) =>
                         isActive ? activeStyles : undefined
@@ -188,6 +197,7 @@ const Header: React.FC = () => {
                   </li>
                   <li className={styles.header__list_item}>
                     <NavLink
+                      onClick={handleBurgerMenu}
                       to={"/blog"}
                       style={({ isActive }) =>
                         isActive ? activeStyles : undefined
@@ -203,22 +213,34 @@ const Header: React.FC = () => {
               <div className={styles.header__mobile_info}>
                 <div className={styles.header__info_languages}>
                   <span
-                    onClick={() => i18n.changeLanguage("de")}
-                    className={`${styles.header__languages_item} ${styles.header__language_active}`}
+                    onClick={() => changeLanguageMobile("de")}
+                    className={`${styles.header__languages_item} ${
+                      activeLanguage === "de"
+                        ? styles.header__language_active
+                        : ""
+                    }`}
                   >
                     DE
                   </span>
                   <span className={styles.header__languages_line}></span>
                   <span
-                    onClick={() => i18n.changeLanguage("en")}
-                    className={styles.header__languages_item}
+                    onClick={() => changeLanguageMobile("en")}
+                    className={`${styles.header__languages_item} ${
+                      activeLanguage === "en"
+                        ? styles.header__language_active
+                        : ""
+                    }`}
                   >
                     EN
                   </span>
                   <span className={styles.header__languages_line}></span>
                   <span
-                    onClick={() => i18n.changeLanguage("ru")}
-                    className={styles.header__languages_item}
+                    onClick={() => changeLanguageMobile("ru")}
+                    className={`${styles.header__languages_item} ${
+                      activeLanguage === "ru"
+                        ? styles.header__language_active
+                        : ""
+                    }`}
                   >
                     RU
                   </span>

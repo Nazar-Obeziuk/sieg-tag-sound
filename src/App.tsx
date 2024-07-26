@@ -6,6 +6,7 @@ import Home from "./pages/home/Home";
 import Services from "./pages/services/Services";
 import Portfolio from "./pages/portfolio/Portfolio";
 import Blog from "./pages/blog/Blog";
+import BlogDetails from "./pages/blog/components/blog-details/BlogDetails";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogDetails />} />
       </Routes>
     </Layout>
   );

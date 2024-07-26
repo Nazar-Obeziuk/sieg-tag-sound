@@ -13,3 +13,9 @@
   flex-direction: column;
   gap: 30px;
 }
+
+@media (max-width: 600px) {
+  .portfolio__works_list {
+    gap: 15px;
+  }
+}

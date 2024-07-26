@@ -200,5 +200,9 @@
     "portfolioTitle": "Examples of our finished tracks: Before and After",
     "portfolioSubtitle": "Immerse yourself in the transformation of sound: examples of professional music mixing and mastering, demonstrating our skill and attention to detail.",
     "portfolioButtonText": ""
+  },
+  "blog": {
+    "blogTitle": "Blog",
+    "blogItemButtonText": "Read more"
   }
 }

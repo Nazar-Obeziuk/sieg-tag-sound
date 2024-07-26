@@ -200,5 +200,9 @@
     "portfolioTitle": "Beispiele für unsere fertigen Tracks: Vorher und Nachher",
     "portfolioSubtitle": "Tauchen Sie ein in die Verwandlung des Klangs: Beispiele für professionelles Mischen und Mastern von Musik, die unser Können und unsere Liebe zum Detail demonstrieren.",
     "portfolioButtonText": ""
+  },
+  "blog": {
+    "blogTitle": "Blog",
+    "blogItemButtonText": "Mehr lesen"
   }
 }
