@@ -1,0 +1,21 @@
+.admin__content_main {
+  width: 80%;
+  background: var(--dark-gray);
+  border-radius: 0 12px 12px 0;
+}
+
+.admin__wrapper_content {
+  width: 100%;
+  display: flex;
+}
+
+@media (max-width: 1000px) {
+  .admin__wrapper_content {
+    flex-direction: column;
+  }
+
+  .admin__content_main {
+    border-radius: 0 0 12px 12px;
+    width: 100%;
+  }
+}

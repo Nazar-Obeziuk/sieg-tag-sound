@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Button from "../../../../../components/UI/button/Button";
 import { useTranslation } from "react-i18next";
+import PortfolioWork from "../../../../../components/portfolio-work/PortfolioWork";
 
 const HomePortfolioItems: React.FC = () => {
   const swiper = useSwiper();
@@ -32,7 +33,7 @@ const HomePortfolioItems: React.FC = () => {
               spaceBetween: 20,
             },
             1024: {
-              slidesPerView: 3,
+              slidesPerView: 2,
               spaceBetween: 40,
             },
           }}
@@ -41,11 +42,9 @@ const HomePortfolioItems: React.FC = () => {
         >
           <SwiperSlide key={"uniq1"}>
             <div className={styles.home__portfolio_item}>
-              <img
-                src="../../images/portfolio-1.jpg"
-                alt="portfolio img"
-                className={styles.home__portfolio_image}
-              />
+              <div className={styles.home__portfolio_work}>
+                <PortfolioWork key={"uniq1"} />
+              </div>
               <div className={styles.home__portfolio_info}>
                 <span className={styles.home__portfolio_category}>
                   Категорія: Классическая музыка
@@ -60,21 +59,19 @@ const HomePortfolioItems: React.FC = () => {
                   инструментов, которые необходимо было гармонично объединить в
                   единую композицию.
                 </p>
-                <div className={styles.home__info_action}>
+                {/* <div className={styles.home__info_action}>
                   <Button type={"button"}>
                     {t("home.homePortfolio.homePortfolioButtonText")}
                   </Button>
-                </div>
+                </div> */}
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide key={"uniq2"}>
             <div className={styles.home__portfolio_item}>
-              <img
-                src="../../images/portfolio-1.jpg"
-                alt="portfolio img"
-                className={styles.home__portfolio_image}
-              />
+              <div className={styles.home__portfolio_work}>
+                <PortfolioWork key={"uniq1"} />
+              </div>
               <div className={styles.home__portfolio_info}>
                 <span className={styles.home__portfolio_category}>
                   Категорія: Рок
@@ -90,21 +87,19 @@ const HomePortfolioItems: React.FC = () => {
                   барабанов и вокала, чтобы добиться идеального баланса и
                   динамики.
                 </p>
-                <div className={styles.home__info_action}>
+                {/* <div className={styles.home__info_action}>
                   <Button type={"button"}>
                     {t("home.homePortfolio.homePortfolioButtonText")}
                   </Button>
-                </div>
+                </div> */}
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide key={"uniq3"}>
             <div className={styles.home__portfolio_item}>
-              <img
-                src="../../images/portfolio-1.jpg"
-                alt="portfolio img"
-                className={styles.home__portfolio_image}
-              />
+              <div className={styles.home__portfolio_work}>
+                <PortfolioWork key={"uniq1"} />
+              </div>
               <div className={styles.home__portfolio_info}>
                 <span className={styles.home__portfolio_category}>
                   Категорія: Электронная музыка
@@ -118,21 +113,19 @@ const HomePortfolioItems: React.FC = () => {
                   танцевальном фестивале. Наша задача заключалась в том, чтобы
                   трек звучал мощно и чисто на больших звуковых системах.
                 </p>
-                <div className={styles.home__info_action}>
+                {/* <div className={styles.home__info_action}>
                   <Button type={"button"}>
                     {t("home.homePortfolio.homePortfolioButtonText")}
                   </Button>
-                </div>
+                </div> */}
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide key={"uniq4"}>
             <div className={styles.home__portfolio_item}>
-              <img
-                src="../../images/portfolio-1.jpg"
-                alt="portfolio img"
-                className={styles.home__portfolio_image}
-              />
+              <div className={styles.home__portfolio_work}>
+                <PortfolioWork key={"uniq1"} />
+              </div>
               <div className={styles.home__portfolio_info}>
                 <span className={styles.home__portfolio_category}>
                   Категорія: Джаз
@@ -145,21 +138,19 @@ const HomePortfolioItems: React.FC = () => {
                   выступления, при этом обеспечив четкость и баланс всех
                   инструментов.
                 </p>
-                <div className={styles.home__info_action}>
+                {/* <div className={styles.home__info_action}>
                   <Button type={"button"}>
                     {t("home.homePortfolio.homePortfolioButtonText")}
                   </Button>
-                </div>
+                </div> */}
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide key={"uniq5"}>
             <div className={styles.home__portfolio_item}>
-              <img
-                src="../../images/portfolio-1.jpg"
-                alt="portfolio img"
-                className={styles.home__portfolio_image}
-              />
+              <div className={styles.home__portfolio_work}>
+                <PortfolioWork key={"uniq1"} />
+              </div>
               <div className={styles.home__portfolio_info}>
                 <span className={styles.home__portfolio_category}>
                   Категорія: Поп-музыка
@@ -173,21 +164,19 @@ const HomePortfolioItems: React.FC = () => {
                   сосредоточились на том, чтобы каждый элемент трека звучал ярко
                   и привлекательно, от вокала до инструментальных партий.
                 </p>
-                <div className={styles.home__info_action}>
+                {/* <div className={styles.home__info_action}>
                   <Button type={"button"}>
                     {t("home.homePortfolio.homePortfolioButtonText")}
                   </Button>
-                </div>
+                </div> */}
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide key={"uniq6"}>
             <div className={styles.home__portfolio_item}>
-              <img
-                src="../../images/portfolio-1.jpg"
-                alt="portfolio img"
-                className={styles.home__portfolio_image}
-              />
+              <div className={styles.home__portfolio_work}>
+                <PortfolioWork key={"uniq1"} />
+              </div>
               <div className={styles.home__portfolio_info}>
                 <span className={styles.home__portfolio_category}>
                   Категорія: Хип-хоп
@@ -203,11 +192,11 @@ const HomePortfolioItems: React.FC = () => {
                   вокальные эффекты и обработка битов, чтобы создать уникальное
                   и профессиональное звучание.
                 </p>
-                <div className={styles.home__info_action}>
+                {/* <div className={styles.home__info_action}>
                   <Button type={"button"}>
                     {t("home.homePortfolio.homePortfolioButtonText")}
                   </Button>
-                </div>
+                </div> */}
               </div>
             </div>
           </SwiperSlide>

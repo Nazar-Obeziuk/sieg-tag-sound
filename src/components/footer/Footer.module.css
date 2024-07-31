@@ -5,7 +5,6 @@
 .footer__section {
   width: 100%;
   background: var(--black);
-  border-radius: 20px 20px 0 0;
   border-top: 2px solid var(--primary);
 }
 .footer__wrapper {
