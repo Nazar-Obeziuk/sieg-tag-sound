@@ -16,7 +16,7 @@ const PortfolioBanner: React.FC = () => {
           <p className={styles.portfolio__banner_text}>
             {t("portfolio.portfolioSubtitle")}
           </p>
-          <Button type={"button"}>Lorem, ipsum dolor.</Button>
+          <Button type={"button"}>{t("portfolio.portfolioButtonText")}</Button>
         </div>
       </div>
     </section>

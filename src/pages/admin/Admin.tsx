@@ -2,27 +2,22 @@ import React, { useEffect } from "react";
 import styles from "./Admin.module.css";
 import AdminLayout from "./components/admin-layout/AdminLayout";
 import { NavLink, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Admin: React.FC = () => {
   const navigate = useNavigate();
 
-  const notify = (message: string) => toast(message);
-
   useEffect(() => {
-    // const login = async () => {
-    //   const token = localStorage.getItem("token");
-    //   if (token) {
-    //     const response: any = await checkRole(token);
-    //     response.status === 200
-    //       ? notify(response.data.message)
-    //       : notify("Щось пішло не так...");
-    //   } else {
-    //     navigate("/admin/login");
-    //   }
-    // };
-    // login();
+    const login = async () => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        navigate("/admin");
+      } else {
+        navigate("/admin/login");
+      }
+    };
+
+    login();
   }, []);
 
   return (
@@ -57,7 +52,7 @@ const Admin: React.FC = () => {
               <path
                 d="M1.02008 1.0307L6.44975 5.50053L1.02008 9.97036"
                 stroke="white"
-                stroke-opacity="0.8"
+                strokeOpacity="0.8"
               />
             </svg>
             <p

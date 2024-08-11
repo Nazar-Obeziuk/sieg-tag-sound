@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./AdminLogin.module.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { loginUser } from "../../../../services/auth/login/login";
+import { toast } from "react-toastify";
 
 const AdminLogin: React.FC = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -9,15 +11,27 @@ const AdminLogin: React.FC = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (data: any) => {
-    // try {
-    //   const response: any = await loginUser(data);
-    //   localStorage.setItem("token", response.data.token);
-    //   setIsLoading(true);
-    //   reset();
-    //   checkToken();
-    // } catch (error) {
-    //   console.log("login error", error);
-    // }
+    try {
+      const response: any = await loginUser(data);
+      localStorage.setItem("token", response.data.token);
+      setIsLoading(true);
+      reset();
+      checkToken();
+      const notify = () => {
+        toast.success("Вітаємо у адмін панелі!", {
+          autoClose: 1000,
+        });
+      };
+      notify();
+    } catch (error) {
+      console.log("login error", error);
+      const notify = () => {
+        toast.error("Неправильний логін або пароль", {
+          autoClose: 1000,
+        });
+      };
+      notify();
+    }
   };
 
   useEffect(() => {
@@ -61,7 +75,7 @@ const AdminLogin: React.FC = () => {
               <path
                 d="M1.02008 1.0307L6.44975 5.50053L1.02008 9.97036"
                 stroke="white"
-                stroke-opacity="0.8"
+                strokeOpacity="0.8"
               />
             </svg>
             <p
@@ -82,8 +96,8 @@ const AdminLogin: React.FC = () => {
                 <input
                   type="text"
                   className={styles.admin__form_field}
-                  placeholder="Ваш email"
-                  {...register("email", { required: true })}
+                  placeholder="Ваш логін"
+                  {...register("login", { required: true })}
                 />
                 <input
                   type="password"

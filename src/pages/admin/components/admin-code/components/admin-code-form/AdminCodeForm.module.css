@@ -112,7 +112,7 @@
   font-weight: 500;
   color: var(--dark);
   transition: 0.4s;
-  box-shadow: 0 24px 46px rgba(240, 173, 0, 0.19);
+  box-shadow: 0 24px 46px rgba(240, 92, 0, 0.332);
   user-select: none;
 }
 .admin__control_add:hover {

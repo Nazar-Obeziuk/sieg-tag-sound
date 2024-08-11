@@ -6,6 +6,17 @@
     "portfolio-page": "Portfolio",
     "blog-page": "Blog"
   },
+  "cartUpload": {
+    "cartUploadTitle": "Make a choice",
+    "cartUploadBlock1": "Track",
+    "cartUploadBlock2": "EP (2-6 tracks)",
+    "cartUploadBlock3": "Album (7-25 tracks)",
+    "cartUploadSubtitle": "Add tracks and write TOR",
+    "cartUploadFilePlaceholder": "Drag and drop files here",
+    "cartUploadTextareaPlaceholder": "Add description for track",
+    "cartUploadAddText": "Add more files",
+    "cartUploadButtonText": "CONTINUE"
+  },
   "footer": {
     "footerFirstText": "We value each of our clients and are always happy to have you back! We have special bonuses and discounts for regular customers.",
     "footerSecondText": "We pride ourselves on our high level of service and guarantee a quick and professional response to all your questions. Our goal is to make the mixing and mastering process as comfortable as possible and exceed your expectations. Contact us today and see the quality of our service!",
@@ -21,7 +32,8 @@
     "linkOnDrive": "Link on drive",
     "promoCode": "Promo code",
     "uploadFiles": "Download the files here",
-    "submitText": "Order a service"
+    "submitText": "Order a service",
+    "formFieldRequired": "This field is required!"
   },
   "bannerForm": {
     "bannerFormFirstTitle": "Don't put off for tomorrow what can change your music career today",
@@ -63,10 +75,10 @@
       "homeTableTitle": "Price comparison",
       "homeTableRow1": "Service",
       "homeTableRow2": "Track (€)",
-      "homeTableRow3": "EP (4-6 tracks) (€)",
-      "homeTableRow4": "Album (10-12 tracks) (€)",
-      "homeTableColumn1": "Synopsis and mastering together",
-      "homeTableColumn2": "Synopsis",
+      "homeTableRow3": "EP (2-6 Tracks) (€)",
+      "homeTableRow4": "Album (7-25 Tracks) (€)",
+      "homeTableColumn1": "Mixing and Mastering",
+      "homeTableColumn2": "Mixing",
       "homeTableColumn3": "Mastering",
       "homeTableButtonText": "Order services"
     },
@@ -102,6 +114,7 @@
     },
     "homePortfolio": {
       "homePortfolioTitle": "Portfolio",
+      "homePortfolioCategory": "Category",
       "homePortfolioButtonText": "See more"
     },
     "homeProcess": {
@@ -199,10 +212,45 @@
   "portfolio": {
     "portfolioTitle": "Examples of our finished tracks: Before and After",
     "portfolioSubtitle": "Immerse yourself in the transformation of sound: examples of professional music mixing and mastering, demonstrating our skill and attention to detail.",
-    "portfolioButtonText": ""
+    "portfolioButtonText": "Listen to examples"
   },
   "blog": {
     "blogTitle": "Blog",
     "blogItemButtonText": "Read more"
+  },
+  "cookies": {
+    "cookiesTitle": "Cookie Policy",
+    "cookiesText1": "We use cookies on our website to improve user experience and provide personalized services.",
+    "cookiesSubtitle1": "What are cookies?",
+    "cookiesText2": "Cookies are small text files that are stored on your device when you visit a website. They help us remember your preferences and improve the functionality of our website.",
+    "cookiesSubtitle2": "How do we use cookies?",
+    "cookiesText3": "Analytical cookies: These cookies help us to understand how visitors use our site and to improve its structure and content.",
+    "cookiesText4": "Functional cookies: These allow us to remember your preferences (such as the language of the site) and provide a more convenient service.",
+    "cookiesText5": "Advertising Cookies: We may use these cookies to provide personalized advertising on our website and third-party platforms.",
+    "cookiesSubtitle3": "Cookie management:",
+    "cookiesText6": "You can control the cookie settings in your browser. You can disable or delete cookies, however this may affect the functionality of our website.",
+    "cookiesSubtitle4": "Consent to the use of cookies:",
+    "cookiesText7": "By continuing to use our website, you agree to our cookies policy.",
+    "cookiesText8": "For more information about our cookies policy, please contact us."
+  },
+  "policy": {
+    "policyTitle": "Privacy Policy",
+    "policyText1": "We value your privacy and take every measure to protect your personal data.",
+    "policySubtitle1": "Data Collection and Utilization:",
+    "policyText2": "We only collect data that is necessary to provide our services, such as your name, contact details and order details. We use this data solely to process your order and provide information and mastering services.",
+    "policySubtitle2": "Transfer of data to third parties:",
+    "policyText3": "We do not share your personal data with third parties without your explicit consent, except where necessary to perform the services (e.g., using third-party services to process payments).",
+    "policySubtitle3": "Data Security:",
+    "policyText4": "We use technical and organizational measures to protect your data from unauthorized access, loss or alteration. All data is transmitted through secure communication channels (SSL/TLS).",
+    "policySubtitle4": "Your rights:",
+    "policyText5Child1": "You have the right to request information about the data we hold about you and to request that this data be amended or deleted. To do this, please contact us via the contact form on the website or send an email to ",
+    "policyText5Child2": "siegtagsound@hotmail.com",
+    "policySubtitle5": "Changes to the privacy policy:",
+    "policyText6": "We may update our privacy policy periodically. We recommend that you review this page regularly for up-to-date information about our privacy policy.",
+    "policySubtitle6": "Contacts:",
+    "policyText7": "If you have any questions or comments about our privacy policy, please contact us:",
+    "policyText8Child1": "Email: ",
+    "policyText8Child2": "siegtagsound@hotmail.com",
+    "policyText9": "Thank you for your trust in SiegTagSound. We are committed to maximizing the protection and privacy of your data."
   }
 }

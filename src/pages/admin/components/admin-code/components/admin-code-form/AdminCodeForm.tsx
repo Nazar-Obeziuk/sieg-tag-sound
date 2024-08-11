@@ -12,7 +12,6 @@ interface Props {
 
 const AdminCodeForm: React.FC<Props> = ({ togglePromocodesForm, getAll }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -23,21 +22,19 @@ const AdminCodeForm: React.FC<Props> = ({ togglePromocodesForm, getAll }) => {
   const onSubmit = async (data: any) => {
     setIsLoading(true);
 
-    const formData = new FormData();
-
-    Object.keys(data).forEach((key) => {
-      formData.append(key, data[key]);
-    });
+    const dataPromocode = {
+      promocode: data.promocode,
+      discount: data.discount,
+    };
 
     const token = localStorage.getItem("token");
     const notify = (message: string) => toast(message);
 
     if (token) {
       try {
-        const response = await createPromocode(formData, token);
+        const response = await createPromocode(dataPromocode, token);
         notify(response.message);
         getAll();
-        navigate("/admin");
         reset();
         togglePromocodesForm();
       } catch (error) {
@@ -71,6 +68,23 @@ const AdminCodeForm: React.FC<Props> = ({ togglePromocodesForm, getAll }) => {
         {errors["promocode"] && (
           <span className={styles.error_message}>
             {errors["promocode"]?.message as string}
+          </span>
+        )}
+      </div>
+      <div className={styles.admin__block_control}>
+        <label htmlFor="discount" className={styles.admin__control_label}>
+          Знижка
+        </label>
+        <input
+          type="text"
+          className={`${styles.admin__control_field} `}
+          style={errors["discount"] ? { border: "1px solid #EB001B" } : {}}
+          placeholder="Знижка"
+          {...register("discount", { required: `Це поле обов'язкове!` })}
+        />
+        {errors["discount"] && (
+          <span className={styles.error_message}>
+            {errors["discount"]?.message as string}
           </span>
         )}
       </div>

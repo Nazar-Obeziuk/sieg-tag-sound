@@ -6,6 +6,17 @@
     "portfolio-page": "Portfolio",
     "blog-page": "Blog"
   },
+  "cartUpload": {
+    "cartUploadTitle": "Treffen Sie eine Entscheidung",
+    "cartUploadBlock1": "Wanderung",
+    "cartUploadBlock2": "EP (2-6 Tracks)",
+    "cartUploadBlock3": "Album (7-25 Tracks)",
+    "cartUploadSubtitle": "Tracks hinzufügen und eine ToR schreiben",
+    "cartUploadFilePlaceholder": "Dateien hierher ziehen und ablegen",
+    "cartUploadTextareaPlaceholder": "Beschreibung für Track hinzufügen",
+    "cartUploadAddText": "Weitere Dateien hinzufügen",
+    "cartUploadButtonText": "WEITERGEHEN"
+  },
   "footer": {
     "footerFirstText": "Wir schätzen jeden unserer Kunden und freuen uns immer, wenn Sie wiederkommen! Wir haben spezielle Boni und Rabatte für Stammkunden.",
     "footerSecondText": "Wir sind stolz auf unser hohes Serviceniveau und garantieren eine schnelle und professionelle Antwort auf alle Ihre Fragen. Unser Ziel ist es, den Mixing- und Mastering-Prozess so angenehm wie möglich zu gestalten und Ihre Erwartungen zu übertreffen. Kontaktieren Sie uns noch heute und überzeugen Sie sich von der Qualität unseres Services!",
@@ -21,7 +32,8 @@
     "linkOnDrive": "Link auf dem Laufwerk",
     "promoCode": "Promo-Code",
     "uploadFiles": "Laden Sie die Dateien hier herunter",
-    "submitText": "Bestellung einer Dienstleistung"
+    "submitText": "Bestellung einer Dienstleistung",
+    "formFieldRequired": "Dieses Feld ist erforderlich!"
   },
   "bannerForm": {
     "bannerFormFirstTitle": "Verschieben Sie nicht auf morgen, was Ihre Musikkarriere heute verändern kann",
@@ -63,8 +75,8 @@
       "homeTableTitle": "Vergleich der Preise",
       "homeTableRow1": "Dienst",
       "homeTableRow2": "Strecke (€)",
-      "homeTableRow3": "EP (4-6 Titel) (€)",
-      "homeTableRow4": "Album (10-12 Titel) (€)",
+      "homeTableRow3": "EP (2-6 Titel) (€)",
+      "homeTableRow4": "Album (7-25 Titel) (€)",
       "homeTableColumn1": "Gemeinsames Abmischen und Mastern",
       "homeTableColumn2": "Versöhnung",
       "homeTableColumn3": "Mastering",
@@ -102,6 +114,7 @@
     },
     "homePortfolio": {
       "homePortfolioTitle": "Portfolio",
+      "homePortfolioCategory": "Kategorie",
       "homePortfolioButtonText": "Mehr sehen"
     },
     "homeProcess": {
@@ -199,10 +212,45 @@
   "portfolio": {
     "portfolioTitle": "Beispiele für unsere fertigen Tracks: Vorher und Nachher",
     "portfolioSubtitle": "Tauchen Sie ein in die Verwandlung des Klangs: Beispiele für professionelles Mischen und Mastern von Musik, die unser Können und unsere Liebe zum Detail demonstrieren.",
-    "portfolioButtonText": ""
+    "portfolioButtonText": "Anhören von Beispielen"
   },
   "blog": {
     "blogTitle": "Blog",
     "blogItemButtonText": "Mehr lesen"
+  },
+  "cookies": {
+    "cookiesTitle": "Cookie-Politik",
+    "cookiesText1": "Wir verwenden Cookies auf unserer Website, um die Benutzerfreundlichkeit zu verbessern und personalisierte Dienste anzubieten.",
+    "cookiesSubtitle1": "Was sind Cookies?",
+    "cookiesText2": "Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden, wenn Sie eine Website besuchen. Sie helfen uns, Ihre Präferenzen zu speichern und die Funktionalität unserer Website zu verbessern.",
+    "cookiesSubtitle2": "Wie verwenden wir Cookies?",
+    "cookiesText3": "Analytische Cookies: Diese Cookies helfen uns zu verstehen, wie Besucher unsere Website nutzen, und ihre Struktur und ihren Inhalt zu verbessern.",
+    "cookiesText4": "Funktionale Cookies: Sie ermöglichen es uns, Ihre Präferenzen (z. B. die Sprache der Website) zu speichern und einen bequemeren Service zu bieten.",
+    "cookiesText5": "Werbe-Cookies: Wir können diese Cookies verwenden, um personalisierte Werbung auf unserer Website und auf Plattformen von Dritten anzubieten.",
+    "cookiesSubtitle3": "Verwaltung von Cookies:",
+    "cookiesText6": "Sie können die Cookie-Einstellungen Ihres Browsers kontrollieren. Sie können Cookies deaktivieren oder löschen, dies kann jedoch die Funktionalität unserer Website beeinträchtigen.",
+    "cookiesSubtitle4": "Einwilligung in die Verwendung von Cookies:",
+    "cookiesText7": "Durch die weitere Nutzung unserer Website erklären Sie sich mit unserer Cookie-Politik einverstanden.",
+    "cookiesText8": "Für weitere Informationen über unsere Cookie-Politik, kontaktieren Sie uns bitte."
+  },
+  "policy": {
+    "policyTitle": "Datenschutzbestimmungen",
+    "policyText1": "Wir schätzen Ihre Privatsphäre und ergreifen alle Maßnahmen zum Schutz Ihrer persönlichen Daten.",
+    "policySubtitle1": "Datenerhebung und -verwendung:",
+    "policyText2": "Wir erheben nur Daten, die für die Erbringung unserer Dienstleistungen notwendig sind, wie z.B. Ihren Namen, Ihre Kontaktdaten und Bestelldaten. Wir verwenden diese Daten ausschließlich zur Bearbeitung Ihrer Bestellung und zur Bereitstellung von Informationen und Mastering-Diensten.",
+    "policySubtitle2": "Weitergabe von Daten an Dritte:",
+    "policyText3": "Wir geben Ihre personenbezogenen Daten nicht ohne Ihre ausdrückliche Zustimmung an Dritte weiter, es sei denn, dies ist für die Erbringung von Dienstleistungen erforderlich (z. B. Inanspruchnahme von Diensten Dritter zur Abwicklung von Zahlungen).",
+    "policySubtitle3": "Datensicherheit:",
+    "policyText4": "Wir setzen technische und organisatorische Maßnahmen ein, um Ihre Daten vor unberechtigtem Zugriff, Verlust oder Veränderung zu schützen. Alle Daten werden über sichere Kommunikationskanäle (SSL/TLS) übertragen.",
+    "policySubtitle4": "Ihre Rechte:",
+    "policyText5Child1": "Sie haben das Recht, Auskunft über die von uns über Sie gespeicherten Daten zu verlangen und die Änderung oder Löschung dieser Daten zu fordern. Wenden Sie sich dazu bitte über das Kontaktformular auf der Website an uns oder senden Sie eine E-Mail an ",
+    "policyText5Child2": "siegtagsound@hotmail.com",
+    "policySubtitle5": "Änderungen an der Datenschutzrichtlinie:",
+    "policyText6": "Wir können unsere Datenschutzrichtlinie regelmäßig aktualisieren. Wir empfehlen Ihnen, diese Seite regelmäßig zu besuchen, um aktuelle Informationen über unsere Datenschutzrichtlinien zu erhalten.",
+    "policySubtitle6": "Kontakte:",
+    "policyText7": "Wenn Sie Fragen oder Anmerkungen zu unserer Datenschutzpolitik haben, wenden Sie sich bitte an uns:",
+    "policyText8Child1": "E-Mail: ",
+    "policyText8Child2": "siegtagsound@hotmail.com",
+    "policyText9": "Vielen Dank für Ihr Vertrauen in SiegTagSound. Wir verpflichten uns, den größtmöglichen Schutz und die Vertraulichkeit Ihrer Daten zu gewährleisten."
   }
 }

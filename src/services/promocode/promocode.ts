@@ -1,4 +1,5 @@
 import axios from "../../utils/axios/axios";
+import { IPromocode } from "./promocode.interface";
 
 export const getAllPromocodes = async () => {
   try {
@@ -20,12 +21,11 @@ export const getPromocodeById = async (id: string) => {
   }
 };
 
-export const createPromocode = async (formData: FormData, token: string) => {
+export const createPromocode = async (promocode: any, token: string) => {
   try {
-    const response = await axios.post("/promocodes", formData, {
+    const response = await axios.post("/promocodes", promocode, {
       headers: {
         Authorization: `Bearer ${token}`,
-        "Content-Type": "multipart/form-data",
       },
     });
     return response.data;
@@ -36,15 +36,14 @@ export const createPromocode = async (formData: FormData, token: string) => {
 };
 
 export const updatePromocode = async (
-  updatedWorker: FormData,
+  updatedPromocode: any,
   id: string,
   token: string
 ) => {
   try {
-    const { data } = await axios.put(`/promocodes/${id}`, updatedWorker, {
+    const { data } = await axios.patch(`/promocodes/${id}`, updatedPromocode, {
       headers: {
         Authorization: `Bearer ${token}`,
-        "Content-Type": "multipart/form-data",
       },
     });
     return data;
@@ -54,7 +53,7 @@ export const updatePromocode = async (
   }
 };
 
-export const deletePromocode = async (id: number, token: string) => {
+export const deletePromocode = async (id: string, token: string) => {
   try {
     const { data } = await axios.delete(`/promocodes/${id}`, {
       headers: {

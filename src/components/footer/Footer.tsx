@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                     </NavLink>
                   </li>
                   <li className={styles.footer__list_item}>
-                    <NavLink to={"/blog"} className={styles.footer__list_link}>
+                    <NavLink to={"/blogs"} className={styles.footer__list_link}>
                       {t("menu.blog-page")}
                     </NavLink>
                   </li>
@@ -136,12 +136,18 @@ const Footer: React.FC = () => {
               </p>
               <ul className={styles.footer__security_list}>
                 <li className={styles.footer__security_item}>
-                  <NavLink to={"/"} className={styles.footer__security_link}>
+                  <NavLink
+                    to={"/cookies"}
+                    className={styles.footer__security_link}
+                  >
                     {t("footer.footerCookies")}
                   </NavLink>
                 </li>
                 <li className={styles.footer__security_list}>
-                  <NavLink to={"/"} className={styles.footer__security_link}>
+                  <NavLink
+                    to={"/privacy-policy"}
+                    className={styles.footer__security_link}
+                  >
                     {t("footer.footerPrivacyPolicy")}
                   </NavLink>
                 </li>

@@ -41,6 +41,11 @@
 .admin__table_td img {
   height: 160px;
 }
+.portfolio__play_icon {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
 .admin__td_slider img {
   width: 60px;
   height: 60px;
@@ -63,7 +68,7 @@
   font-weight: 400;
   color: var(--dark) !important;
   transition: 0.4s;
-  box-shadow: 0 24px 46px rgba(240, 173, 0, 0.19);
+  box-shadow: 0 24px 46px rgba(240, 92, 0, 0.332);
   user-select: none;
   margin-bottom: 10px;
 }

@@ -1,4 +1,5 @@
 export interface IPromocode {
-    id: number;
-    promocode: string;
+  _id: string;
+  promocode: string;
+  discount: string;
 }

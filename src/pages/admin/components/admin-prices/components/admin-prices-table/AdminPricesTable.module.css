@@ -1,0 +1,87 @@
+.admin__table_block {
+  width: 100%;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.admin__block_info {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--white);
+}
+.admin__table_item {
+  width: 100%;
+  border-collapse: collapse;
+}
+.admin__table_head {
+  width: 100%;
+}
+.admin__table_tr {
+  width: 100%;
+}
+.admin__table_th,
+.admin__table_td {
+  padding: 16px 42px;
+  border: 1px solid var(--border-gray);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 18px;
+  color: var(--white);
+}
+.admin__table_text {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 15px;
+  color: var(--white);
+}
+.admin__table_th {
+  padding: 16px 100px;
+}
+.admin__table_td {
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+}
+.admin__table_td img {
+  height: 160px;
+}
+.admin__td_slider img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.admin__td_actions {
+  color: var(--dark) !important;
+}
+
+.admin__td_action {
+  width: 148px;
+  background: var(--primary);
+  border-radius: 10px;
+  border: 1px solid var(--primary);
+  outline: none;
+  cursor: pointer;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark) !important;
+  transition: 0.4s;
+  box-shadow: 0 24px 46px rgba(240, 92, 0, 0.332);
+  user-select: none;
+  margin-bottom: 10px;
+}
+
+.admin__td_action:hover {
+  transform: scale(1.1);
+}
+
+.admin__table_empty {
+  padding: 80px 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--white);
+  text-align: center;
+}

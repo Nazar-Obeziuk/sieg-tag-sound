@@ -32,16 +32,22 @@ const AdminCode: React.FC = () => {
   };
 
   const onEditPromocode = (code: IPromocode) => {
-    navigate(`/admin/update-promocode/${code.id}`);
+    navigate(`/admin-promocode-update/${code._id}`);
   };
 
-  const onDeletePromocode = async (id: number) => {
-    const token = localStorage.getItem("token");
+  const onDeletePromocode = async (_id: string) => {
+    const confirmation = window.confirm(
+      "Ви впевнені, що хочете видалити цей промокод?"
+    );
 
-    if (token) {
-      const response = await deletePromocode(id, token);
-      notify(response.message);
-      getAll();
+    if (confirmation) {
+      const token = localStorage.getItem("token");
+
+      if (token) {
+        const response = await deletePromocode(_id, token);
+        notify(response.message);
+        getAll();
+      }
     }
   };
 

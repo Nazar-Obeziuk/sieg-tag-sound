@@ -4,7 +4,12 @@ import { IBlog } from "../../../../../../services/blog/blog.interface";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { useFieldArray, useForm } from "react-hook-form";
 import { Accept, useDropzone } from "react-dropzone";
-import { getBlogById, updateBlog } from "../../../../../../services/blog/blog";
+import {
+  createBlogLang,
+  getBlogById,
+  getBlogByIdLang,
+  updateBlog,
+} from "../../../../../../services/blog/blog";
 import { toast } from "react-toastify";
 import { AdminImage } from "../../../../../../utils/dropzone/dropzone";
 
@@ -13,6 +18,8 @@ const AdminBlogUpdate: React.FC = () => {
   const [blogImagePreview, setBlogImagePreview] = useState<string[] | null>(
     null
   );
+  const [editedImageURL, setEditedImageURL] = useState<string>("");
+  const [isUpdate, setIsUpdate] = useState<boolean>(true);
   const [isEditUploadOpen, setEditUploadOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [editBlog, setEditBlog] = useState<IBlog>();
@@ -23,6 +30,8 @@ const AdminBlogUpdate: React.FC = () => {
     control,
     formState: { errors, isValid },
     reset,
+    getValues,
+    setValue,
   } = useForm({
     mode: "onChange",
   });
@@ -72,7 +81,9 @@ const AdminBlogUpdate: React.FC = () => {
             descriptions: editedBlog.descriptions,
             title: editedBlog.title,
             text: editedBlog.text,
+            blog_language: editedBlog.blog_language,
           };
+          setEditedImageURL(editedBlog.image_url);
           reset(updatedObject);
         }
       } catch (error) {
@@ -83,6 +94,41 @@ const AdminBlogUpdate: React.FC = () => {
     getEditedBlog();
   }, [id, reset]);
 
+  const onChangeLanguage = async (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const selectedLanguage = event.target.value;
+
+    if (editBlog) {
+      try {
+        const response = await getBlogByIdLang(
+          editBlog.langID,
+          selectedLanguage
+        );
+
+        if (response.length === 0) {
+          reset({
+            image_url: "",
+            descriptions: [],
+            title: "",
+            text: "",
+          });
+
+          setEditedImageURL("");
+          editBlog.image_url = "";
+          setIsUpdate(false);
+          setEditUploadOpen(true);
+        } else {
+          reset(response);
+          setIsUpdate(true);
+          setEditedImageURL(response.image_url);
+        }
+      } catch (error: any) {
+        console.log(error);
+      }
+    }
+  };
+
   const notify = (message: string) => toast(message);
 
   const onSubmit = async (data: any) => {
@@ -91,7 +137,11 @@ const AdminBlogUpdate: React.FC = () => {
     const formData = new FormData();
 
     Object.keys(data).forEach((key) => {
-      formData.append(key, data[key]);
+      if (key === "descriptions") {
+        formData.append("descriptions", JSON.stringify(data.descriptions));
+      } else {
+        formData.append(key, data[key]);
+      }
     });
 
     if (blogImage) {
@@ -102,8 +152,18 @@ const AdminBlogUpdate: React.FC = () => {
 
     if (token) {
       try {
-        const response = await updateBlog(formData, id!, token);
-        notify(response.message);
+        if (isUpdate) {
+          const response = await updateBlog(formData, id!, token);
+          notify(response.message);
+        } else {
+          const response = await createBlogLang(
+            formData,
+            token,
+            editBlog!.langID
+          );
+          notify(response.message);
+        }
+
         navigate("/admin");
         reset();
       } catch (error) {
@@ -114,6 +174,11 @@ const AdminBlogUpdate: React.FC = () => {
 
   const handleChangePhoto = () => {
     setEditUploadOpen((prevState) => !prevState);
+  };
+
+  const handleAddDescription = () => {
+    const currentDescriptions = getValues("descriptions");
+    setValue("descriptions", [...currentDescriptions, ""]);
   };
 
   return (
@@ -143,7 +208,7 @@ const AdminBlogUpdate: React.FC = () => {
               className={styles.admin__router_arrow}
             />
             <NavLink
-              to={"/prostopoo-admin-panel"}
+              to={"/admin"}
               className={`${styles.admin__router_name} ${styles.admin__router_active}`}
             >
               Адмін панель
@@ -176,23 +241,17 @@ const AdminBlogUpdate: React.FC = () => {
                     >
                       Зображення блогу
                     </label>
-                    {/* <ul className={styles.admin__drag_slider}>
-                            {editPortfolio?.track_before &&
-                              editPortfolio?.track_before.map(
-                                (track: string, index: number) => (
-                                  <li
-                                    key={index}
-                                    className={styles.admin__drag_preview}
-                                  >
-                                    <img
-                                      className={styles.admin__drag_image}
-                                      src={track}
-                                      alt={`portfolio preview ${index}`}
-                                    />
-                                  </li>
-                                )
-                              )}
-                          </ul> */}
+                    <ul className={styles.admin__drag_slider}>
+                      {editBlog?.image_url && (
+                        <li className={styles.admin__drag_preview}>
+                          <img
+                            className={styles.admin__drag_image}
+                            src={editedImageURL}
+                            alt="blog img"
+                          />
+                        </li>
+                      )}
+                    </ul>
                   </div>
                 )}
                 <div className={styles.admin__control_item}>
@@ -245,6 +304,25 @@ const AdminBlogUpdate: React.FC = () => {
                     </div>
                   )}
                 </div>
+              </div>
+              <div className={styles.admin__block_control}>
+                <label
+                  htmlFor="blog_language"
+                  className={styles.admin__control_label}
+                >
+                  Оберіть мову
+                </label>
+                <select
+                  className={styles.admin__control_field}
+                  {...register("blog_language", {
+                    required: `Це поле обов'язкове!`,
+                  })}
+                  onChange={onChangeLanguage}
+                >
+                  <option value="en">Англ</option>
+                  <option value="de">Нім</option>
+                  <option value="ru">Рос</option>
+                </select>
               </div>
               <div className={styles.admin__block_control}>
                 <label htmlFor="title" className={styles.admin__control_label}>
@@ -300,30 +378,50 @@ const AdminBlogUpdate: React.FC = () => {
                   />
                 </div>
               ))}
-              <div className={styles.admin__block_control}>
-                <label htmlFor="title" className={styles.admin__control_label}>
-                  Заголовок
-                </label>
-                <input
-                  type="text"
-                  className={`${styles.admin__control_field} `}
-                  style={errors["title"] ? { border: "1px solid #EB001B" } : {}}
-                  placeholder="Заголовок"
-                  {...register("title", { required: `Це поле обов'язкове!` })}
-                />
-                {errors["title"] && (
-                  <span className={styles.error_message}>
-                    {errors["title"]?.message as string}
-                  </span>
-                )}
-              </div>
+              {!isUpdate && (
+                <>
+                  {getValues("descriptions").map(
+                    (descriptions: any, index: number) => (
+                      <div key={index} className={styles.admin__block_control}>
+                        <label
+                          htmlFor={`descriptions.${index}`}
+                          className={styles.admin__control_label}
+                        >
+                          Опис статті {index + 1}
+                        </label>
+                        <input
+                          type="text"
+                          className={`${styles.admin__control_field} `}
+                          placeholder={`Опис статті ${index + 1}`}
+                          {...register(`descriptions.${index}`, {
+                            required: `Це поле обов'язкове!`,
+                          })}
+                        />
+                      </div>
+                    )
+                  )}
+                  <button
+                    onClick={handleAddDescription}
+                    className={styles.admin__add_button}
+                    type="button"
+                  >
+                    Додати опис до блогу
+                  </button>
+                </>
+              )}
               <div className={styles.admin__block_actions}>
                 <button
                   className={`${styles.admin__actions_button} ${styles.admin__button_full}`}
                   type="submit"
                   disabled={isLoading || !isValid}
                 >
-                  {isLoading ? "Оновлення..." : "Підтвердити"}
+                  {isUpdate
+                    ? isLoading
+                      ? "Оновлення..."
+                      : "Підтвердити"
+                    : isLoading
+                    ? "Загрузка..."
+                    : "Додати нову мову"}
                 </button>
               </div>
             </form>

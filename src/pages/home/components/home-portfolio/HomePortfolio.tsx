@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./HomePortfolio.module.css";
 import HomePortfolioItems from "./home-portfolio-items/HomePortfolioItems";
 import { useTranslation } from "react-i18next";
-import Button from "../../../../components/UI/button/Button";
+import { IPortfolio } from "../../../../services/portfolio/portfolio.interface";
+import { getAllPortfoliosByLang } from "../../../../services/portfolio/portfolio";
+import Loader from "../../../../components/loader/Loader";
+import { NavLink } from "react-router-dom";
 
 const HomePortfolio: React.FC = () => {
-  const { t } = useTranslation();
+  const [portfolios, setPortfolios] = useState<IPortfolio[]>([]);
+  const { t, i18n } = useTranslation();
+
+  const getPortfolios = async () => {
+    try {
+      const response = await getAllPortfoliosByLang(i18n.language);
+      setPortfolios(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getPortfolios();
+  }, [i18n.language]);
+
+  if (!portfolios) {
+    return <Loader />;
+  }
 
   return (
     <section className={styles.home__portfolio_section}>
@@ -15,11 +36,11 @@ const HomePortfolio: React.FC = () => {
             {t("home.homePortfolio.homePortfolioTitle")}
           </h2>
           <div className={styles.home__portfolio_main}>
-            <HomePortfolioItems key={"uniq1"} />
+            <HomePortfolioItems portfolios={portfolios} />
           </div>
-          <Button type={"button"}>
+          <NavLink to={"/portfolio"} className={styles.home__portfolio_button}>
             {t("home.homePortfolio.homePortfolioButtonText")}
-          </Button>
+          </NavLink>
         </div>
       </div>
     </section>

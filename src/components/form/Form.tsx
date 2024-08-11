@@ -1,9 +1,21 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import styles from "./Form.module.css";
 import Button from "../UI/button/Button";
 import Select from "react-select";
 import { useDropzone } from "react-dropzone";
 import { useTranslation } from "react-i18next";
+import { useForm, Controller } from "react-hook-form";
+import { sendMessage } from "../../api/telegram";
+
+interface FormValues {
+  firstName: string;
+  phone: string;
+  email: string;
+  service: any;
+  drive: string;
+  promocode: string;
+  files: File[];
+}
 
 const customStyles = {
   control: (provided: any) => ({
@@ -22,18 +34,74 @@ const customStyles = {
 };
 
 const Form: React.FC = () => {
+  const [files, setFiles] = useState<File[]>([]);
+  const [isError, setIsError] = useState<boolean>(false);
+  const {
+    handleSubmit,
+    register,
+    watch,
+    control,
+    formState: { errors, isValid, isSubmitting },
+    reset,
+  } = useForm({
+    mode: "onChange",
+    // defaultValues: {
+    //   firstName: "",
+    //   phone: "",
+    //   email: "",
+    //   service: {},
+    //   drive: "",
+    //   promocode: "",
+    //   file: null,
+    // },
+  });
   const { t } = useTranslation();
 
   const options = [
-    { value: "track", label: "mixing&mastering" },
+    { value: "track", label: "Mixing&Mastering" },
     { value: "ep", label: "Mixing" },
     { value: "album", label: "Mastering" },
   ];
 
   const onDrop = useCallback((acceptedFiles: any) => {
-    // Do something with the files
+    setFiles(acceptedFiles);
   }, []);
+
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+
+  const driveLink = watch("drive");
+  const file = watch("file");
+
+  const onSubmit = async ({
+    firstName,
+    phone,
+    email,
+    service,
+    drive,
+    promocode,
+  }: any): Promise<void> => {
+    try {
+      const message = `
+        Прізвище та ім'я: ${firstName}
+        Телефон: ${phone}
+        Електронна пошта: ${email}
+        Сервіс: ${service.label}
+        Посилання на диск: ${drive}
+        Промокод: ${promocode}
+      `;
+
+      console.log(message);
+
+      await sendMessage(message, files);
+
+      reset();
+      setFiles([]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // const isSubmitButtonDisabled = !driveLink && !file;
 
   return (
     <div className={styles.form__block}>
@@ -41,10 +109,16 @@ const Form: React.FC = () => {
         <div className={styles.form__wrapper_info}>
           <h3 className={styles.form__info_title}>{t("form.formTitle")}</h3>
         </div>
-        <form className={styles.form__wrapper_item}>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className={styles.form__wrapper_item}
+        >
           <div className={styles.form__item_fields}>
             <div className={styles.form__fields_inner}>
-              <div className={styles.form__fields_control}>
+              <div
+                style={errors.firstName ? { border: "1px solid #EB001B" } : {}}
+                className={styles.form__fields_control}
+              >
                 <svg
                   width="12"
                   height="16"
@@ -65,9 +139,15 @@ const Form: React.FC = () => {
                   type="text"
                   className={styles.form__control_input}
                   placeholder={t("form.firstName")}
+                  {...register("firstName", {
+                    required: t("form.formFieldRequired"),
+                  })}
                 />
               </div>
-              <div className={styles.form__fields_control}>
+              <div
+                style={errors.phone ? { border: "1px solid #EB001B" } : {}}
+                className={styles.form__fields_control}
+              >
                 <svg
                   width="12"
                   height="12"
@@ -84,10 +164,16 @@ const Form: React.FC = () => {
                   type="text"
                   className={styles.form__control_input}
                   placeholder={t("form.phone")}
+                  {...register("phone", {
+                    required: t("form.formFieldRequired"),
+                  })}
                 />
               </div>
             </div>
-            <div className={styles.form__fields_control}>
+            <div
+              style={errors.email ? { border: "1px solid #EB001B" } : {}}
+              className={styles.form__fields_control}
+            >
               <svg
                 width="16"
                 height="12"
@@ -108,6 +194,9 @@ const Form: React.FC = () => {
                 type="text"
                 className={styles.form__control_input}
                 placeholder={t("form.email")}
+                {...register("email", {
+                  required: t("form.formFieldRequired"),
+                })}
               />
             </div>
             <div className={styles.form__fields_control}>
@@ -123,10 +212,21 @@ const Form: React.FC = () => {
                   fill="#A1ADCD"
                 />
               </svg>
-              <Select
+              <Controller
+                name="service"
+                control={control}
                 defaultValue={options[0]}
-                options={options}
-                styles={customStyles}
+                render={({ field }) => (
+                  <Select
+                    {...field}
+                    options={options}
+                    styles={customStyles}
+                    onChange={(selectedOption: any) =>
+                      field.onChange(selectedOption)
+                    }
+                    value={field.value}
+                  />
+                )}
               />
             </div>
             <div className={styles.form__fields_inner}>
@@ -147,6 +247,9 @@ const Form: React.FC = () => {
                   type="text"
                   className={styles.form__control_input}
                   placeholder={t("form.linkOnDrive")}
+                  {...register("drive", {
+                    required: false,
+                  })}
                 />
               </div>
               <div className={styles.form__fields_control}>
@@ -166,34 +269,54 @@ const Form: React.FC = () => {
                   type="text"
                   className={styles.form__control_input}
                   placeholder={t("form.promoCode")}
+                  {...register("promocode", {
+                    required: false,
+                  })}
                 />
               </div>
             </div>
-            <div className={styles.form__fields_control}>
-              <svg
-                width="12"
-                height="16"
-                viewBox="0 0 12 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+            <div className={styles.form__inner_upload}>
+              <div
+                className={styles.form__fields_control}
+                // style={
+                //   !isSubmitButtonDisabled ? { border: "1px solid #EB001B" } : {}
+                // }
               >
-                <path
-                  d="M0 2C0 0.896875 0.896875 0 2 0H7V4C7 4.55313 7.44687 5 8 5H12V14C12 15.1031 11.1031 16 10 16H2C0.896875 16 0 15.1031 0 14V2ZM12 4H8V0L12 4Z"
-                  fill="#A1ADCD"
-                />
-              </svg>
-              <div {...getRootProps()} className={styles.form__control_file}>
-                <input {...getInputProps()} />
-                {isDragActive ? (
-                  <p>{t("form.uploadFiles")}...</p>
-                ) : (
-                  <p>{t("form.uploadFiles")}</p>
-                )}
+                <svg
+                  width="12"
+                  height="16"
+                  viewBox="0 0 12 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 2C0 0.896875 0.896875 0 2 0H7V4C7 4.55313 7.44687 5 8 5H12V14C12 15.1031 11.1031 16 10 16H2C0.896875 16 0 15.1031 0 14V2ZM12 4H8V0L12 4Z"
+                    fill="#A1ADCD"
+                  />
+                </svg>
+                <div {...getRootProps()} className={styles.form__control_file}>
+                  <input
+                    {...getInputProps()}
+                    {...register("file", { required: true })}
+                  />
+                  {isDragActive ? (
+                    <p>{t("form.uploadFiles")}...</p>
+                  ) : (
+                    <p>{t("form.uploadFiles")}</p>
+                  )}
+                </div>
               </div>
+              {files.map((file: File, index: number) => (
+                <span className={styles.form__file_name} key={index}>
+                  {file.name}
+                </span>
+              ))}
             </div>
           </div>
           <div className={styles.form__item_actions}>
-            <Button type={"submit"}>{t("form.submitText")}</Button>
+            <button className={styles.form__button} type="submit">
+              {t("form.submitText")}
+            </button>
           </div>
         </form>
       </div>

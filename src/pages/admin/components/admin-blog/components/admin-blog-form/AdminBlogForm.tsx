@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AdminImage } from "../../../../../../utils/dropzone/dropzone";
+import { createBlog } from "../../../../../../services/blog/blog";
 
 interface Props {
   toggleBlogsForm: () => void;
@@ -22,13 +23,11 @@ const AdminBlogForm: React.FC<Props> = ({ toggleBlogsForm, getAll }) => {
   const [mainImage, setMainImage] = useState<File | null>(null);
   const [mainImagePreview, setMainImagePreview] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors, isValid },
     reset,
-    control,
     getValues,
   } = useForm<FormValues>({
     mode: "onChange",
@@ -71,33 +70,24 @@ const AdminBlogForm: React.FC<Props> = ({ toggleBlogsForm, getAll }) => {
 
     Object.keys(data).forEach((key) => {
       if (key === "descriptions") {
-        data.descriptions.forEach((desc: any, index: number) => {
-          formData.append(`descriptions[${index}]`, desc);
-        });
+        formData.append("descriptions", JSON.stringify(data.descriptions));
       } else {
         formData.append(key, data[key]);
       }
     });
 
     if (mainImage) {
-      formData.append("image", mainImage);
+      formData.append("image_url", mainImage);
     }
-
-    console.log(data);
-
-    formData.forEach((value, key) => {
-      console.log(key, value);
-    });
 
     const token = localStorage.getItem("token");
     const notify = (message: string) => toast(message);
 
     if (token) {
       try {
-        // const response = await createWorker(formData, token);
-        // notify(response.message);
+        const response = await createBlog(formData, token);
+        notify(response.message);
         getAll();
-        navigate("/admin");
         reset();
         toggleBlogsForm();
         setMainImagePreview(null);
@@ -134,7 +124,7 @@ const AdminBlogForm: React.FC<Props> = ({ toggleBlogsForm, getAll }) => {
           {isMainDragActive ? (
             <p>Перетягніть сюди файли ...</p>
           ) : (
-            <p>Перетягніть файли сюди файли</p>
+            <p>Перетягніть сюди файли</p>
           )}
         </AdminImage>
         {mainImagePreview && (

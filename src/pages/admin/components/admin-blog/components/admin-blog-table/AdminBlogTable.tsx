@@ -1,11 +1,10 @@
 import React from "react";
 import styles from "./AdminBlogTable.module.css";
-
-interface IBlog {}
+import { IBlog } from "../../../../../../services/blog/blog.interface";
 
 interface Props {
   handleEditBlog: (blog: IBlog) => void;
-  handleDeleteBlog: (id: number) => void;
+  handleDeleteBlog: (id: string) => void;
   adminBlogs: IBlog[];
 }
 
@@ -21,57 +20,42 @@ const AdminBlogTable: React.FC<Props> = ({
           <thead className={styles.admin__table_head}>
             <tr className={styles.admin__table_tr}>
               <th className={styles.admin__table_th}>Зображення</th>
-              <th className={styles.admin__table_th}>Ім'я (Укр)</th>
-              <th className={styles.admin__table_th}>Ім'я (Англ)</th>
-              <th className={styles.admin__table_th}>Напрямок (Укр)</th>
-              <th className={styles.admin__table_th}>Напрямок (Англ)</th>
-              <th className={styles.admin__table_th}>Перший опис (Укр)</th>
-              <th className={styles.admin__table_th}>Перший опис (Англ)</th>
-              <th className={styles.admin__table_th}>Другий опис (Укр)</th>
-              <th className={styles.admin__table_th}>Другий опис (Англ)</th>
-              <th className={styles.admin__table_th}>Третій опис (Укр)</th>
-              <th className={styles.admin__table_th}>Третій опис (Англ)</th>
-              <th className={styles.admin__table_th}>Слайдер зображення</th>
+              <th
+                className={`${styles.admin__table_th} ${styles.admin__table_descriptions}`}
+              >
+                Описи
+              </th>
+              <th className={styles.admin__table_th}>Мова блогу</th>
+              <th className={styles.admin__table_th}>Заголовок</th>
+              <th className={styles.admin__table_th}>Текст</th>
               <th className={styles.admin__table_th}>Дії</th>
             </tr>
           </thead>
-          {/* <tbody className={styles.admin__table_body}>
+          <tbody className={styles.admin__table_body}>
             {adminBlogs.map((adminBlog: IBlog, index) => (
               <tr key={index} className={styles.admin__table_tr}>
                 <td className={styles.admin__table_td}>
-                  <img src={adminBlog.image_url} alt="worker banner" />
-                </td>
-                <td className={styles.admin__table_td}>{adminBlog.name_ua}</td>
-                <td className={styles.admin__table_td}>{adminBlog.name_en}</td>
-                <td className={styles.admin__table_td}>
-                  {adminBlog.subtitle_ua}
+                  <img src={adminBlog.image_url} alt="blog img" />
                 </td>
                 <td className={styles.admin__table_td}>
-                  {adminBlog.subtitle_en}
+                  {adminBlog.descriptions.map(
+                    (description: string, index: number) => (
+                      <p className={styles.admin__table_text} key={index}>
+                        {description}
+                      </p>
+                    )
+                  )}
                 </td>
                 <td className={styles.admin__table_td}>
-                  {adminBlog.first_description_ua}
+                  {adminBlog.blog_language}
                 </td>
-                <td className={styles.admin__table_td}>
-                  {adminBlog.first_description_en}
-                </td>
-                <td className={styles.admin__table_td}>
-                  {adminBlog.second_description_ua}
-                </td>
-                <td className={styles.admin__table_td}>
-                  {adminBlog.second_description_en}
-                </td>
-                <td className={styles.admin__table_td}>
-                  {adminBlog.third_description_ua}
-                </td>
-                <td className={styles.admin__table_td}>
-                  {adminBlog.third_description_en}
-                </td>
+                <td className={styles.admin__table_td}>{adminBlog.title}</td>
+                <td className={styles.admin__table_td}>{adminBlog.text}</td>
                 <td
                   className={`${styles.admin__table_td} ${styles.admin__td_actions}`}
                 >
                   <button
-                    onClick={() => handleDeleteBlog(adminBlog.id)}
+                    onClick={() => handleDeleteBlog(adminBlog._id)}
                     className={styles.admin__td_action}
                     type="button"
                   >
@@ -87,7 +71,7 @@ const AdminBlogTable: React.FC<Props> = ({
                 </td>
               </tr>
             ))}
-          </tbody> */}
+          </tbody>
         </table>
       ) : (
         <p className={styles.admin__table_empty}>

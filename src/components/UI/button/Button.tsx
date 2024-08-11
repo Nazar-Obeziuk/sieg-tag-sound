@@ -4,11 +4,16 @@ import styles from "./Button.module.css";
 interface Props {
   children: ReactNode;
   type: any;
+  handleClick?: () => void;
 }
 
-const Button: React.FC<Props> = ({ children, type }) => {
+const Button: React.FC<Props> = ({ children, type, handleClick }) => {
   return (
-    <button className={styles.home__about_button} type={type}>
+    <button
+      onClick={handleClick}
+      className={styles.home__about_button}
+      type={type}
+    >
       {children}
     </button>
   );

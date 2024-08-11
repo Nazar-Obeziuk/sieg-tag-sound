@@ -2,9 +2,9 @@ import React, { useCallback, useState } from "react";
 import styles from "./AdminPortfolioForm.module.css";
 import { Accept, useDropzone } from "react-dropzone";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AdminImage } from "../../../../../../utils/dropzone/dropzone";
+import { createPortfolio } from "../../../../../../services/portfolio/portfolio";
 
 interface Props {
   togglePortfolioForm: () => void;
@@ -16,15 +16,8 @@ const AdminPortfolioForm: React.FC<Props> = ({
   getAll,
 }) => {
   const [mainImageBefore, setMainImageBefore] = useState<File | null>(null);
-  const [mainImageBeforePreview, setMainImageBeforePreview] = useState<
-    string | null
-  >(null);
   const [mainImageAfter, setMainImageAfter] = useState<File | null>(null);
-  const [mainImageAfterPreview, setMainImageAfterPreview] = useState<
-    string | null
-  >(null);
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -33,19 +26,17 @@ const AdminPortfolioForm: React.FC<Props> = ({
   } = useForm({ mode: "onChange" });
 
   const acceptType: Accept = {
-    "image/*": [".jpeg", ".jpg", ".png", ".gif"],
+    "audio/*": [],
   };
 
   const onDropMainImageBefore = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
     setMainImageBefore(file);
-    setMainImageBeforePreview(URL.createObjectURL(file));
   }, []);
 
   const onDropMainImageAfter = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
     setMainImageAfter(file);
-    setMainImageAfterPreview(URL.createObjectURL(file));
   }, []);
 
   const {
@@ -81,11 +72,8 @@ const AdminPortfolioForm: React.FC<Props> = ({
       formData.append(key, data[key]);
     });
 
-    if (mainImageBefore) {
+    if (mainImageBefore && mainImageAfter) {
       formData.append("track_before", mainImageBefore);
-    }
-
-    if (mainImageAfter) {
       formData.append("track_after", mainImageAfter);
     }
 
@@ -94,14 +82,11 @@ const AdminPortfolioForm: React.FC<Props> = ({
 
     if (token) {
       try {
-        // const response = await createWorker(formData, token);
-        // getAll();
-        // notify(response.message);
-        navigate("/admin");
+        const response = await createPortfolio(formData, token);
+        notify(response.message);
+        getAll();
         reset();
         togglePortfolioForm();
-        setMainImageBeforePreview(null);
-        setMainImageAfterPreview(null);
       } catch (error) {
         console.error("Error creating worker:", error);
         notify("Щось пішло не так...");
@@ -135,18 +120,12 @@ const AdminPortfolioForm: React.FC<Props> = ({
           {isMainBeforeDragActive ? (
             <p>Перетягніть сюди файли ...</p>
           ) : (
-            <p>Перетягніть файли сюди файли</p>
+            <p>Перетягніть сюди файли</p>
           )}
         </AdminImage>
-        {mainImageBeforePreview && (
-          <div className={styles.admin__drag_preview}>
-            <img
-              src={mainImageBeforePreview}
-              alt="banner preview"
-              className={styles.admin__drag_image}
-            />
-          </div>
-        )}
+        <span className={styles.admin__control_label}>
+          {mainImageBefore?.name}
+        </span>
         {errors["image"] && (
           <span className={styles.error_message}>
             {errors["image"]?.message as string}
@@ -169,18 +148,12 @@ const AdminPortfolioForm: React.FC<Props> = ({
           {isMainAfterDragActive ? (
             <p>Перетягніть сюди файли ...</p>
           ) : (
-            <p>Перетягніть файли сюди файли</p>
+            <p>Перетягніть сюди файли</p>
           )}
         </AdminImage>
-        {mainImageAfterPreview && (
-          <div className={styles.admin__drag_preview}>
-            <img
-              src={mainImageAfterPreview}
-              alt="banner preview"
-              className={styles.admin__drag_image}
-            />
-          </div>
-        )}
+        <span className={styles.admin__control_label}>
+          {mainImageAfter?.name}
+        </span>
         {errors["image"] && (
           <span className={styles.error_message}>
             {errors["image"]?.message as string}
@@ -188,12 +161,15 @@ const AdminPortfolioForm: React.FC<Props> = ({
         )}
       </div>
       <div className={styles.admin__block_control}>
-        <label htmlFor="blog_language" className={styles.admin__control_label}>
+        <label
+          htmlFor="portfolio_language"
+          className={styles.admin__control_label}
+        >
           Оберіть мову
         </label>
         <select
           className={styles.admin__control_field}
-          {...register("blog_language", {
+          {...register("portfolio_language", {
             required: `Це поле обов'язкове!`,
           })}
         >

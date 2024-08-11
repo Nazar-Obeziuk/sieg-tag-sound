@@ -10,6 +10,16 @@ export const getAllPortfolios = async () => {
   }
 };
 
+export const getAllPortfoliosByLang = async (lang: string) => {
+  try {
+    const { data } = await axios.get(`/portfolios/lang/${lang}`);
+    return data;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};
+
 export const getPortfolioById = async (id: string) => {
   try {
     const { data } = await axios.get(`/portfolios/${id}`);
@@ -36,12 +46,12 @@ export const createPortfolio = async (formData: FormData, token: string) => {
 };
 
 export const updatePortfolio = async (
-  updatedWorker: FormData,
+  updatedPortfolio: FormData,
   id: string,
   token: string
 ) => {
   try {
-    const { data } = await axios.put(`/portfolios/${id}`, updatedWorker, {
+    const { data } = await axios.patch(`/portfolios/${id}`, updatedPortfolio, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "multipart/form-data",
@@ -54,7 +64,7 @@ export const updatePortfolio = async (
   }
 };
 
-export const deletePortfolio = async (id: number, token: string) => {
+export const deletePortfolio = async (id: string, token: string) => {
   try {
     const { data } = await axios.delete(`/portfolios/${id}`, {
       headers: {

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "../admin-portfolio-form/AdminPortfolioForm.module.css";
 import { IPortfolio } from "../../../../../../services/portfolio/portfolio.interface";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
@@ -12,18 +12,17 @@ import { toast } from "react-toastify";
 import { AdminImage } from "../../../../../../utils/dropzone/dropzone";
 
 const AdminPortfolioUpdate: React.FC = () => {
+  const [isAudioPlayAfter, setIsAudioPlayAfter] = useState(false);
+  const [isAudioPlayBefore, setIsAudioPlayBefore] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const [portfolioFilesBefore, setPortfolioFilesBefore] = useState<File | null>(
     null
   );
-  const [portfolioFilesBeforePreview, setPortfolioFilesBeforePreview] =
-    useState<string[] | null>(null);
   const [portfolioFilesAfter, setPortfolioFilesAfter] = useState<File | null>(
     null
   );
-  const [portfolioFilesAfterPreview, setPortfolioFilesAfterPreview] = useState<
-    string[] | null
-  >(null);
-  const [isEditUploadOpen, setEditUploadOpen] = useState(false);
+  const [isEditUploadBeforeOpen, setEditUploadBeforeOpen] = useState(false);
+  const [isEditUploadAfterOpen, setEditUploadAfterOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [editPortfolio, setEditPortfolio] = useState<IPortfolio>();
   const { id } = useParams();
@@ -38,29 +37,17 @@ const AdminPortfolioUpdate: React.FC = () => {
   const navigate = useNavigate();
 
   const acceptType: Accept = {
-    "image/*": [".jpeg", ".jpg", ".png", ".gif"],
+    "audio/*": [],
   };
 
   const onDropMainFileBefore = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
     setPortfolioFilesBefore(file);
-
-    const newPreviews = acceptedFiles.map((file) => URL.createObjectURL(file));
-    setPortfolioFilesBeforePreview((prevPreviews) => [
-      ...(prevPreviews || []),
-      ...newPreviews,
-    ]);
   }, []);
 
   const onDropMainFileAfter = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
     setPortfolioFilesAfter(file);
-
-    const newPreviews = acceptedFiles.map((file) => URL.createObjectURL(file));
-    setPortfolioFilesAfterPreview((prevPreviews) => [
-      ...(prevPreviews || []),
-      ...newPreviews,
-    ]);
   }, []);
 
   const {
@@ -147,8 +134,40 @@ const AdminPortfolioUpdate: React.FC = () => {
     }
   };
 
-  const handleChangePhoto = () => {
-    setEditUploadOpen((prevState) => !prevState);
+  const handlePlayAudioAfter = () => {
+    if (audioRef.current) {
+      setIsAudioPlayAfter(true);
+      audioRef.current.play();
+    }
+  };
+
+  const handlePauseAudioAfter = () => {
+    if (audioRef.current) {
+      setIsAudioPlayAfter(false);
+      audioRef.current.pause();
+    }
+  };
+
+  const handlePlayAudioBefore = () => {
+    if (audioRef.current) {
+      setIsAudioPlayBefore(true);
+      audioRef.current.play();
+    }
+  };
+
+  const handlePauseAudioBefore = () => {
+    if (audioRef.current) {
+      setIsAudioPlayBefore(false);
+      audioRef.current.pause();
+    }
+  };
+
+  const handleChangeFileBefore = () => {
+    setEditUploadBeforeOpen((prevState) => !prevState);
+  };
+
+  const handleChangeFileAfter = () => {
+    setEditUploadAfterOpen((prevState) => !prevState);
   };
 
   return (
@@ -178,7 +197,7 @@ const AdminPortfolioUpdate: React.FC = () => {
               className={styles.admin__router_arrow}
             />
             <NavLink
-              to={"/prostopoo-admin-panel"}
+              to={"/admin"}
               className={`${styles.admin__router_name} ${styles.admin__router_active}`}
             >
               Адмін панель
@@ -205,7 +224,7 @@ const AdminPortfolioUpdate: React.FC = () => {
               <div
                 className={`${styles.admin__block_control} ${styles.admin__control_block}`}
               >
-                {!isEditUploadOpen && (
+                {!isEditUploadBeforeOpen && (
                   <div className={styles.admin__control_item}>
                     <label
                       htmlFor="image"
@@ -213,34 +232,44 @@ const AdminPortfolioUpdate: React.FC = () => {
                     >
                       Файл треку до
                     </label>
-                    {/* <ul className={styles.admin__drag_slider}>
-                        {editPortfolio?.track_before &&
-                          editPortfolio?.track_before.map(
-                            (track: string, index: number) => (
-                              <li
-                                key={index}
-                                className={styles.admin__drag_preview}
-                              >
-                                <img
-                                  className={styles.admin__drag_image}
-                                  src={track}
-                                  alt={`portfolio preview ${index}`}
-                                />
-                              </li>
-                            )
-                          )}
-                      </ul> */}
+                    <ul className={styles.admin__drag_slider}>
+                      {editPortfolio?.track_before && (
+                        <li className={styles.admin__file_preview}>
+                          <div className={styles.portfolio__work_block}>
+                            {!isAudioPlayBefore ? (
+                              <img
+                                src="../../images/play-icon.svg"
+                                alt="play icon"
+                                className={styles.portfolio__play_icon}
+                                onClick={handlePlayAudioBefore}
+                              />
+                            ) : (
+                              <img
+                                src="../../images/pause-icon.svg"
+                                alt="play icon"
+                                className={styles.portfolio__play_icon}
+                                onClick={handlePauseAudioBefore}
+                              />
+                            )}
+                            <audio
+                              ref={audioRef}
+                              src={editPortfolio.track_before}
+                            />
+                          </div>
+                        </li>
+                      )}
+                    </ul>
                   </div>
                 )}
                 <div className={styles.admin__control_item}>
                   <button
-                    onClick={handleChangePhoto}
+                    onClick={handleChangeFileBefore}
                     className={styles.admin__control_add}
                     type="button"
                   >
-                    {!isEditUploadOpen ? "Змінити файл" : "Скасувати"}
+                    {!isEditUploadBeforeOpen ? "Змінити файл" : "Скасувати"}
                   </button>
-                  {isEditUploadOpen && (
+                  {isEditUploadBeforeOpen && (
                     <div className={styles.admin__control_upload}>
                       <AdminImage
                         {...getMainBeforeRootProps({
@@ -257,26 +286,86 @@ const AdminPortfolioUpdate: React.FC = () => {
                           <p>Перетягніть файли сюди, або клацніть</p>
                         )}
                       </AdminImage>
-                      <ul className={styles.admin__drag_slider}>
-                        {portfolioFilesBeforePreview &&
-                          portfolioFilesBeforePreview.map(
-                            (
-                              certificateImagePreview: string,
-                              index: number
-                            ) => (
-                              <li
-                                key={index}
-                                className={styles.admin__drag_preview}
-                              >
-                                <img
-                                  className={styles.admin__drag_image}
-                                  src={certificateImagePreview}
-                                  alt={`certificate preview ${index}`}
-                                />
-                              </li>
-                            )
-                          )}
-                      </ul>
+                      <span className={styles.admin__control_label}>
+                        {portfolioFilesBefore?.name}
+                      </span>
+                      {errors["image_url"] && (
+                        <span className={styles.error_message}>
+                          {errors["image_url"]?.message as string}
+                        </span>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div
+                className={`${styles.admin__block_control} ${styles.admin__control_block}`}
+              >
+                {!isEditUploadAfterOpen && (
+                  <div className={styles.admin__control_item}>
+                    <label
+                      htmlFor="image"
+                      className={styles.admin__control_label}
+                    >
+                      Файл треку після
+                    </label>
+                    <ul className={styles.admin__drag_slider}>
+                      {editPortfolio?.track_after && (
+                        <li className={styles.admin__file_preview}>
+                          <div className={styles.portfolio__work_block}>
+                            {!isAudioPlayAfter ? (
+                              <img
+                                src="../../images/play-icon.svg"
+                                alt="play icon"
+                                className={styles.portfolio__play_icon}
+                                onClick={handlePlayAudioAfter}
+                              />
+                            ) : (
+                              <img
+                                src="../../images/pause-icon.svg"
+                                alt="play icon"
+                                className={styles.portfolio__play_icon}
+                                onClick={handlePauseAudioAfter}
+                              />
+                            )}
+                            <audio
+                              ref={audioRef}
+                              src={editPortfolio.track_after}
+                            />
+                          </div>
+                        </li>
+                      )}
+                    </ul>
+                  </div>
+                )}
+                <div className={styles.admin__control_item}>
+                  <button
+                    onClick={handleChangeFileAfter}
+                    className={styles.admin__control_add}
+                    type="button"
+                  >
+                    {!isEditUploadAfterOpen ? "Змінити файл" : "Скасувати"}
+                  </button>
+                  {isEditUploadAfterOpen && (
+                    <div className={styles.admin__control_upload}>
+                      <AdminImage
+                        {...getMainAfterRootProps({
+                          isdragactive: isMainAfterDragActive.toString(),
+                          isdragaccept: isMainAfterDragAccept.toString(),
+                          isdragreject: isMainAfterDragReject.toString(),
+                          isfocused: isMainAfterFocused.toString(),
+                        })}
+                      >
+                        <input {...getMainAfterInputProps()} />
+                        {isMainAfterDragActive ? (
+                          <p>Перетягніть сюди файли ...</p>
+                        ) : (
+                          <p>Перетягніть файли сюди, або клацніть</p>
+                        )}
+                      </AdminImage>
+                      <span className={styles.admin__control_label}>
+                        {portfolioFilesAfter?.name}
+                      </span>
                       {errors["image_url"] && (
                         <span className={styles.error_message}>
                           {errors["image_url"]?.message as string}

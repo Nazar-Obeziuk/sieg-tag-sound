@@ -8,7 +8,7 @@ type AdminSidebarProps = {
 
 const AdminSidebar: React.FC<AdminSidebarProps> = ({ onSectionChange }) => {
   const [activeAdminPage, setActiveAdminPage] = useState<
-    "portfolio" | "blog" | "promocode"
+    "portfolio" | "blog" | "promocode" | "prices"
   >("portfolio");
   const navigate = useNavigate();
 
@@ -53,6 +53,17 @@ const AdminSidebar: React.FC<AdminSidebarProps> = ({ onSectionChange }) => {
             }`}
           >
             Промокод
+          </div>
+          <div
+            onClick={() => {
+              onSectionChange("prices");
+              setActiveAdminPage("prices");
+            }}
+            className={`${styles.admin__wrapper_item} ${
+              activeAdminPage === "prices" ? styles.active : ""
+            }`}
+          >
+            Ціни
           </div>
         </div>
         <div className={styles.admin__wrapper_logout}>

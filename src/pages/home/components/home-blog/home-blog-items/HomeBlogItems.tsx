@@ -6,10 +6,21 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Button from "../../../../../components/UI/button/Button";
 import { useTranslation } from "react-i18next";
+import { IBlog } from "../../../../../services/blog/blog.interface";
+import { useNavigate } from "react-router-dom";
 
-const HomeBlogItems: React.FC = () => {
+interface Props {
+  blogs: IBlog[];
+}
+
+const HomeBlogItems: React.FC<Props> = ({ blogs }) => {
   const swiper = useSwiper();
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleNavigate = (_id: string) => {
+    navigate(`/blog/${_id}`);
+  };
 
   return (
     <>
@@ -39,30 +50,30 @@ const HomeBlogItems: React.FC = () => {
           modules={[Navigation]}
           className="blogSwiper"
         >
-          <SwiperSlide key={"uniq1"}>
-            <div className={styles.home__blog_item}>
-              <img
-                src="../../images/home-blog-1.jpg"
-                alt="portfolio img"
-                className={styles.home__blog_image}
-              />
-              <div className={styles.home__blog_info}>
-                <h3 className={styles.home__blog_name}>Полезные статьи</h3>
-                <p className={styles.home__blog_description}>
-                  Мы публикуем информативные статьи на темы музыкального
-                  мастеринга, сведения и аудиопроизводства. Вы найдете здесь
-                  советы от наших экспертов, а также интересные кейсы из нашей
-                  практики.
-                </p>
-                <div className={styles.home__info_action}>
-                  <Button type={"button"}>
-                    {t("home.homeBlog.homeBlogButtonText")}
-                  </Button>
+          {blogs.map((blog: IBlog, index: number) => (
+            <SwiperSlide key={index}>
+              <div className={styles.home__blog_item}>
+                <img
+                  src={blog.image_url}
+                  alt="portfolio img"
+                  className={styles.home__blog_image}
+                />
+                <div className={styles.home__blog_info}>
+                  <h3 className={styles.home__blog_name}>{blog.title}</h3>
+                  <p className={styles.home__blog_description}>{blog.text}</p>
+                  <div className={styles.home__info_action}>
+                    <Button
+                      type={"button"}
+                      handleClick={() => handleNavigate(blog._id)}
+                    >
+                      {t("home.homeBlog.homeBlogButtonText")}
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide key={"uniq2"}>
+            </SwiperSlide>
+          ))}
+          {/* <SwiperSlide key={"uniq2"}>
             <div className={styles.home__blog_item}>
               <img
                 src="../../images/home-blog-1.jpg"
@@ -130,7 +141,7 @@ const HomeBlogItems: React.FC = () => {
                 </div>
               </div>
             </div>
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
       </div>
 

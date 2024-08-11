@@ -1,0 +1,124 @@
+.cart__upload_area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.cart__area_title {
+  color: var(--white);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+}
+.cart__area_main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 30px;
+}
+.cart__area_block,
+.cart__area_add {
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cart__area_block {
+  gap: 10px;
+}
+.cart__block_control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cart__control_filename {
+  color: var(--input-gray);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+.cart__area_textarea {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  background: var(--input-gray);
+  color: var(--black);
+  font-size: 14px;
+  resize: none;
+  font-weight: 400;
+  line-height: 16px;
+  padding: 15px;
+}
+.cart__area_add {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 12px;
+  border: 1px dashed var(--white);
+  cursor: pointer;
+  transition: 0.4s;
+  padding: 20px;
+}
+.cart__area_add:hover {
+  background: var(--white);
+}
+.cart__area_add:hover .cart__add_icon path {
+  fill: var(--black);
+}
+.cart__area_add:hover .cart__add_text {
+  color: var(--black);
+}
+.cart__add_icon {
+  width: 20px;
+}
+.cart__add_text {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  display: flex;
+}
+
+.cart__block_control > div {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (max-width: 900px) {
+  .cart__area_main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .cart__area_title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart__area_title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .cart__area_main {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .cart__area_add {
+    height: 120px;
+  }
+}
+
+@media (max-width: 500px) {
+}

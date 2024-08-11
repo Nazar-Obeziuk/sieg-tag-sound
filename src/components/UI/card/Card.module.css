@@ -1,5 +1,6 @@
 .card__block {
   width: 100%;
+  min-height: 100%;
   border-radius: 30px;
   background: var(--card-gray);
   padding: 32px;

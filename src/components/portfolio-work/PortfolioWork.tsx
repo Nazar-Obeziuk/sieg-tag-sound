@@ -1,43 +1,52 @@
 import React, { useRef, useState } from "react";
 import styles from "./PortfolioWork.module.css";
+import { IPortfolio } from "../../services/portfolio/portfolio.interface";
 
-const PortfolioWork: React.FC = () => {
+interface Props {
+  portfolio: IPortfolio;
+  index: number;
+}
+
+const PortfolioWork: React.FC<Props> = ({ portfolio, index }) => {
   const [isAudioPlayAfter, setIsAudioPlayAfter] = useState(false);
   const [isAudioPlayBefore, setIsAudioPlayBefore] = useState(false);
-  const audioRef = useRef<HTMLAudioElement>(null);
+  const audioRefBefore = useRef<HTMLAudioElement>(null);
+  const audioRefAfter = useRef<HTMLAudioElement>(null);
 
   const handlePlayAudioAfter = () => {
-    if (audioRef.current) {
+    if (audioRefAfter.current) {
       setIsAudioPlayAfter(true);
-      audioRef.current.play();
+      audioRefAfter.current.play();
     }
   };
 
   const handlePauseAudioAfter = () => {
-    if (audioRef.current) {
+    if (audioRefAfter.current) {
       setIsAudioPlayAfter(false);
-      audioRef.current.pause();
+      audioRefAfter.current.pause();
     }
   };
 
   const handlePlayAudioBefore = () => {
-    if (audioRef.current) {
+    if (audioRefBefore.current) {
       setIsAudioPlayBefore(true);
-      audioRef.current.play();
+      audioRefBefore.current.play();
     }
   };
 
   const handlePauseAudioBefore = () => {
-    if (audioRef.current) {
+    if (audioRefBefore.current) {
       setIsAudioPlayBefore(false);
-      audioRef.current.pause();
+      audioRefBefore.current.pause();
     }
   };
+
+  const formattedIndex = (index + 1).toString().padStart(2, "0");
 
   return (
     <li className={styles.portfolio__work_item}>
       <div className={styles.portfolio__work_block}>
-        <span className={styles.portfolio__work_count}>01.</span>
+        <span className={styles.portfolio__work_count}>{formattedIndex}.</span>
         <p className={styles.portfolio__work_text}>Alternativ(Before)</p>
         {!isAudioPlayBefore ? (
           <img
@@ -54,10 +63,10 @@ const PortfolioWork: React.FC = () => {
             onClick={handlePauseAudioBefore}
           />
         )}
-        <audio ref={audioRef} src="../../images/work-1-before.mp3" />
+        <audio ref={audioRefBefore} src={portfolio.track_before} />
       </div>
       <div className={styles.portfolio__work_block}>
-        <span className={styles.portfolio__work_count}>01.</span>
+        <span className={styles.portfolio__work_count}>{formattedIndex}.</span>
         <p className={styles.portfolio__work_text}>Alternativ(After)</p>
         {!isAudioPlayAfter ? (
           <img
@@ -74,7 +83,7 @@ const PortfolioWork: React.FC = () => {
             onClick={handlePauseAudioAfter}
           />
         )}
-        <audio ref={audioRef} src="../../images/work-1-after.mp3" />
+        <audio ref={audioRefAfter} src={portfolio.track_after} />
       </div>
     </li>
   );

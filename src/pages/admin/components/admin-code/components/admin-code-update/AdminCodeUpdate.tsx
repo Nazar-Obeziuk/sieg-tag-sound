@@ -46,17 +46,15 @@ const AdminCodeUpdate: React.FC = () => {
   const onSubmit = async (data: any) => {
     setIsLoading(true);
 
-    const formData = new FormData();
-
-    Object.keys(data).forEach((key) => {
-      formData.append(key, data[key]);
-    });
+    const dataPromocode = {
+      promocode: data.promocode,
+    };
 
     const token = localStorage.getItem("token");
 
     if (token) {
       try {
-        const response = await updatePromocode(formData, id!, token);
+        const response = await updatePromocode(dataPromocode, id!, token);
         notify(response.message);
         navigate("/admin");
         reset();
@@ -93,7 +91,7 @@ const AdminCodeUpdate: React.FC = () => {
               className={styles.admin__router_arrow}
             />
             <NavLink
-              to={"/prostopoo-admin-panel"}
+              to={"/admin"}
               className={`${styles.admin__router_name} ${styles.admin__router_active}`}
             >
               Адмін панель

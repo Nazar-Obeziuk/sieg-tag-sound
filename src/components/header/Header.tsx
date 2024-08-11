@@ -92,7 +92,7 @@ const Header: React.FC = () => {
                 </li>
                 <li className={styles.header__list_item}>
                   <NavLink
-                    to={"/blog"}
+                    to={"/blogs"}
                     style={({ isActive }) =>
                       isActive ? activeStyles : undefined
                     }
@@ -198,7 +198,7 @@ const Header: React.FC = () => {
                   <li className={styles.header__list_item}>
                     <NavLink
                       onClick={handleBurgerMenu}
-                      to={"/blog"}
+                      to={"/blogs"}
                       style={({ isActive }) =>
                         isActive ? activeStyles : undefined
                       }

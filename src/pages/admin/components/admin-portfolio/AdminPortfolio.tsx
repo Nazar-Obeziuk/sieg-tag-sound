@@ -31,16 +31,22 @@ const AdminPortfolio: React.FC = () => {
   };
 
   const onEditPortfolio = (portfolio: IPortfolio) => {
-    navigate(`/admin/update-portfolio/${portfolio.id}`);
+    navigate(`/admin-portfolio-update/${portfolio._id}`);
   };
 
-  const onDeletePortfolio = async (id: number) => {
-    const token = localStorage.getItem("token");
+  const onDeletePortfolio = async (_id: string) => {
+    const confirmation = window.confirm(
+      "Ви впевнені, що хочете видалити цей блог?"
+    );
 
-    if (token) {
-      const response = await deletePortfolio(id, token);
-      notify(response.message);
-      getAll();
+    if (confirmation) {
+      const token = localStorage.getItem("token");
+
+      if (token) {
+        const response = await deletePortfolio(_id, token);
+        notify(response.message);
+        getAll();
+      }
     }
   };
 
