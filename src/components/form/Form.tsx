@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styles from "./Form.module.css";
 import Button from "../UI/button/Button";
 import Select from "react-select";
@@ -34,6 +34,7 @@ const customStyles = {
 };
 
 const Form: React.FC = () => {
+  const [isFileFieldEmpty, setIsFileFieldEmpty] = useState<boolean>(false);
   const [files, setFiles] = useState<File[]>([]);
   const [isError, setIsError] = useState<boolean>(false);
   const {
@@ -41,19 +42,10 @@ const Form: React.FC = () => {
     register,
     watch,
     control,
-    formState: { errors, isValid, isSubmitting },
+    formState: { errors },
     reset,
   } = useForm({
     mode: "onChange",
-    // defaultValues: {
-    //   firstName: "",
-    //   phone: "",
-    //   email: "",
-    //   service: {},
-    //   drive: "",
-    //   promocode: "",
-    //   file: null,
-    // },
   });
   const { t } = useTranslation();
 
@@ -63,45 +55,41 @@ const Form: React.FC = () => {
     { value: "album", label: "Mastering" },
   ];
 
-  const onDrop = useCallback((acceptedFiles: any) => {
-    setFiles(acceptedFiles);
-  }, []);
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop: (acceptedFiles) => {
+      setFiles(acceptedFiles);
+    },
+    multiple: true,
+  });
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
-
-  const driveLink = watch("drive");
-  const file = watch("file");
-
-  const onSubmit = async ({
-    firstName,
-    phone,
-    email,
-    service,
-    drive,
-    promocode,
-  }: any): Promise<void> => {
+  const onSubmit = async (data: any): Promise<void> => {
+    console.log(data);
     try {
-      const message = `
-        Прізвище та ім'я: ${firstName}
-        Телефон: ${phone}
-        Електронна пошта: ${email}
-        Сервіс: ${service.label}
-        Посилання на диск: ${drive}
-        Промокод: ${promocode}
-      `;
+      if (files.length === 0) {
+        setIsFileFieldEmpty(true);
+        console.log(files);
+        return;
+      } else {
+        setIsFileFieldEmpty(false);
 
-      console.log(message);
+        const message = `
+          Прізвище та ім'я: ${data.firstName}
+          Телефон: ${data.phone}
+          Електронна пошта: ${data.email}
+          Сервіс: ${data.service.label}
+          Посилання на диск: ${data.drive}
+          Промокод: ${data.promocode}
+        `;
 
-      await sendMessage(message, files);
+        await sendMessage(message, files);
 
-      reset();
-      setFiles([]);
+        reset();
+        setFiles([]);
+      }
     } catch (error) {
       console.log(error);
     }
   };
-
-  // const isSubmitButtonDisabled = !driveLink && !file;
 
   return (
     <div className={styles.form__block}>
@@ -165,7 +153,7 @@ const Form: React.FC = () => {
                   className={styles.form__control_input}
                   placeholder={t("form.phone")}
                   {...register("phone", {
-                    required: t("form.formFieldRequired"),
+                    required: true,
                   })}
                 />
               </div>
@@ -277,27 +265,29 @@ const Form: React.FC = () => {
             </div>
             <div className={styles.form__inner_upload}>
               <div
+                style={errors.file ? { border: "1px solid #EB001B" } : {}}
                 className={styles.form__fields_control}
-                // style={
-                //   !isSubmitButtonDisabled ? { border: "1px solid #EB001B" } : {}
-                // }
               >
                 <svg
                   width="12"
-                  height="16"
-                  viewBox="0 0 12 16"
+                  height="12"
+                  viewBox="0 0 12 12"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M0 2C0 0.896875 0.896875 0 2 0H7V4C7 4.55313 7.44687 5 8 5H12V14C12 15.1031 11.1031 16 10 16H2C0.896875 16 0 15.1031 0 14V2ZM12 4H8V0L12 4Z"
+                    d="M0 1.31399V5.41503C0 5.88137 0.183792 6.3285 0.512973 6.65768L5.34095 11.4857C6.02675 12.1715 7.13773 12.1715 7.82352 11.4857L11.4857 7.82353C12.1714 7.13774 12.1714 6.02676 11.4857 5.34096L6.65767 0.512982C6.32849 0.183802 5.88136 9.53055e-06 5.41502 9.53055e-06H1.31672C0.589782 -0.00273364 0 0.587048 0 1.31399ZM3.07235 2.1918C3.30516 2.1918 3.52844 2.28429 3.69306 2.44891C3.85768 2.61353 3.95017 2.83681 3.95017 3.06962C3.95017 3.30243 3.85768 3.5257 3.69306 3.69033C3.52844 3.85495 3.30516 3.94743 3.07235 3.94743C2.83954 3.94743 2.61626 3.85495 2.45164 3.69033C2.28702 3.5257 2.19454 3.30243 2.19454 3.06962C2.19454 2.83681 2.28702 2.61353 2.45164 2.44891C2.61626 2.28429 2.83954 2.1918 3.07235 2.1918Z"
                     fill="#A1ADCD"
                   />
                 </svg>
                 <div {...getRootProps()} className={styles.form__control_file}>
                   <input
+                    type="file"
                     {...getInputProps()}
-                    {...register("file", { required: true })}
+                    {...register("file", {
+                      required: true,
+                    })}
+                    value={"divf"}
                   />
                   {isDragActive ? (
                     <p>{t("form.uploadFiles")}...</p>
@@ -306,11 +296,6 @@ const Form: React.FC = () => {
                   )}
                 </div>
               </div>
-              {files.map((file: File, index: number) => (
-                <span className={styles.form__file_name} key={index}>
-                  {file.name}
-                </span>
-              ))}
             </div>
           </div>
           <div className={styles.form__item_actions}>
