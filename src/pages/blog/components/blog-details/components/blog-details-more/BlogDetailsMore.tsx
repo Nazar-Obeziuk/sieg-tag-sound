@@ -13,7 +13,7 @@ const BlogDetailsMore: React.FC<Props> = ({ blogs }) => {
   const { id } = useParams();
 
   const getUniqueBlogs = () => {
-    const result = blogs.filter((blog) => blog._id !== id);
+    const result = blogs.filter((blog) => blog.langID !== id);
     setUniqueBlogs(result);
   };
 

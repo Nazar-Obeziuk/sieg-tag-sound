@@ -3,6 +3,7 @@ import styles from "./BlogDetailsInfo.module.css";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { IBlog } from "../../../../../../services/blog/blog.interface";
+import Loader from "../../../../../../components/loader/Loader";
 
 interface Props {
   blog: IBlog;
@@ -10,6 +11,10 @@ interface Props {
 
 const BlogDetailsInfo: React.FC<Props> = ({ blog }) => {
   const { t } = useTranslation();
+
+  if (!blog) {
+    return <Loader />;
+  }
 
   return (
     <>

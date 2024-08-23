@@ -66,7 +66,14 @@ const HomeTable: React.FC = () => {
               </tbody>
             </table>
           </div>
-          <Button type={"button"}>
+          <Button
+            type={"button"}
+            handleClick={() =>
+              document
+                .getElementById("homeForm")!
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
             {t("home.homeTable.homeTableButtonText")}
           </Button>
         </div>

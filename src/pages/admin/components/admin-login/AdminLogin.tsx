@@ -14,6 +14,7 @@ const AdminLogin: React.FC = () => {
     try {
       const response: any = await loginUser(data);
       localStorage.setItem("token", response.data.token);
+
       setIsLoading(true);
       reset();
       checkToken();

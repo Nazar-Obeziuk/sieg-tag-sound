@@ -30,9 +30,42 @@ export const getPortfolioById = async (id: string) => {
   }
 };
 
+export const getPortfolioByIdLang = async (
+  langID: string,
+  portfolio_language: string
+) => {
+  try {
+    const { data } = await axios.get(
+      `/portfolios/${langID}/${portfolio_language}`
+    );
+    return data;
+  } catch (error) {
+    return [];
+  }
+};
+
 export const createPortfolio = async (formData: FormData, token: string) => {
   try {
     const response = await axios.post("/portfolios", formData, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};
+
+export const createPortfolioLang = async (
+  formData: FormData,
+  token: string,
+  langID: string
+) => {
+  try {
+    const response = await axios.post(`/portfolios/${langID}`, formData, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "multipart/form-data",

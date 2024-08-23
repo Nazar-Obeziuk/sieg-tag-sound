@@ -16,7 +16,16 @@ const PortfolioBanner: React.FC = () => {
           <p className={styles.portfolio__banner_text}>
             {t("portfolio.portfolioSubtitle")}
           </p>
-          <Button type={"button"}>{t("portfolio.portfolioButtonText")}</Button>
+          <Button
+            type={"button"}
+            handleClick={() =>
+              document
+                .getElementById("portfolios")!
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            {t("portfolio.portfolioButtonText")}
+          </Button>
         </div>
       </div>
     </section>

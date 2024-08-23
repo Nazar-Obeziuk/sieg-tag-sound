@@ -7,7 +7,7 @@ const HomeForm: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section className={styles.home__form_section}>
+    <section id="homeForm" className={styles.home__form_section}>
       <div className="container">
         <div className={styles.home__form_wrapper}>
           <div className={styles.home__form_heading}>

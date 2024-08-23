@@ -7,4 +7,5 @@ export interface IPortfolio {
   category: string;
   title: string;
   text: string;
+  langID: string;
 }

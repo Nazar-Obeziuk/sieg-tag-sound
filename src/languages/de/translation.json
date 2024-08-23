@@ -8,14 +8,18 @@
   },
   "cartUpload": {
     "cartUploadTitle": "Treffen Sie eine Entscheidung",
-    "cartUploadBlock1": "Wanderung",
+    "cartUploadBlock1": "Lied",
     "cartUploadBlock2": "EP (2-6 Tracks)",
     "cartUploadBlock3": "Album (7-25 Tracks)",
     "cartUploadSubtitle": "Tracks hinzufügen und eine ToR schreiben",
+    "cartUploadSubtitle2": "Laden Sie die Tracks auf unserer Website herunter oder fügen Sie den Link in die Cloud ein",
+    "cartUploadSubtext": "Schreiben Sie unten tz's und lassen Sie eine Referenz Spur ( wenn Sie keine Ideen haben, werden wir auf unseren Geschmack zu machen )",
+    "cartUploadInfoText": "Laden Sie Ihre Tracks direkt oder bequem über die Cloud hoch.",
     "cartUploadFilePlaceholder": "Dateien hierher ziehen und ablegen",
     "cartUploadTextareaPlaceholder": "Beschreibung für Track hinzufügen",
     "cartUploadAddText": "Weitere Dateien hinzufügen",
-    "cartUploadButtonText": "WEITERGEHEN"
+    "cartUploadButtonText": "WEITERGEHEN",
+    "cartUploadFillFieldsText": "Bitte füllen Sie alle Felder aus"
   },
   "footer": {
     "footerFirstText": "Wir schätzen jeden unserer Kunden und freuen uns immer, wenn Sie wiederkommen! Wir haben spezielle Boni und Rabatte für Stammkunden.",
@@ -33,7 +37,8 @@
     "promoCode": "Promo-Code",
     "uploadFiles": "Laden Sie die Dateien hier herunter",
     "submitText": "Bestellung einer Dienstleistung",
-    "formFieldRequired": "Dieses Feld ist erforderlich!"
+    "formFieldRequired": "Dieses Feld ist erforderlich!",
+    "agreeToTerms": "Wenn Ihre Dateien in der Cloud gespeichert sind, klicken Sie hier."
   },
   "bannerForm": {
     "bannerFormFirstTitle": "Verschieben Sie nicht auf morgen, was Ihre Musikkarriere heute verändern kann",
@@ -212,11 +217,16 @@
   "portfolio": {
     "portfolioTitle": "Beispiele für unsere fertigen Tracks: Vorher und Nachher",
     "portfolioSubtitle": "Tauchen Sie ein in die Verwandlung des Klangs: Beispiele für professionelles Mischen und Mastern von Musik, die unser Können und unsere Liebe zum Detail demonstrieren.",
-    "portfolioButtonText": "Anhören von Beispielen"
+    "portfolioButtonText": "Anhören von Beispielen",
+    "portfolioEmpty": "Noch nicht verfügbare Werke",
+    "portfolioBeforeText": "Vor",
+    "portfolioAfterText": "Nach"
   },
   "blog": {
     "blogTitle": "Blog",
-    "blogItemButtonText": "Mehr lesen"
+    "blogItemButtonText": "Mehr lesen",
+    "blogNotAvailable": "Dieser Blog ist nicht in dieser Sprache verfügbar",
+    "blogGoHome": "Zurück zu Home"
   },
   "cookies": {
     "cookiesTitle": "Cookie-Politik",

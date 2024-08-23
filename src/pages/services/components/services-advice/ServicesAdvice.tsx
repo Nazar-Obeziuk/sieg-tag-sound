@@ -49,7 +49,14 @@ const ServicesAdvice: React.FC = () => {
               <p>{t("services.servicesAdvice.servicesAdviceCardText6")}</p>
             </Card>
           </div>
-          <Button type={"button"}>
+          <Button
+            type={"button"}
+            handleClick={() =>
+              document
+                .getElementById("servicesForm")!
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
             {t("services.servicesAdvice.servicesAdviceButtonText")}
           </Button>
         </div>

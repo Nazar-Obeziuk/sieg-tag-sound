@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import styles from "./BlogDetails.module.css";
 import BlogDetailsInfo from "./components/blog-details-info/BlogDetailsInfo";
 import BlogDetailsMore from "./components/blog-details-more/BlogDetailsMore";
 import {
@@ -7,15 +8,16 @@ import {
   getBlogByIdLang,
 } from "../../../../services/blog/blog";
 import { useTranslation } from "react-i18next";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { IBlog } from "../../../../services/blog/blog.interface";
 import Loader from "../../../../components/loader/Loader";
+import Button from "../../../../components/UI/button/Button";
 
 const BlogDetails: React.FC = () => {
   const [isError, setIsError] = useState<boolean>(false);
   const [blog, setBlog] = useState<IBlog>();
   const [blogs, setBlogs] = useState<IBlog[]>([]);
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { id } = useParams();
 
   const getBlog = async () => {
@@ -56,10 +58,21 @@ const BlogDetails: React.FC = () => {
       {!isError ? (
         <>
           <BlogDetailsInfo blog={blog!} />
-          <BlogDetailsMore blogs={blogs} />{" "}
+          <BlogDetailsMore blogs={blogs} />
         </>
       ) : (
-        <p>Нажаль біда</p>
+        <section className={styles.blog__section_error}>
+          <div className="container">
+            <div className={styles.blog__error_wrapper}>
+              <h3 className={styles.blog__error_text}>
+                {t("blog.blogNotAvailable")}
+              </h3>
+              <NavLink to={"/"}>
+                <Button type="button">{t("blog.blogGoHome")}</Button>
+              </NavLink>
+            </div>
+          </div>
+        </section>
       )}
     </>
   );

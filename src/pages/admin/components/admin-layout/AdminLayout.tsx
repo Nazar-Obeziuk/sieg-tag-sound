@@ -5,6 +5,7 @@ import AdminSidebar from "../admin-sidebar/AdminSidebar";
 import AdminBlog from "../admin-blog/AdminBlog";
 import AdminCode from "../admin-code/AdminCode";
 import AdminPrices from "../admin-prices/AdminPrices";
+import AdminFullPrices from "../admin-full-prices/AdminFullPrices";
 
 const AdminLayout: React.FC = () => {
   const [activeSection, setActiveSection] = useState("portfolio");
@@ -19,6 +20,8 @@ const AdminLayout: React.FC = () => {
         return <AdminCode />;
       case "prices":
         return <AdminPrices />;
+      case "fullPrices":
+        return <AdminFullPrices />;
       default:
         return null;
     }

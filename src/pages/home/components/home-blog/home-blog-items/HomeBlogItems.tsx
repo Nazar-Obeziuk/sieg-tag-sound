@@ -64,7 +64,7 @@ const HomeBlogItems: React.FC<Props> = ({ blogs }) => {
                   <div className={styles.home__info_action}>
                     <Button
                       type={"button"}
-                      handleClick={() => handleNavigate(blog._id)}
+                      handleClick={() => handleNavigate(blog.langID)}
                     >
                       {t("home.homeBlog.homeBlogButtonText")}
                     </Button>
@@ -73,75 +73,6 @@ const HomeBlogItems: React.FC<Props> = ({ blogs }) => {
               </div>
             </SwiperSlide>
           ))}
-          {/* <SwiperSlide key={"uniq2"}>
-            <div className={styles.home__blog_item}>
-              <img
-                src="../../images/home-blog-1.jpg"
-                alt="portfolio img"
-                className={styles.home__blog_image}
-              />
-              <div className={styles.home__blog_info}>
-                <h3 className={styles.home__blog_name}>Полезные статьи</h3>
-                <p className={styles.home__blog_description}>
-                  Мы публикуем информативные статьи на темы музыкального
-                  мастеринга, сведения и аудиопроизводства. Вы найдете здесь
-                  советы от наших экспертов, а также интересные кейсы из нашей
-                  практики.
-                </p>
-                <div className={styles.home__info_action}>
-                  <Button type={"button"}>
-                    {t("home.homeBlog.homeBlogButtonText")}
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide key={"uniq3"}>
-            <div className={styles.home__blog_item}>
-              <img
-                src="../../images/home-blog-1.jpg"
-                alt="portfolio img"
-                className={styles.home__blog_image}
-              />
-              <div className={styles.home__blog_info}>
-                <h3 className={styles.home__blog_name}>Полезные статьи</h3>
-                <p className={styles.home__blog_description}>
-                  Мы публикуем информативные статьи на темы музыкального
-                  мастеринга, сведения и аудиопроизводства. Вы найдете здесь
-                  советы от наших экспертов, а также интересные кейсы из нашей
-                  практики.
-                </p>
-                <div className={styles.home__info_action}>
-                  <Button type={"button"}>
-                    {t("home.homeBlog.homeBlogButtonText")}
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide key={"uniq4"}>
-            <div className={styles.home__blog_item}>
-              <img
-                src="../../images/home-blog-1.jpg"
-                alt="portfolio img"
-                className={styles.home__blog_image}
-              />
-              <div className={styles.home__blog_info}>
-                <h3 className={styles.home__blog_name}>Полезные статьи</h3>
-                <p className={styles.home__blog_description}>
-                  Мы публикуем информативные статьи на темы музыкального
-                  мастеринга, сведения и аудиопроизводства. Вы найдете здесь
-                  советы от наших экспертов, а также интересные кейсы из нашей
-                  практики.
-                </p>
-                <div className={styles.home__info_action}>
-                  <Button type={"button"}>
-                    {t("home.homeBlog.homeBlogButtonText")}
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide> */}
         </Swiper>
       </div>
 

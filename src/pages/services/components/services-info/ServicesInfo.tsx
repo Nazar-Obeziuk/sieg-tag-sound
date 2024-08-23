@@ -44,7 +44,14 @@ const ServicesInfo: React.FC = () => {
               </Card>
             </div>
           </div>
-          <Button type={"button"}>
+          <Button
+            type={"button"}
+            handleClick={() =>
+              document
+                .getElementById("servicesForm")!
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
             {t("services.servicesInfo.servicesInfoButtonText")}
           </Button>
         </div>

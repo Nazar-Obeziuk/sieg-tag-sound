@@ -1,8 +1,8 @@
 import axios from "../../utils/axios/axios";
 
-export const getAllPromocodes = async () => {
+export const getAllFullPrices = async () => {
   try {
-    const { data } = await axios.get("/promocodes");
+    const { data } = await axios.get("/full-prices");
     return data;
   } catch (error) {
     console.log(error);
@@ -10,9 +10,9 @@ export const getAllPromocodes = async () => {
   }
 };
 
-export const getPromocodeById = async (id: string) => {
+export const getFullPriceById = async (id: string) => {
   try {
-    const { data } = await axios.get(`/promocodes/${id}`);
+    const { data } = await axios.get(`/full-prices/${id}`);
     return data;
   } catch (error) {
     console.log(error);
@@ -20,9 +20,9 @@ export const getPromocodeById = async (id: string) => {
   }
 };
 
-export const createPromocode = async (promocode: any, token: string) => {
+export const createFullPrice = async (data: any, token: string) => {
   try {
-    const response = await axios.post("/promocodes", promocode, {
+    const response = await axios.post("/full-prices", data, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -34,13 +34,13 @@ export const createPromocode = async (promocode: any, token: string) => {
   }
 };
 
-export const updatePromocode = async (
-  updatedPromocode: any,
+export const updateFullPrice = async (
+  updatedFullPrice: any,
   id: string,
   token: string
 ) => {
   try {
-    const { data } = await axios.patch(`/promocodes/${id}`, updatedPromocode, {
+    const { data } = await axios.patch(`/full-prices/${id}`, updatedFullPrice, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -52,12 +52,11 @@ export const updatePromocode = async (
   }
 };
 
-export const deletePromocode = async (id: string, token: string) => {
+export const deleteFullPrice = async (id: string, token: string) => {
   try {
-    const { data } = await axios.delete(`/promocodes/${id}`, {
+    const { data } = await axios.delete(`/full-prices/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
-        "Content-Type": "multipart/form-data",
       },
     });
     return data;

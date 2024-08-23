@@ -104,7 +104,14 @@ const ServicesMain: React.FC = () => {
               </div>
             </div>
           </div>
-          <Button type={"button"}>
+          <Button
+            type={"button"}
+            handleClick={() =>
+              document
+                .getElementById("servicesForm")!
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
             {t("services.servicesMain.servicesMainButtonText")}
           </Button>
         </div>

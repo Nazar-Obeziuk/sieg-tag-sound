@@ -35,7 +35,14 @@ const HomePayment: React.FC = () => {
               <p>{t("home.homePayment.homePaymentThirdText")}</p>
             </Card>
           </div>
-          <Button type={"button"}>
+          <Button
+            type={"button"}
+            handleClick={() =>
+              document
+                .getElementById("homeForm")!
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
             {t("home.homePayment.homePaymentButtonText")}
           </Button>
         </div>

@@ -5,7 +5,9 @@ import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Accept, useDropzone } from "react-dropzone";
 import {
+  createPortfolioLang,
   getPortfolioById,
+  getPortfolioByIdLang,
   updatePortfolio,
 } from "../../../../../../services/portfolio/portfolio";
 import { toast } from "react-toastify";
@@ -21,6 +23,9 @@ const AdminPortfolioUpdate: React.FC = () => {
   const [portfolioFilesAfter, setPortfolioFilesAfter] = useState<File | null>(
     null
   );
+  const [editedFileBeforeURL, setEditedFileBeforeURL] = useState<string>("");
+  const [editedFileAfterURL, setEditedFileAfterURL] = useState<string>("");
+  const [isUpdate, setIsUpdate] = useState<boolean>(true);
   const [isEditUploadBeforeOpen, setEditUploadBeforeOpen] = useState(false);
   const [isEditUploadAfterOpen, setEditUploadAfterOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -90,6 +95,7 @@ const AdminPortfolioUpdate: React.FC = () => {
             category: editedPortfolio.category,
             title: editedPortfolio.title,
             text: editedPortfolio.text,
+            portfolio_language: editedPortfolio.portfolio_language,
           };
           reset(updatedObject);
         }
@@ -100,6 +106,47 @@ const AdminPortfolioUpdate: React.FC = () => {
 
     getEditedPortfolio();
   }, [id, reset]);
+
+  const onChangeLanguage = async (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const selectedLanguage = event.target.value;
+
+    if (editPortfolio) {
+      try {
+        const response = await getPortfolioByIdLang(
+          editPortfolio.langID,
+          selectedLanguage
+        );
+
+        if (response.length === 0) {
+          reset({
+            track_before: "",
+            track_after: "",
+            name: "",
+            category: "",
+            title: "",
+            text: "",
+          });
+
+          setEditedFileBeforeURL("");
+          setEditedFileAfterURL("");
+          editPortfolio.track_before = "";
+          editPortfolio.track_after = "";
+          setIsUpdate(false);
+          setEditUploadBeforeOpen(true);
+          setEditUploadAfterOpen(true);
+        } else {
+          reset(response);
+          setIsUpdate(true);
+          setEditedFileBeforeURL(response.track_before);
+          setEditedFileAfterURL(response.track_after);
+        }
+      } catch (error: any) {
+        console.log(error);
+      }
+    }
+  };
 
   const notify = (message: string) => toast(message);
 
@@ -124,8 +171,18 @@ const AdminPortfolioUpdate: React.FC = () => {
 
     if (token) {
       try {
-        const response = await updatePortfolio(formData, id!, token);
-        notify(response.message);
+        if (isUpdate) {
+          const response = await updatePortfolio(formData, id!, token);
+          notify(response.message);
+        } else {
+          const response = await createPortfolioLang(
+            formData,
+            token,
+            editPortfolio!.langID
+          );
+          notify(response.message);
+        }
+
         navigate("/admin");
         reset();
       } catch (error) {
@@ -376,6 +433,25 @@ const AdminPortfolioUpdate: React.FC = () => {
                 </div>
               </div>
               <div className={styles.admin__block_control}>
+                <label
+                  htmlFor="portfolio_language"
+                  className={styles.admin__control_label}
+                >
+                  Оберіть мову
+                </label>
+                <select
+                  className={styles.admin__control_field}
+                  {...register("portfolio_language", {
+                    required: `Це поле обов'язкове!`,
+                  })}
+                  onChange={onChangeLanguage}
+                >
+                  <option value="en">Англ</option>
+                  <option value="de">Нім</option>
+                  <option value="ru">Рос</option>
+                </select>
+              </div>
+              <div className={styles.admin__block_control}>
                 <label htmlFor="name" className={styles.admin__control_label}>
                   Назва трека
                 </label>
@@ -456,7 +532,13 @@ const AdminPortfolioUpdate: React.FC = () => {
                   type="submit"
                   disabled={isLoading || !isValid}
                 >
-                  {isLoading ? "Оновлення..." : "Підтвердити"}
+                  {isUpdate
+                    ? isLoading
+                      ? "Оновлення..."
+                      : "Підтвердити"
+                    : isLoading
+                    ? "Загрузка..."
+                    : "Додати нову мову"}
                 </button>
               </div>
             </form>

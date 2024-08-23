@@ -36,7 +36,7 @@ const AdminPortfolio: React.FC = () => {
 
   const onDeletePortfolio = async (_id: string) => {
     const confirmation = window.confirm(
-      "Ви впевнені, що хочете видалити цей блог?"
+      "Ви впевнені, що хочете видалити це портфоліо?"
     );
 
     if (confirmation) {

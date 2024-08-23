@@ -88,7 +88,7 @@ const AdminPortfolioForm: React.FC<Props> = ({
         reset();
         togglePortfolioForm();
       } catch (error) {
-        console.error("Error creating worker:", error);
+        console.error("Error creating portfolio:", error);
         notify("Щось пішло не так...");
       } finally {
         setIsLoading(false);

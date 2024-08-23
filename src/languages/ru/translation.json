@@ -12,10 +12,14 @@
     "cartUploadBlock2": "EP (2-6 треков)",
     "cartUploadBlock3": "Альбом (7-25 треков)",
     "cartUploadSubtitle": "Добавьте треки и напишите ТЗ",
+    "cartUploadSubtitle2": "Загрузите треки на нашем сайте или вставьте ссылку на облако",
+    "cartUploadSubtext": "Напишите ниже тз и оставьте референсный трек ( если у вас нету идей, мы сделаем на свой вкус )",
+    "cartUploadInfoText": "Загрузите Треки напрямую или через облако для удобства.",
     "cartUploadFilePlaceholder": "Перетащите сюда файлы",
     "cartUploadTextareaPlaceholder": "Добавить описание для трека",
     "cartUploadAddText": "Добавьте больше файлов",
-    "cartUploadButtonText": "ПРОДОЛЖИТЬ"
+    "cartUploadButtonText": "ПРОДОЛЖИТЬ",
+    "cartUploadFillFieldsText": "Пожалуйста, заполните все поля"
   },
   "footer": {
     "footerFirstText": "Мы ценим каждого нашего клиента и всегда рады вашему возвращению! Для постоянных клиентов у нас действуют специальные бонусы и скидки.",
@@ -33,7 +37,8 @@
     "promoCode": "Промо код",
     "uploadFiles": "Загрузите файлы здесь",
     "submitText": "Заказать услугу",
-    "formFieldRequired": "Это поле обязательное!"
+    "formFieldRequired": "Это поле обязательное!",
+    "agreeToTerms": "Если ваши файлы на облаке, нажмите сюда."
   },
   "bannerForm": {
     "bannerFormFirstTitle": "Не откладывайте на завтра то, что может изменить вашу музыкальную карьеру сегодня",
@@ -212,11 +217,16 @@
   "portfolio": {
     "portfolioTitle": "Примеры наших готовых треков: До и После",
     "portfolioSubtitle": "Погрузитесь в трансформацию звука: примеры профессионального сведения и мастеринга музыки, демонстрирующие наше мастерство и внимание к деталям.",
-    "portfolioButtonText": "Слушать примеры"
+    "portfolioButtonText": "Слушать примеры",
+    "portfolioEmpty": "Работы пока не доступны",
+    "portfolioBeforeText": "До",
+    "portfolioAfterText": "После"
   },
   "blog": {
     "blogTitle": "Блог",
-    "blogItemButtonText": "Читать больше"
+    "blogItemButtonText": "Читать больше",
+    "blogNotAvailable": "Этот блог на этом языке не доступен",
+    "blogGoHome": "Вернуться на главную"
   },
   "cookies": {
     "cookiesTitle": "Политика использования файлов cookies",

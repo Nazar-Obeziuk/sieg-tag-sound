@@ -51,7 +51,14 @@ const HomeAbout: React.FC = () => {
               </p>
             </Card>
           </div>
-          <Button type="button">
+          <Button
+            type="button"
+            handleClick={() =>
+              document
+                .getElementById("homeForm")!
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
             {t("home.homeAbout.homeAboutButtonText")}
           </Button>
         </div>

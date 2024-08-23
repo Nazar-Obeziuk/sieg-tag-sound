@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import styles from "./PortfolioWork.module.css";
 import { IPortfolio } from "../../services/portfolio/portfolio.interface";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   portfolio: IPortfolio;
@@ -12,6 +13,7 @@ const PortfolioWork: React.FC<Props> = ({ portfolio, index }) => {
   const [isAudioPlayBefore, setIsAudioPlayBefore] = useState(false);
   const audioRefBefore = useRef<HTMLAudioElement>(null);
   const audioRefAfter = useRef<HTMLAudioElement>(null);
+  const { t } = useTranslation();
 
   const handlePlayAudioAfter = () => {
     if (audioRefAfter.current) {
@@ -47,7 +49,9 @@ const PortfolioWork: React.FC<Props> = ({ portfolio, index }) => {
     <li className={styles.portfolio__work_item}>
       <div className={styles.portfolio__work_block}>
         <span className={styles.portfolio__work_count}>{formattedIndex}.</span>
-        <p className={styles.portfolio__work_text}>Alternativ(Before)</p>
+        <p className={styles.portfolio__work_text}>
+          {portfolio.name}({t("portfolio.portfolioBeforeText")})
+        </p>
         {!isAudioPlayBefore ? (
           <img
             src="../../images/play-icon.svg"
@@ -67,7 +71,9 @@ const PortfolioWork: React.FC<Props> = ({ portfolio, index }) => {
       </div>
       <div className={styles.portfolio__work_block}>
         <span className={styles.portfolio__work_count}>{formattedIndex}.</span>
-        <p className={styles.portfolio__work_text}>Alternativ(After)</p>
+        <p className={styles.portfolio__work_text}>
+          {portfolio.name}({t("portfolio.portfolioAfterText")})
+        </p>
         {!isAudioPlayAfter ? (
           <img
             src="../../images/play-icon.svg"

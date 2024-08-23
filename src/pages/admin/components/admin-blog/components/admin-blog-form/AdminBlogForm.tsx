@@ -92,7 +92,7 @@ const AdminBlogForm: React.FC<Props> = ({ toggleBlogsForm, getAll }) => {
         toggleBlogsForm();
         setMainImagePreview(null);
       } catch (error) {
-        console.error("Error creating worker:", error);
+        console.error("Error creating blog:", error);
         notify("Щось пішло не так...");
       } finally {
         setIsLoading(false);

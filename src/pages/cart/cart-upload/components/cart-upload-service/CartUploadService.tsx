@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./CartUploadService.module.css";
 import { useTranslation } from "react-i18next";
 
 interface Props {
-  onServiceChange: (service: string) => void;
+  onServiceChange: (servicse: any) => void;
 }
 
 const CartUploadService: React.FC<Props> = ({ onServiceChange }) => {
@@ -16,6 +16,10 @@ const CartUploadService: React.FC<Props> = ({ onServiceChange }) => {
     onServiceChange(service);
     setActiveService(service);
   };
+
+  useEffect(() => {
+    localStorage.setItem("category", activeService);
+  }, [activeService]);
 
   return (
     <div className={styles.cart__upload_choose}>

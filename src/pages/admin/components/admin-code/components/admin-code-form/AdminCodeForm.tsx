@@ -19,12 +19,13 @@ const AdminCodeForm: React.FC<Props> = ({ togglePromocodesForm, getAll }) => {
     reset,
   } = useForm({ mode: "onChange" });
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async ({ promocode, discount, category }: any) => {
     setIsLoading(true);
 
     const dataPromocode = {
-      promocode: data.promocode,
-      discount: data.discount,
+      promocode,
+      discount,
+      category,
     };
 
     const token = localStorage.getItem("token");
@@ -85,6 +86,26 @@ const AdminCodeForm: React.FC<Props> = ({ togglePromocodesForm, getAll }) => {
         {errors["discount"] && (
           <span className={styles.error_message}>
             {errors["discount"]?.message as string}
+          </span>
+        )}
+      </div>
+      <div className={styles.admin__block_control}>
+        <label htmlFor="category" className={styles.admin__control_label}>
+          Категорія
+        </label>
+        <select
+          className={styles.admin__control_field}
+          {...register("category", {
+            required: `Це поле обов'язкове!`,
+          })}
+        >
+          <option value="Mixing&Mastering">Mixing and Mastering</option>
+          <option value="Mixing">Mixing</option>
+          <option value="Mastering">Mastering</option>
+        </select>
+        {errors["category"] && (
+          <span className={styles.error_message}>
+            {errors["category"]?.message as string}
           </span>
         )}
       </div>

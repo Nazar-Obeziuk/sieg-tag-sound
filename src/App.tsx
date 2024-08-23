@@ -16,10 +16,13 @@ import Cookies from "./pages/cookies/Cookies";
 import PrivacyPolicy from "./pages/privacy-policy/PrivacyPolicy";
 import CartUpload from "./pages/cart/cart-upload/CartUpload";
 import AdminPricesUpdate from "./pages/admin/components/admin-prices/components/admin-prices-update/AdminPricesUpdate";
+import AdminFullPricesUpload from "./pages/admin/components/admin-full-prices/components/admin-full-prices-update/AdminFullPricesUpload";
+import ScrollToTop from "./components/sroll-to-top/ScrollToTop";
 
 function App() {
   return (
     <Layout>
+      <ScrollToTop />
       <Routes>
         <Route path="*" element={<Home />} />
         <Route path="/" element={<Home />} />
@@ -42,6 +45,10 @@ function App() {
           element={<AdminCodeUpdate />}
         />
         <Route path="/admin-price-update/:id" element={<AdminPricesUpdate />} />
+        <Route
+          path="/admin-full-price-update/:id"
+          element={<AdminFullPricesUpload />}
+        />
       </Routes>
     </Layout>
   );

@@ -360,24 +360,25 @@ const AdminBlogUpdate: React.FC = () => {
                   </span>
                 )}
               </div>
-              {fieldsDesc.map((fieldDesc, index) => (
-                <div key={index} className={styles.admin__block_control}>
-                  <label
-                    htmlFor={`descriptions.${index}`}
-                    className={styles.admin__control_label}
-                  >
-                    Опис статті {index + 1}
-                  </label>
-                  <input
-                    type="text"
-                    className={`${styles.admin__control_field} `}
-                    placeholder={`Опис статті ${index + 1}`}
-                    {...register(`descriptions.${index}`, {
-                      required: `Це поле обов'язкове!`,
-                    })}
-                  />
-                </div>
-              ))}
+              {isUpdate &&
+                fieldsDesc.map((fieldDesc, index) => (
+                  <div key={index} className={styles.admin__block_control}>
+                    <label
+                      htmlFor={`descriptions.${index}`}
+                      className={styles.admin__control_label}
+                    >
+                      Опис статті {index + 1}
+                    </label>
+                    <input
+                      type="text"
+                      className={`${styles.admin__control_field} `}
+                      placeholder={`Опис статті ${index + 1}`}
+                      {...register(`descriptions.${index}`, {
+                        required: `Це поле обов'язкове!`,
+                      })}
+                    />
+                  </div>
+                ))}
               {!isUpdate && (
                 <>
                   {getValues("descriptions").map(

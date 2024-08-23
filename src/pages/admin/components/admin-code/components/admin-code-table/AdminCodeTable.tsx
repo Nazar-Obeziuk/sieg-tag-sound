@@ -21,6 +21,7 @@ const AdminCodeTable: React.FC<Props> = ({
             <tr className={styles.admin__table_tr}>
               <th className={styles.admin__table_th}>Промокод</th>
               <th className={styles.admin__table_th}>Знижка</th>
+              <th className={styles.admin__table_th}>Категорія</th>
               <th className={styles.admin__table_th}>Дії</th>
             </tr>
           </thead>
@@ -32,6 +33,9 @@ const AdminCodeTable: React.FC<Props> = ({
                 </td>
                 <td className={styles.admin__table_td}>
                   {adminPromocode.discount}
+                </td>
+                <td className={styles.admin__table_td}>
+                  {adminPromocode.category}
                 </td>
                 <td
                   className={`${styles.admin__table_td} ${styles.admin__td_actions}`}

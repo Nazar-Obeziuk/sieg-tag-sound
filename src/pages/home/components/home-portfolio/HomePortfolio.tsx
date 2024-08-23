@@ -29,21 +29,28 @@ const HomePortfolio: React.FC = () => {
   }
 
   return (
-    <section className={styles.home__portfolio_section}>
-      <div className="container">
-        <div className={styles.home__portfolio_wrapper}>
-          <h2 className={styles.home__portfolio_title}>
-            {t("home.homePortfolio.homePortfolioTitle")}
-          </h2>
-          <div className={styles.home__portfolio_main}>
-            <HomePortfolioItems portfolios={portfolios} />
+    <>
+      {portfolios.length > 0 && (
+        <section className={styles.home__portfolio_section}>
+          <div className="container">
+            <div className={styles.home__portfolio_wrapper}>
+              <h2 className={styles.home__portfolio_title}>
+                {t("home.homePortfolio.homePortfolioTitle")}
+              </h2>
+              <div className={styles.home__portfolio_main}>
+                <HomePortfolioItems portfolios={portfolios} />
+              </div>
+              <NavLink
+                to={"/portfolio"}
+                className={styles.home__portfolio_button}
+              >
+                {t("home.homePortfolio.homePortfolioButtonText")}
+              </NavLink>
+            </div>
           </div>
-          <NavLink to={"/portfolio"} className={styles.home__portfolio_button}>
-            {t("home.homePortfolio.homePortfolioButtonText")}
-          </NavLink>
-        </div>
-      </div>
-    </section>
+        </section>
+      )}
+    </>
   );
 };
 

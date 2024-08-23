@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import styles from "../admin-code-form/AdminCodeForm.module.css";
+import styles from "../admin-full-prices-form/AdminFullPricesForm.module.css";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
-import { IPromocode } from "../../../../../../services/promocode/promocode.interface";
 import { useForm } from "react-hook-form";
-import {
-  getPromocodeById,
-  updatePromocode,
-} from "../../../../../../services/promocode/promocode";
 import { toast } from "react-toastify";
+import { IFullPrices } from "../../../../../../services/full-prices/fullPrices.interface";
+import {
+  getFullPriceById,
+  updateFullPrice,
+} from "../../../../../../services/full-prices/fullPrices";
 
-const AdminCodeUpdate: React.FC = () => {
+const AdminFullPricesUpload: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
   const {
@@ -23,15 +23,17 @@ const AdminCodeUpdate: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const getEditedPromocode = async () => {
+    const getEditedFullPrice = async () => {
       try {
-        const editedPromocode: IPromocode = await getPromocodeById(id!);
+        const editedFullPrice: IFullPrices = await getFullPriceById(id!);
 
-        if (editedPromocode) {
+        if (editedFullPrice) {
           const updatedObject = {
-            promocode: editedPromocode.promocode,
-            discount: editedPromocode.discount,
-            category: editedPromocode.category,
+            count: editedFullPrice.count,
+            category: editedFullPrice.category,
+            mixingAndMastering: editedFullPrice.mixingAndMastering,
+            mastering: editedFullPrice.mastering,
+            mixing: editedFullPrice.mixing,
           };
           reset(updatedObject);
         }
@@ -40,25 +42,19 @@ const AdminCodeUpdate: React.FC = () => {
       }
     };
 
-    getEditedPromocode();
+    getEditedFullPrice();
   }, [id, reset]);
 
   const notify = (message: string) => toast(message);
 
-  const onSubmit = async ({ promocode, discount, category }: any) => {
+  const onSubmit = async (data: any) => {
     setIsLoading(true);
-
-    const dataPromocode = {
-      promocode,
-      discount,
-      category,
-    };
 
     const token = localStorage.getItem("token");
 
     if (token) {
       try {
-        const response = await updatePromocode(dataPromocode, id!, token);
+        const response = await updateFullPrice(data, id!, token);
         notify(response.message);
         navigate("/admin");
         reset();
@@ -120,50 +116,19 @@ const AdminCodeUpdate: React.FC = () => {
               className={styles.admin__form_block}
             >
               <div className={styles.admin__block_control}>
-                <label
-                  htmlFor="promocode"
-                  className={styles.admin__control_label}
-                >
-                  Промокод
+                <label htmlFor="count" className={styles.admin__control_label}>
+                  Кількість треків
                 </label>
                 <input
                   type="text"
                   className={`${styles.admin__control_field} `}
-                  style={
-                    errors["promocode"] ? { border: "1px solid #EB001B" } : {}
-                  }
-                  placeholder="Промокод"
-                  {...register("promocode", {
-                    required: `Це поле обов'язкове!`,
-                  })}
+                  style={errors["count"] ? { border: "1px solid #EB001B" } : {}}
+                  placeholder="Кількість треків"
+                  {...register("count", { required: `Це поле обов'язкове!` })}
                 />
-                {errors["promocode"] && (
+                {errors["count"] && (
                   <span className={styles.error_message}>
-                    {errors["promocode"]?.message as string}
-                  </span>
-                )}
-              </div>
-              <div className={styles.admin__block_control}>
-                <label
-                  htmlFor="discount"
-                  className={styles.admin__control_label}
-                >
-                  Знижка
-                </label>
-                <input
-                  type="text"
-                  className={`${styles.admin__control_field} `}
-                  style={
-                    errors["discount"] ? { border: "1px solid #EB001B" } : {}
-                  }
-                  placeholder="Знижка"
-                  {...register("discount", {
-                    required: `Це поле обов'язкове!`,
-                  })}
-                />
-                {errors["discount"] && (
-                  <span className={styles.error_message}>
-                    {errors["discount"]?.message as string}
+                    {errors["count"]?.message as string}
                   </span>
                 )}
               </div>
@@ -172,7 +137,7 @@ const AdminCodeUpdate: React.FC = () => {
                   htmlFor="category"
                   className={styles.admin__control_label}
                 >
-                  Категорія
+                  Оберіть категорію
                 </label>
                 <select
                   className={styles.admin__control_field}
@@ -180,13 +145,77 @@ const AdminCodeUpdate: React.FC = () => {
                     required: `Це поле обов'язкове!`,
                   })}
                 >
-                  <option value="Mixing&Mastering">Mixing and Mastering</option>
-                  <option value="Mixing">Mixing</option>
-                  <option value="Mastering">Mastering</option>
+                  <option value="track">Трек</option>
+                  <option value="ep">EP</option>
+                  <option value="album">Album</option>
                 </select>
-                {errors["category"] && (
+              </div>
+              <div className={styles.admin__block_control}>
+                <label
+                  htmlFor="mixingAndMastering"
+                  className={styles.admin__control_label}
+                >
+                  Ціна за мікс та мас.
+                </label>
+                <input
+                  type="text"
+                  className={`${styles.admin__control_field} `}
+                  style={
+                    errors["mixingAndMastering"]
+                      ? { border: "1px solid #EB001B" }
+                      : {}
+                  }
+                  placeholder="Ціна за мікс та мас."
+                  {...register("mixingAndMastering", {
+                    required: `Це поле обов'язкове!`,
+                  })}
+                />
+                {errors["mixingAndMastering"] && (
                   <span className={styles.error_message}>
-                    {errors["category"]?.message as string}
+                    {errors["mixingAndMastering"]?.message as string}
+                  </span>
+                )}
+              </div>
+              <div className={styles.admin__block_control}>
+                <label htmlFor="mixing" className={styles.admin__control_label}>
+                  Ціна за мікс.
+                </label>
+                <input
+                  type="text"
+                  className={`${styles.admin__control_field} `}
+                  style={
+                    errors["mixing"] ? { border: "1px solid #EB001B" } : {}
+                  }
+                  placeholder="Ціна за мікс."
+                  {...register("mixing", { required: `Це поле обов'язкове!` })}
+                />
+                {errors["mixing"] && (
+                  <span className={styles.error_message}>
+                    {errors["mixing"]?.message as string}
+                  </span>
+                )}
+              </div>
+              <div className={styles.admin__block_control}>
+                <label
+                  htmlFor="mastering"
+                  className={styles.admin__control_label}
+                >
+                  Ціна за мас.
+                </label>
+                <input
+                  type="text"
+                  className={`${styles.admin__control_field} `}
+                  style={
+                    errors["mastering"] ? { border: "1px solid #EB001B" } : {}
+                  }
+                  placeholder="Ціна за мас."
+                  {...register("mastering", {
+                    required: `Це поле обов'язкове!`,
+                  })}
+                />
+                {errors["mastering"] && (
+                  <span className={styles.error_message}>
+                    {errors["mastering"]?.message as string}
                   </span>
                 )}
               </div>
@@ -207,4 +236,4 @@ const AdminCodeUpdate: React.FC = () => {
   );
 };
 
-export default AdminCodeUpdate;
+export default AdminFullPricesUpload;

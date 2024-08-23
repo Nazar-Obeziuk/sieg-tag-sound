@@ -12,10 +12,14 @@
     "cartUploadBlock2": "EP (2-6 tracks)",
     "cartUploadBlock3": "Album (7-25 tracks)",
     "cartUploadSubtitle": "Add tracks and write TOR",
+    "cartUploadSubtitle2": "Download the tracks on our website or paste the link to the cloud",
+    "cartUploadSubtext": "Write below tz and leave a reference track ( if you have no ideas, we will make to your taste )",
+    "cartUploadInfoText": "Upload your Tracks directly or via the cloud for convenience.",
     "cartUploadFilePlaceholder": "Drag and drop files here",
     "cartUploadTextareaPlaceholder": "Add description for track",
     "cartUploadAddText": "Add more files",
-    "cartUploadButtonText": "CONTINUE"
+    "cartUploadButtonText": "CONTINUE",
+    "cartUploadFillFieldsText": "Please, fill all the fields"
   },
   "footer": {
     "footerFirstText": "We value each of our clients and are always happy to have you back! We have special bonuses and discounts for regular customers.",
@@ -33,7 +37,8 @@
     "promoCode": "Promo code",
     "uploadFiles": "Download the files here",
     "submitText": "Order a service",
-    "formFieldRequired": "This field is required!"
+    "formFieldRequired": "This field is required!",
+    "agreeToTerms": "If your files are on the cloud, click here."
   },
   "bannerForm": {
     "bannerFormFirstTitle": "Don't put off for tomorrow what can change your music career today",
@@ -212,11 +217,16 @@
   "portfolio": {
     "portfolioTitle": "Examples of our finished tracks: Before and After",
     "portfolioSubtitle": "Immerse yourself in the transformation of sound: examples of professional music mixing and mastering, demonstrating our skill and attention to detail.",
-    "portfolioButtonText": "Listen to examples"
+    "portfolioButtonText": "Listen to examples",
+    "portfolioEmpty": "Works are not yet available",
+    "portfolioBeforeText": "Before",
+    "portfolioAfterText": "After"
   },
   "blog": {
     "blogTitle": "Blog",
-    "blogItemButtonText": "Read more"
+    "blogItemButtonText": "Read more",
+    "blogNotAvailable": "This blog is not available in that language",
+    "blogGoHome": "Back to Home"
   },
   "cookies": {
     "cookiesTitle": "Cookie Policy",
