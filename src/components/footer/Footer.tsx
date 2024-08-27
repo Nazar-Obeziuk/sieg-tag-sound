@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
                   </svg>
                 </NavLink>
                 <NavLink
-                  to={"mailto:siegtagsound@hotmail.com"}
+                  to={"mailto:siegtagprod@hotmail.com"}
                   target="_blank"
                   className={styles.footer__socials_item}
                 >

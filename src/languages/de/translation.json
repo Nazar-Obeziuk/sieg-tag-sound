@@ -19,7 +19,8 @@
     "cartUploadTextareaPlaceholder": "Beschreibung für Track hinzufügen",
     "cartUploadAddText": "Weitere Dateien hinzufügen",
     "cartUploadButtonText": "WEITERGEHEN",
-    "cartUploadFillFieldsText": "Bitte füllen Sie alle Felder aus"
+    "cartUploadFillFieldsText": "Bitte füllen Sie alle Felder aus",
+    "cartUploadFillFastText": "Schnelle Auftragsabwicklung 3-5 Tage (50€)"
   },
   "footer": {
     "footerFirstText": "Wir schätzen jeden unserer Kunden und freuen uns immer, wenn Sie wiederkommen! Wir haben spezielle Boni und Rabatte für Stammkunden.",

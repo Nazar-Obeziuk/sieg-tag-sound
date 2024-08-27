@@ -61,8 +61,9 @@ const CartUpload: React.FC = () => {
     let finalPrice;
 
     const category = localStorage.getItem("category");
+    const isFast = localStorage.getItem("fast");
 
-    if (cart) {
+    if (cart && isFast) {
       const parsedCart = JSON.parse(cart);
       const filteredPriceByCategory = prices.filter(
         (price) => price.category === category
@@ -85,6 +86,11 @@ const CartUpload: React.FC = () => {
         const discountAmount = checkout * (parsedCart.discount / 100);
         finalPrice = checkout - discountAmount;
       } else {
+        finalPrice = checkout;
+      }
+
+      if (isFast === "yes") {
+        checkout = Number(checkout) + 50;
         finalPrice = checkout;
       }
 
@@ -115,7 +121,7 @@ const CartUpload: React.FC = () => {
             Скидка: ${parsedCart.discount > 0 ? parsedCart.discount : "Нема"}
             Галочка на облако: ${parsedCart.agreeToTerms === "on" ? "Да" : "Ні"}
             Сумма замовлення: ${finalPrice}
-            
+
             Опис файлів:
             ${descriptionText}
           `;
