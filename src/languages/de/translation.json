@@ -20,14 +20,16 @@
     "cartUploadAddText": "Weitere Dateien hinzufügen",
     "cartUploadButtonText": "WEITERGEHEN",
     "cartUploadFillFieldsText": "Bitte füllen Sie alle Felder aus",
-    "cartUploadFillFastText": "Schnelle Auftragsabwicklung 3-5 Tage (50€)"
+    "cartUploadFillFastText": "Schnelle Auftragsabwicklung 3-5 Tage (50€)",
+    "cartUploadFileUploadedText": "Hochgeladen"
   },
   "footer": {
     "footerFirstText": "Wir schätzen jeden unserer Kunden und freuen uns immer, wenn Sie wiederkommen! Wir haben spezielle Boni und Rabatte für Stammkunden.",
     "footerSecondText": "Wir sind stolz auf unser hohes Serviceniveau und garantieren eine schnelle und professionelle Antwort auf alle Ihre Fragen. Unser Ziel ist es, den Mixing- und Mastering-Prozess so angenehm wie möglich zu gestalten und Ihre Erwartungen zu übertreffen. Kontaktieren Sie uns noch heute und überzeugen Sie sich von der Qualität unseres Services!",
     "footerCopyrights": "Copyrights © 2024 Alle Rechte vorbehalten SiegTagSound",
     "footerCookies": "Cookie-Politik",
-    "footerPrivacyPolicy": "Bedingungen für die Nutzung"
+    "footerPrivacyPolicy": "Bedingungen für die Nutzung",
+    "footerRefundPolicy": "Erstattungspolitik"
   },
   "form": {
     "formTitle": "Füllen Sie das Formular aus",
@@ -263,5 +265,14 @@
     "policyText8Child1": "E-Mail: ",
     "policyText8Child2": "siegtagsound@hotmail.com",
     "policyText9": "Vielen Dank für Ihr Vertrauen in SiegTagSound. Wir verpflichten uns, den größtmöglichen Schutz und die Vertraulichkeit Ihrer Daten zu gewährleisten."
+  },
+  "refund": {
+    "refundTitle": "Erstattungspolitik",
+    "refundText1": "Wir schätzen Ihre Wahl und Ihr Vertrauen in unsere Sound- und Masteringdienste. Wir möchten Sie jedoch darauf aufmerksam machen, dass eine Rückerstattung nicht möglich ist. ",
+    "refundSubtitle1": "Warum gibt es keine Erstattungen?",
+    "refundListText1": "Individueller Ansatz: Jeder Mixing- und Mastering-Auftrag ist einzigartig und erfordert Zeit, Mühe und kreativen Input. Unsere Spezialisten arbeiten an Ihrem Projekt und berücksichtigen dabei Ihre Vorlieben und Anforderungen. Das Endergebnis wird unter Berücksichtigung zahlreicher Details erstellt, sodass es vollständig auf Ihre Bedürfnisse zugeschnitten ist.",
+    "refundListText2": "Immaterielles Produkt: Mixing und Mastering sind Dienstleistungen, deren Ergebnisse digital übertragen werden. Sie können nicht wie physische Waren zurückgegeben oder umgetauscht werden. Sobald das fertige Produkt eingegangen ist, gilt die Dienstleistung als vollständig erbracht.",
+    "refundListText3": "Hohe Qualität: Wir bemühen uns, dass jeder Kunde mit dem Ergebnis zufrieden ist. Wenn Sie nicht zufrieden sind, sind wir bereit, die notwendigen Anpassungen im Rahmen der vereinbarten Bedingungen vorzunehmen. Wir sind bestrebt, Ihre Zufriedenheit zu erreichen, und bieten daher die Möglichkeit, das Projekt zu überarbeiten.",
+    "refundText5": "Wir danken Ihnen für Ihr Verständnis und freuen uns auf eine fruchtbare Zusammenarbeit. Sollten Sie Fragen oder Zweifel haben, kontaktieren Sie uns bitte - wir sind immer bereit, Ihnen zu helfen und Ihre Wünsche zu besprechen."
   }
 }

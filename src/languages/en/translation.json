@@ -20,14 +20,16 @@
     "cartUploadAddText": "Add more files",
     "cartUploadButtonText": "CONTINUE",
     "cartUploadFillFieldsText": "Please, fill all the fields",
-    "cartUploadFillFastText": "Fast fulfillment 3-5 days (50€)"
+    "cartUploadFillFastText": "Fast fulfillment 3-5 days (50€)",
+    "cartUploadFileUploadedText": "Uploaded"
   },
   "footer": {
     "footerFirstText": "We value each of our clients and are always happy to have you back! We have special bonuses and discounts for regular customers.",
     "footerSecondText": "We pride ourselves on our high level of service and guarantee a quick and professional response to all your questions. Our goal is to make the mixing and mastering process as comfortable as possible and exceed your expectations. Contact us today and see the quality of our service!",
     "footerCopyrights": "Copyrights © 2024 All rights reserved SiegTagSound",
     "footerCookies": "Cookie Policy",
-    "footerPrivacyPolicy": "Conditions of Use"
+    "footerPrivacyPolicy": "Conditions of Use",
+    "footerRefundPolicy": "Refund Policy"
   },
   "form": {
     "formTitle": "Fill out the form",
@@ -263,5 +265,14 @@
     "policyText8Child1": "Email: ",
     "policyText8Child2": "siegtagsound@hotmail.com",
     "policyText9": "Thank you for your trust in SiegTagSound. We are committed to maximizing the protection and privacy of your data."
+  },
+  "refund": {
+    "refundTitle": "Refund Policy",
+    "refundText1": "We appreciate your choice and trust in our mastering and mastering services. However, we would like to draw your attention to the fact that refunds are not possible.",
+    "refundSubtitle1": "Why are there no refunds provided?",
+    "refundListText1": "Individual approach: Every mixing and mastering job is unique and requires time, effort and creative input. Our specialists work on your project, taking into account your preferences and requirements. The final result is created with many details in mind, making it completely customized to your needs.",
+    "refundListText2": "Intangible product: Mixing and mastering are services whose results are transferred digitally. They are not returnable or exchangeable like physical goods. Once the finished product is received, the service is considered fully rendered.",
+    "refundListText3": "High quality: We strive to ensure that every customer is satisfied with the result. If you are not satisfied, we are ready to make the necessary adjustments within the agreed terms and conditions. We aim to achieve your satisfaction, and therefore offer the possibility to finalize the project.",
+    "refundText5": "We thank you for your understanding and look forward to fruitful cooperation. In case of questions or doubts, please contact us - we are always ready to help and discuss any of your wishes."
   }
 }

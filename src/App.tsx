@@ -18,6 +18,7 @@ import CartUpload from "./pages/cart/cart-upload/CartUpload";
 import AdminPricesUpdate from "./pages/admin/components/admin-prices/components/admin-prices-update/AdminPricesUpdate";
 import AdminFullPricesUpload from "./pages/admin/components/admin-full-prices/components/admin-full-prices-update/AdminFullPricesUpload";
 import ScrollToTop from "./components/sroll-to-top/ScrollToTop";
+import RefundPolicy from "./pages/refund-policy/RefundPolicy";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/cookies" element={<Cookies />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/cart-upload" element={<CartUpload />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/login" element={<AdminLogin />} />

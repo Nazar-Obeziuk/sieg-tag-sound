@@ -69,7 +69,7 @@ const PrivacyPolicy: React.FC = () => {
             <p className={styles.policy__main_text}>
               {t("policy.policyText8Child1")}
               <NavLink
-                to={"mailto:siegtagsound@hotmail.com"}
+                to={"mailto:siegtagprod@hotmail.com"}
                 className={styles.policy__main_link}
               >
                 {t("policy.policyText8Child2")}

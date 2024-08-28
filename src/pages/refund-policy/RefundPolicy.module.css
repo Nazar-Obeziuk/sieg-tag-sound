@@ -1,0 +1,75 @@
+.refund__section {
+  width: 100%;
+  height: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: var(--black);
+}
+.refund__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.refund__wrapper_title {
+  color: var(--white);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: center;
+}
+.refund__wrapper_main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.refund__main_text {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.refund__main_subtitle {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+}
+.refund__main_control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.refund__control_list {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.refund__list_item {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+}
+.refun__item_count {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+}
+.refun__item_text {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+@media (max-width: 600px) {
+  .refund__wrapper_title {
+    font-size: 26px;
+    line-height: 34px;
+  }
+}

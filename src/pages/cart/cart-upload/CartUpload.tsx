@@ -85,12 +85,11 @@ const CartUpload: React.FC = () => {
       if (parsedCart.discount > 0) {
         const discountAmount = checkout * (parsedCart.discount / 100);
         finalPrice = checkout - discountAmount;
-      } else {
-        finalPrice = checkout;
-      }
 
-      if (isFast === "yes") {
-        checkout = Number(checkout) + 50;
+        if (isFast === "yes") {
+          finalPrice += 50;
+        }
+      } else {
         finalPrice = checkout;
       }
 
@@ -109,7 +108,6 @@ const CartUpload: React.FC = () => {
           const descriptionText = descriptions
             .map((desc, index) => `${index + 1}. ${desc}`)
             .join("\n\n");
-
           const message = `
             Прізвище та ім'я: ${parsedCart.firstName}
             Телефон: ${parsedCart.phone}
@@ -121,11 +119,9 @@ const CartUpload: React.FC = () => {
             Скидка: ${parsedCart.discount > 0 ? parsedCart.discount : "Нема"}
             Галочка на облако: ${parsedCart.agreeToTerms === "on" ? "Да" : "Ні"}
             Сумма замовлення: ${finalPrice}
-
             Опис файлів:
             ${descriptionText}
           `;
-
           await sendMessage(message, files);
           localStorage.removeItem("cart");
           localStorage.removeItem("category");

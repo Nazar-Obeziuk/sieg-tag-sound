@@ -151,6 +151,14 @@ const Footer: React.FC = () => {
                     {t("footer.footerPrivacyPolicy")}
                   </NavLink>
                 </li>
+                <li className={styles.footer__security_list}>
+                  <NavLink
+                    to={"/refund-policy"}
+                    className={styles.footer__security_link}
+                  >
+                    {t("footer.footerRefundPolicy")}
+                  </NavLink>
+                </li>
               </ul>
             </div>
           </div>

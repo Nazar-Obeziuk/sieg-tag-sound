@@ -189,7 +189,9 @@ const DropzoneBlock: React.FC<DropzoneBlockProps> = ({
             <p>{t("cartUpload.cartUploadFilePlaceholder")}</p>
           )}
         </AdminImage>
-        <span className={styles.cart__control_filename}>{filename || ""}</span>
+        <span className={styles.cart__control_filename}>
+          {filename && t("cartUpload.cartUploadFileUploadedText")}
+        </span>
       </div>
       <textarea
         className={`${styles.cart__area_textarea} ${
