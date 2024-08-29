@@ -179,10 +179,7 @@ const DropzoneBlock: React.FC<DropzoneBlockProps> = ({
           })}
           className={styles.dropzone}
         >
-          <input
-            {...getInputProps()}
-            {...({ webkitdirectory: "true", directory: "true" } as any)}
-          />
+          <input {...getInputProps()} />
           {isDragActive ? (
             <p>{t("cartUpload.cartUploadFilePlaceholder")}</p>
           ) : (
