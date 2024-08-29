@@ -146,9 +146,18 @@ const DropzoneBlock: React.FC<DropzoneBlockProps> = ({
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: handleDrop,
-    multiple: true,
+    multiple: false,
     accept: {
-      "audio/*": [],
+      "audio/mpeg": [],
+      "audio/wav": [],
+      "audio/flac": [],
+      "audio/aac": [],
+      "audio/ogg": [],
+      "audio/x-ms-wma": [],
+      "audio/alac": [],
+      "audio/aiff": [],
+      "audio/dsd": [],
+      "audio/mp4": [],
     },
   });
 
