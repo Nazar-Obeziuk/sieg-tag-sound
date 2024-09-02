@@ -122,6 +122,7 @@ const CartUpload: React.FC = () => {
             Телефон: ${parsedCart.phone}
             Електронна пошта: ${parsedCart.email}
             Сервіс: ${parsedCart.service.label}
+            Соц. мережа: ${parsedCart.socials.label}
             Категорія: ${category}
             Посилання на диск: ${driveLink ? driveLink : "Немає"}
             Промокод: ${parsedCart.promocode}
@@ -136,13 +137,43 @@ const CartUpload: React.FC = () => {
 
           await sendMessage(message, files);
 
+          // const paymentData = {
+          //   merchantAccount: "185_233_117_23",
+          //   merchantDomainName: "185.233.117.23:3000",
+          //   orderReference: `ORD-${Date.now()}`,
+          //   orderDate: Math.floor(Date.now() / 1000),
+          //   amount: finalPrice,
+          //   currency: "EUR",
+          //   productName: blocks.map((block) => block.description || "File"),
+          //   productCount: blocks.map((block) => (block.file ? 1 : 0)),
+          //   productPrice: blocks.map((block) => finalPrice / blocks.length),
+          //   clientFirstName: parsedCart.firstName.split(" ")[0],
+          //   clientLastName: parsedCart.firstName.split(" ")[1] || "",
+          //   clientEmail: parsedCart.email,
+          //   clientPhone: parsedCart.phone,
+          //   language: "DE",
+          //   cartData: JSON.stringify({
+          //     firstName: parsedCart.firstName,
+          //     phone: parsedCart.phone,
+          //     email: parsedCart.email,
+          //     service: parsedCart.service,
+          //     socials: parsedCart.socials,
+          //     category: category,
+          //     driveLink: driveLink,
+          //     promocode: parsedCart.promocode,
+          //     discount: parsedCart.discount,
+          //     agreeToTerms: parsedCart.agreeToTerms,
+          //     descriptions: blocks.map((block) => block.description),
+          //   }),
+          // };
+
           const paymentData = {
             merchantAccount: "185_233_117_23",
             merchantDomainName: "185.233.117.23:3000",
             orderReference: `ORD-${Date.now()}`,
             orderDate: Math.floor(Date.now() / 1000),
-            amount: 1,
-            currency: "UAH",
+            amount: finalPrice,
+            currency: "EUR",
             productName: blocks.map((block) => block.description || "File"),
             productCount: blocks.map((block) => (block.file ? 1 : 0)),
             productPrice: blocks.map((block) => finalPrice / blocks.length),
@@ -150,12 +181,13 @@ const CartUpload: React.FC = () => {
             clientLastName: parsedCart.firstName.split(" ")[1] || "",
             clientEmail: parsedCart.email,
             clientPhone: parsedCart.phone,
-            language: "UA",
+            language: "DE",
             cartData: JSON.stringify({
               firstName: parsedCart.firstName,
               phone: parsedCart.phone,
               email: parsedCart.email,
               service: parsedCart.service,
+              socials: parsedCart.socials,
               category: category,
               driveLink: driveLink,
               promocode: parsedCart.promocode,
@@ -165,9 +197,22 @@ const CartUpload: React.FC = () => {
             }),
           };
 
+          console.log(paymentData);
+
           try {
+            // const response = await fetch(
+            //   "http://185.233.117.23:5555/payment/initiate-payment",
+            //   {
+            //     method: "POST",
+            //     headers: {
+            //       "Content-Type": "application/json",
+            //     },
+            //     body: JSON.stringify(paymentData),
+            //   }
+            // );
+
             const response = await fetch(
-              "http://185.233.117.23:5555/payment/initiate-payment",
+              "http://localhost:5555/payment/initiate-payment",
               {
                 method: "POST",
                 headers: {
@@ -199,8 +244,8 @@ const CartUpload: React.FC = () => {
 
               document.body.appendChild(form);
               form.submit();
-              localStorage.removeItem("cart");
-              localStorage.removeItem("category");
+              // localStorage.removeItem("cart");
+              // localStorage.removeItem("category");
             }
           } catch (error) {
             console.error("Помилка під час ініціації платежу:", error);

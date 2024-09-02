@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Form.module.css";
 import Select from "react-select";
-import { InputMask } from "@react-input/mask";
 import { useTranslation } from "react-i18next";
 import { sendMessage } from "../../api/telegram";
 import { getAllPromocodes } from "../../services/promocode/promocode";
@@ -13,6 +12,7 @@ interface FormValues {
   phone: string;
   email: string;
   service: any;
+  socials: any;
   promocode: string;
   agreeToTerms: boolean;
 }
@@ -41,6 +41,7 @@ const Form: React.FC = () => {
     phone: "",
     email: "",
     service: { value: "track", label: "Mixing&Mastering" },
+    socials: { value: "whatsapp", label: "WhatsApp" },
     promocode: "",
     agreeToTerms: false,
   });
@@ -52,6 +53,13 @@ const Form: React.FC = () => {
     { value: "track", label: "Mixing&Mastering" },
     { value: "ep", label: "Mixing" },
     { value: "album", label: "Mastering" },
+  ];
+
+  const optionsSocials = [
+    { value: "whatsapp", label: "WhatsApp" },
+    { value: "telegram", label: "Telegram" },
+    { value: "instagram", label: "Instagram" },
+    { value: "facebook", label: "Facebook" },
   ];
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -78,6 +86,13 @@ const Form: React.FC = () => {
     setFormData((prevState) => ({
       ...prevState,
       service: selectedOption,
+    }));
+  };
+
+  const handleSelectSocialsChange = (selectedOption: any) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      socials: selectedOption,
     }));
   };
 
@@ -127,8 +142,15 @@ const Form: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const { firstName, phone, email, service, promocode, agreeToTerms } =
-      formData;
+    const {
+      firstName,
+      phone,
+      email,
+      service,
+      socials,
+      promocode,
+      agreeToTerms,
+    } = formData;
 
     const newErrors = validateForm();
     if (Object.keys(newErrors).length > 0) {
@@ -141,6 +163,7 @@ const Form: React.FC = () => {
       phone,
       email,
       service,
+      socials,
       promocode,
       agreeToTerms,
       countOfFiles: 0,
@@ -170,6 +193,7 @@ const Form: React.FC = () => {
       phone: "",
       email: "",
       service: { value: "track", label: "Mixing&Mastering" },
+      socials: { value: "whatsapp", label: "WhatsApp" },
       promocode: "",
       agreeToTerms: false,
     });
@@ -284,6 +308,26 @@ const Form: React.FC = () => {
                 styles={customStyles}
                 onChange={handleSelectChange}
                 value={formData.service}
+              />
+            </div>
+            <div className={styles.form__fields_control}>
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 12C7.5913 12 9.11742 11.3679 10.2426 10.2426C11.3679 9.11742 12 7.5913 12 6C12 4.4087 11.3679 2.88258 10.2426 1.75736C9.11742 0.632141 7.5913 0 6 0C4.4087 0 2.88258 0.632141 1.75736 1.75736C0.632141 2.88258 0 4.4087 0 6C0 7.5913 0.632141 9.11742 1.75736 10.2426C2.88258 11.3679 4.4087 12 6 12ZM8.64844 4.89844L5.64844 7.89844C5.42813 8.11875 5.07188 8.11875 4.85391 7.89844L3.35391 6.39844C3.13359 6.17813 3.13359 5.82188 3.35391 5.60391C3.57422 5.38594 3.93047 5.38359 4.14844 5.60391L5.25 6.70547L7.85156 4.10156C8.07187 3.88125 8.42812 3.88125 8.64609 4.10156C8.86406 4.32187 8.86641 4.67812 8.64609 4.89609L8.64844 4.89844Z"
+                  fill="#A1ADCD"
+                />
+              </svg>
+              <Select
+                options={optionsSocials}
+                styles={customStyles}
+                onChange={handleSelectSocialsChange}
+                value={formData.socials}
               />
             </div>
             <div className={styles.form__fields_control}>
