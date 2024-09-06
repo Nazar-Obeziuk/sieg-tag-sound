@@ -23,7 +23,6 @@ const CartUploadService: React.FC<Props> = ({ onServiceChange }) => {
     const isFastEnabled = e.target.checked;
     setFastEnabled(isFastEnabled);
     localStorage.setItem("fast", isFastEnabled ? "yes" : "no");
-    console.log(isFastEnabled ? "on" : "off");
   };
 
   useEffect(() => {

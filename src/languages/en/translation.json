@@ -21,7 +21,8 @@
     "cartUploadButtonText": "CONTINUE",
     "cartUploadFillFieldsText": "Please, fill all the fields",
     "cartUploadFillFastText": "Fast fulfillment 3-5 days (50€)",
-    "cartUploadFileUploadedText": "Uploaded"
+    "cartUploadFileUploadedText": "Uploaded",
+    "cartUploadFileTextUploading": "Files are being sent"
   },
   "footer": {
     "footerFirstText": "We value each of our clients and are always happy to have you back! We have special bonuses and discounts for regular customers.",

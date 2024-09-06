@@ -21,7 +21,8 @@
     "cartUploadButtonText": "ПРОДОЛЖИТЬ",
     "cartUploadFillFieldsText": "Пожалуйста, заполните все поля",
     "cartUploadFillFastText": "Быстрое выполнение заказа 3-5 дней (50€)",
-    "cartUploadFileUploadedText": "Загружено"
+    "cartUploadFileUploadedText": "Загружено",
+    "cartUploadFileTextUploading": "Идет отправка файлов"
   },
   "footer": {
     "footerFirstText": "Мы ценим каждого нашего клиента и всегда рады вашему возвращению! Для постоянных клиентов у нас действуют специальные бонусы и скидки.",

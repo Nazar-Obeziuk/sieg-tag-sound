@@ -8,6 +8,7 @@ import { getAllFullPrices } from "../../../services/full-prices/fullPrices";
 import { useNavigate } from "react-router-dom";
 import { sendMessage } from "../../../api/telegram";
 import Loader from "../../../components/loader/Loader";
+import LoaderFiles from "../../../components/loader-files/LoaderFiles";
 
 declare global {
   interface Window {
@@ -96,14 +97,15 @@ const CartUpload: React.FC = () => {
         finalPrice = checkout;
       }
 
-      if (isFast === "yes") {
-        checkout = Number(checkout) + 50;
-        finalPrice = checkout;
+      if (isFast) {
+        if (isFast === "yes") {
+          finalPrice = Number(finalPrice) + 50;
+        }
       }
 
-      localStorage.setItem("checkoutAmount", finalPrice.toString());
-
       if (finalPrice > 0) {
+        localStorage.setItem("checkoutAmount", finalPrice.toString());
+
         let files: File[] = [];
         let descriptions: string[] = [];
 
@@ -137,36 +139,6 @@ const CartUpload: React.FC = () => {
 
           await sendMessage(message, files);
 
-          // const paymentData = {
-          //   merchantAccount: "185_233_117_23",
-          //   merchantDomainName: "185.233.117.23:3000",
-          //   orderReference: `ORD-${Date.now()}`,
-          //   orderDate: Math.floor(Date.now() / 1000),
-          //   amount: finalPrice,
-          //   currency: "EUR",
-          //   productName: blocks.map((block) => block.description || "File"),
-          //   productCount: blocks.map((block) => (block.file ? 1 : 0)),
-          //   productPrice: blocks.map((block) => finalPrice / blocks.length),
-          //   clientFirstName: parsedCart.firstName.split(" ")[0],
-          //   clientLastName: parsedCart.firstName.split(" ")[1] || "",
-          //   clientEmail: parsedCart.email,
-          //   clientPhone: parsedCart.phone,
-          //   language: "DE",
-          //   cartData: JSON.stringify({
-          //     firstName: parsedCart.firstName,
-          //     phone: parsedCart.phone,
-          //     email: parsedCart.email,
-          //     service: parsedCart.service,
-          //     socials: parsedCart.socials,
-          //     category: category,
-          //     driveLink: driveLink,
-          //     promocode: parsedCart.promocode,
-          //     discount: parsedCart.discount,
-          //     agreeToTerms: parsedCart.agreeToTerms,
-          //     descriptions: blocks.map((block) => block.description),
-          //   }),
-          // };
-
           const paymentData = {
             merchantAccount: "185_233_117_23",
             merchantDomainName: "185.233.117.23:3000",
@@ -197,20 +169,7 @@ const CartUpload: React.FC = () => {
             }),
           };
 
-          console.log(paymentData);
-
           try {
-            // const response = await fetch(
-            //   "http://185.233.117.23:5555/payment/initiate-payment",
-            //   {
-            //     method: "POST",
-            //     headers: {
-            //       "Content-Type": "application/json",
-            //     },
-            //     body: JSON.stringify(paymentData),
-            //   }
-            // );
-
             const response = await fetch(
               "http://localhost:5555/payment/initiate-payment",
               {
@@ -244,8 +203,8 @@ const CartUpload: React.FC = () => {
 
               document.body.appendChild(form);
               form.submit();
-              // localStorage.removeItem("cart");
-              // localStorage.removeItem("category");
+              localStorage.removeItem("cart");
+              localStorage.removeItem("category");
             }
           } catch (error) {
             console.error("Помилка під час ініціації платежу:", error);
@@ -258,7 +217,7 @@ const CartUpload: React.FC = () => {
   };
 
   if (isLoading) {
-    return <Loader />;
+    return <LoaderFiles />;
   }
 
   return (
