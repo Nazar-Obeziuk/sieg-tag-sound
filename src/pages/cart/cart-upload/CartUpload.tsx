@@ -216,7 +216,7 @@ const CartUpload: React.FC = () => {
     }
   };
 
-  if (isLoading) {
+  if (!isLoading) {
     return <LoaderFiles />;
   }
 
