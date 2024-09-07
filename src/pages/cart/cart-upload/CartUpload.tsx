@@ -171,7 +171,7 @@ const CartUpload: React.FC = () => {
 
           try {
             const response = await fetch(
-              "http://185.233.117.23/:5555/payment/initiate-payment",
+              "http://185.233.117.23:5555/payment/initiate-payment",
               {
                 method: "POST",
                 headers: {
