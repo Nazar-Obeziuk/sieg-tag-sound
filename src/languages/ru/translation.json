@@ -86,9 +86,9 @@
       "homeTableRow2": "Трек (€)",
       "homeTableRow3": "EP (2-6 треков) (€)",
       "homeTableRow4": "Альбом (7-25 треков) (€)",
-      "homeTableColumn1": "Сведение и мастеринг вместе",
-      "homeTableColumn2": "Сведение",
-      "homeTableColumn3": "Мастеринг",
+      "homeTableColumn1": "Mixing and Mastering",
+      "homeTableColumn2": "Mastering",
+      "homeTableColumn3": "Mixing",
       "homeTableButtonText": "Заказать услуги"
     },
     "homeUpload": {
@@ -264,7 +264,7 @@
     "policySubtitle6": "Контакты:",
     "policyText7": "Если у вас есть вопросы или комментарии по поводу нашей политики конфиденциальности, пожалуйста, свяжитесь с нами:",
     "policyText8Child1": "Электронная почта: ",
-    "policyText8Child2": "siegtagsound@hotmail.com",
+    "policyText8Child2": "siegtagprod@hotmail.com",
     "policyText9": "Спасибо за доверие к SiegTagSound. Мы стремимся обеспечивать максимальную защиту и конфиденциальность ваших данных."
   },
   "refund": {

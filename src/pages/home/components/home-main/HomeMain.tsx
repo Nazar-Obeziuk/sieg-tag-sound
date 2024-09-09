@@ -26,7 +26,7 @@ const HomeMain: React.FC = () => {
                     <span className={styles.home__item_text}>
                       {t("home.homeMain.homeMainMadeTracks")}
                     </span>
-                    <h2 className={styles.home__item_title}>240+</h2>
+                    <h2 className={styles.home__item_title}>21 240</h2>
                   </div>
                 </div>
                 <div className={styles.home__blocks_item}>
@@ -34,7 +34,7 @@ const HomeMain: React.FC = () => {
                     <span className={styles.home__item_text}>
                       {t("home.homeMain.homeMainHappyClients")}
                     </span>
-                    <h2 className={styles.home__item_title}>72+</h2>
+                    <h2 className={styles.home__item_title}>1672+</h2>
                   </div>
                 </div>
               </div>

@@ -106,9 +106,13 @@
   align-items: center;
   gap: 18px;
 }
-
-.header__mobile_burger {
+.header__mobile_info {
   display: none;
+  align-items: center;
+  gap: 20px;
+}
+.header__mobile_burger {
+  display: flex;
   align-items: center;
   flex-direction: column;
   gap: 5px;
@@ -196,10 +200,8 @@
     width: 100px;
   }
 
-  .header__wrapper_mobile {
-    display: flex;
-  }
-
+  .header__wrapper_mobile,
+  .header__mobile_info,
   .header__mobile_burger {
     display: flex;
   }

@@ -141,15 +141,51 @@ const Header: React.FC = () => {
               </div>
             </div>
 
-            <div
-              onClick={handleBurgerMenu}
-              className={`${styles.header__mobile_burger} ${
-                isMobileMenuOpen ? `${styles.active}` : ""
-              }`}
-            >
-              <span className={styles.header__burger_bar}></span>
-              <span className={styles.header__burger_bar}></span>
-              <span className={styles.header__burger_bar}></span>
+            <div className={styles.header__mobile_info}>
+              <div className={styles.header__info_languages}>
+                <span
+                  onClick={() => changeLanguage("de")}
+                  className={`${styles.header__languages_item} ${
+                    activeLanguage === "de"
+                      ? styles.header__language_active
+                      : ""
+                  }`}
+                >
+                  DE
+                </span>
+                <span className={styles.header__languages_line}></span>
+                <span
+                  onClick={() => changeLanguage("en")}
+                  className={`${styles.header__languages_item} ${
+                    activeLanguage === "en"
+                      ? styles.header__language_active
+                      : ""
+                  }`}
+                >
+                  EN
+                </span>
+                <span className={styles.header__languages_line}></span>
+                <span
+                  onClick={() => changeLanguage("ru")}
+                  className={`${styles.header__languages_item} ${
+                    activeLanguage === "ru"
+                      ? styles.header__language_active
+                      : ""
+                  }`}
+                >
+                  RU
+                </span>
+              </div>
+              <div
+                onClick={handleBurgerMenu}
+                className={`${styles.header__mobile_burger} ${
+                  isMobileMenuOpen ? `${styles.active}` : ""
+                }`}
+              >
+                <span className={styles.header__burger_bar}></span>
+                <span className={styles.header__burger_bar}></span>
+                <span className={styles.header__burger_bar}></span>
+              </div>
             </div>
 
             <div
