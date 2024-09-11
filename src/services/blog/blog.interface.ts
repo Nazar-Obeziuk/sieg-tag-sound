@@ -4,6 +4,7 @@ export interface IBlog {
   descriptions: string[];
   blog_language: string;
   title: string;
+  subtitle: string;
   text: string;
   langID: string;
 }

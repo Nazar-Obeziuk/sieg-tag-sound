@@ -41,6 +41,13 @@
   line-height: 30px;
   margin-bottom: 20px;
 }
+.blog__details_subtitle {
+  color: var(--black);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
 .blog__details_text {
   color: var(--black);
   font-size: 16px;

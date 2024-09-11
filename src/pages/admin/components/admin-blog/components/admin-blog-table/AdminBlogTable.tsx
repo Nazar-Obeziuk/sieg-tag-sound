@@ -27,6 +27,7 @@ const AdminBlogTable: React.FC<Props> = ({
               </th>
               <th className={styles.admin__table_th}>Мова блогу</th>
               <th className={styles.admin__table_th}>Заголовок</th>
+              <th className={styles.admin__table_th}>Підзаголовок</th>
               <th className={styles.admin__table_th}>Текст</th>
               <th className={styles.admin__table_th}>Дії</th>
             </tr>
@@ -50,6 +51,7 @@ const AdminBlogTable: React.FC<Props> = ({
                   {adminBlog.blog_language}
                 </td>
                 <td className={styles.admin__table_td}>{adminBlog.title}</td>
+                <td className={styles.admin__table_td}>{adminBlog.subtitle}</td>
                 <td className={styles.admin__table_td}>{adminBlog.text}</td>
                 <td
                   className={`${styles.admin__table_td} ${styles.admin__td_actions}`}

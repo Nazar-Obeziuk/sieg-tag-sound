@@ -14,8 +14,9 @@ interface Props {
 interface FormValues {
   blog_language: string;
   title: string;
+  subtitle: string;
   text: string;
-  descriptions: { value: string }[]; // Поле описів тепер містить об'єкти
+  descriptions: { value: string }[];
 }
 
 const AdminBlogForm: React.FC<Props> = ({ toggleBlogsForm, getAll }) => {
@@ -27,7 +28,7 @@ const AdminBlogForm: React.FC<Props> = ({ toggleBlogsForm, getAll }) => {
     register,
     handleSubmit,
     formState: { errors, isValid },
-    control, // додаємо control для управління полями
+    control,
   } = useForm<FormValues>({
     mode: "onChange",
     defaultValues: { descriptions: [{ value: "" }] }, // Початкове значення descriptions
@@ -35,7 +36,7 @@ const AdminBlogForm: React.FC<Props> = ({ toggleBlogsForm, getAll }) => {
 
   const { fields, append, remove } = useFieldArray({
     control,
-    name: "descriptions", // Використовуємо descriptions як масив
+    name: "descriptions",
   });
 
   const acceptType: Accept = {
@@ -67,6 +68,7 @@ const AdminBlogForm: React.FC<Props> = ({ toggleBlogsForm, getAll }) => {
     const formData = new FormData();
     formData.append("blog_language", data.blog_language);
     formData.append("title", data.title);
+    formData.append("subtitle", data.subtitle);
     formData.append("text", data.text);
     formData.append(
       "descriptions",
@@ -162,6 +164,23 @@ const AdminBlogForm: React.FC<Props> = ({ toggleBlogsForm, getAll }) => {
         {errors["title"] && (
           <span className={styles.error_message}>
             {errors["title"]?.message as string}
+          </span>
+        )}
+      </div>
+      <div className={styles.admin__block_control}>
+        <label htmlFor="subtitle" className={styles.admin__control_label}>
+          Підзаголовок блогу
+        </label>
+        <input
+          type="text"
+          className={`${styles.admin__control_field} `}
+          style={errors["subtitle"] ? { border: "1px solid #EB001B" } : {}}
+          placeholder="Заголовок блогу"
+          {...register("subtitle", { required: `Це поле обов'язкове!` })}
+        />
+        {errors["subtitle"] && (
+          <span className={styles.error_message}>
+            {errors["subtitle"]?.message as string}
           </span>
         )}
       </div>
