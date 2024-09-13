@@ -32,7 +32,7 @@ const AdminPricesTable: React.FC<Props> = ({
             </tr>
           </thead>
           <tbody className={styles.admin__table_body}>
-            {adminPrices.map((adminPrice: IPrice, index) => (
+            {adminPrices.reverse().map((adminPrice: IPrice, index) => (
               <tr key={index} className={styles.admin__table_tr}>
                 <td className={styles.admin__table_td}>
                   {adminPrice.track_mixmas}

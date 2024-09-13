@@ -33,7 +33,7 @@ const AdminBlogTable: React.FC<Props> = ({
             </tr>
           </thead>
           <tbody className={styles.admin__table_body}>
-            {adminBlogs.map((adminBlog: IBlog, index) => (
+            {adminBlogs.reverse().map((adminBlog: IBlog, index) => (
               <tr key={index} className={styles.admin__table_tr}>
                 <td className={styles.admin__table_td}>
                   <img src={adminBlog.image_url} alt="blog img" />

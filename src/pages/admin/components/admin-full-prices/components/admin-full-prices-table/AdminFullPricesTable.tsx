@@ -28,8 +28,9 @@ const AdminFullPricesTable: React.FC<Props> = ({
             </tr>
           </thead>
           <tbody className={styles.admin__table_body}>
-            {adminFullPrices.map(
-              (adminFullPrice: IFullPrices, index: number) => (
+            {adminFullPrices
+              .reverse()
+              .map((adminFullPrice: IFullPrices, index: number) => (
                 <tr key={index} className={styles.admin__table_tr}>
                   <td className={styles.admin__table_td}>
                     {adminFullPrice.count}
@@ -65,8 +66,7 @@ const AdminFullPricesTable: React.FC<Props> = ({
                     </button>
                   </td>
                 </tr>
-              )
-            )}
+              ))}
           </tbody>
         </table>
       ) : (

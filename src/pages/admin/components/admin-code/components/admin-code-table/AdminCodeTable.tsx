@@ -26,37 +26,39 @@ const AdminCodeTable: React.FC<Props> = ({
             </tr>
           </thead>
           <tbody className={styles.admin__table_body}>
-            {adminPromocodes.map((adminPromocode: IPromocode, index) => (
-              <tr key={index} className={styles.admin__table_tr}>
-                <td className={styles.admin__table_td}>
-                  {adminPromocode.promocode}
-                </td>
-                <td className={styles.admin__table_td}>
-                  {adminPromocode.discount}
-                </td>
-                <td className={styles.admin__table_td}>
-                  {adminPromocode.category}
-                </td>
-                <td
-                  className={`${styles.admin__table_td} ${styles.admin__td_actions}`}
-                >
-                  <button
-                    onClick={() => handleDeleteBlog(adminPromocode._id)}
-                    className={styles.admin__td_action}
-                    type="button"
+            {adminPromocodes
+              .reverse()
+              .map((adminPromocode: IPromocode, index) => (
+                <tr key={index} className={styles.admin__table_tr}>
+                  <td className={styles.admin__table_td}>
+                    {adminPromocode.promocode}
+                  </td>
+                  <td className={styles.admin__table_td}>
+                    {adminPromocode.discount}
+                  </td>
+                  <td className={styles.admin__table_td}>
+                    {adminPromocode.category}
+                  </td>
+                  <td
+                    className={`${styles.admin__table_td} ${styles.admin__td_actions}`}
                   >
-                    Видалити
-                  </button>
-                  <button
-                    onClick={() => handleEditBlog(adminPromocode)}
-                    className={styles.admin__td_action}
-                    type="button"
-                  >
-                    Редагувати
-                  </button>
-                </td>
-              </tr>
-            ))}
+                    <button
+                      onClick={() => handleDeleteBlog(adminPromocode._id)}
+                      className={styles.admin__td_action}
+                      type="button"
+                    >
+                      Видалити
+                    </button>
+                    <button
+                      onClick={() => handleEditBlog(adminPromocode)}
+                      className={styles.admin__td_action}
+                      type="button"
+                    >
+                      Редагувати
+                    </button>
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       ) : (
