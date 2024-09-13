@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import styles from "./HomePortfolioItems.module.css";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import { useTranslation } from "react-i18next";
 import PortfolioWork from "../../../../../components/portfolio-work/PortfolioWork";
 import { IPortfolio } from "../../../../../services/portfolio/portfolio.interface";
+import PortfolioWorks from "../../../../portfolio/components/portfolio-works/PortfolioWorks";
 
 interface Props {
   portfolios: IPortfolio[];
@@ -15,10 +16,30 @@ interface Props {
 const HomePortfolioItems: React.FC<Props> = ({ portfolios }) => {
   const swiper = useSwiper();
   const { t } = useTranslation();
+  const [activeBlock, setActiveBlock] = useState<number | null>(null);
+  const audioWrapper = useRef<any>(null);
+
+  const playAudio = (index: number, music: any) => {
+    if (audioWrapper.current) {
+      const audios = audioWrapper.current.querySelectorAll("audio");
+
+      audios.forEach((audio: any) => {
+        audio.pause();
+      });
+
+      music.current.play();
+      setActiveBlock(index);
+    }
+  };
+
+  const pauseAudio = (index: number, music: any) => {
+    music.current.pause();
+    setActiveBlock(index);
+  };
 
   return (
     <>
-      <div className={styles.home__portfolio_content}>
+      <div className={styles.home__portfolio_content} ref={audioWrapper}>
         <Swiper
           key={"uniq1"}
           slidesPerView={1}
@@ -52,6 +73,9 @@ const HomePortfolioItems: React.FC<Props> = ({ portfolios }) => {
                     portfolio={portfolio}
                     index={index}
                     key={index}
+                    playAudio={playAudio}
+                    pauseAudio={pauseAudio}
+                    activeBlock={activeBlock!}
                   />
                 </div>
                 <div className={styles.home__portfolio_info}>

@@ -9,6 +9,7 @@
   border-radius: 19px 19px 0 0;
 }
 .home__portfolio_info {
+  height: 240px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -117,5 +118,8 @@
   .arrow__slide_right svg,
   .arrow__slide_left svg {
     width: 12px;
+  }
+  .home__portfolio_name {
+    font-size: 16px;
   }
 }
