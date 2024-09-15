@@ -149,7 +149,7 @@ const AdminPricesUpdate: React.FC = () => {
                   htmlFor="track_mix"
                   className={styles.admin__control_label}
                 >
-                  Трек (Мас.)
+                  Трек (Микс.)
                 </label>
                 <input
                   type="text"
@@ -157,7 +157,7 @@ const AdminPricesUpdate: React.FC = () => {
                   style={
                     errors["track_mix"] ? { border: "1px solid #EB001B" } : {}
                   }
-                  placeholder="Трек (Мас.)"
+                  placeholder="Трек (Микс.)"
                   {...register("track_mix", {
                     required: `Це поле обов'язкове!`,
                   })}
@@ -173,7 +173,7 @@ const AdminPricesUpdate: React.FC = () => {
                   htmlFor="track_mas"
                   className={styles.admin__control_label}
                 >
-                  Трек (Микс.)
+                  Трек (Мас.)
                 </label>
                 <input
                   type="text"
@@ -181,7 +181,7 @@ const AdminPricesUpdate: React.FC = () => {
                   style={
                     errors["track_mas"] ? { border: "1px solid #EB001B" } : {}
                   }
-                  placeholder="Трек (Микс.)"
+                  placeholder="Трек (Мас.)"
                   {...register("track_mas", {
                     required: `Це поле обов'язкове!`,
                   })}
@@ -218,7 +218,7 @@ const AdminPricesUpdate: React.FC = () => {
               </div>
               <div className={styles.admin__block_control}>
                 <label htmlFor="ep_mix" className={styles.admin__control_label}>
-                  EP (Мас.)
+                  EP (Микс.)
                 </label>
                 <input
                   type="text"
@@ -226,7 +226,7 @@ const AdminPricesUpdate: React.FC = () => {
                   style={
                     errors["ep_mix"] ? { border: "1px solid #EB001B" } : {}
                   }
-                  placeholder="EP (Мас.)"
+                  placeholder=" EP (Микс.)"
                   {...register("ep_mix", { required: `Це поле обов'язкове!` })}
                 />
                 {errors["ep_mix"] && (
@@ -237,7 +237,7 @@ const AdminPricesUpdate: React.FC = () => {
               </div>
               <div className={styles.admin__block_control}>
                 <label htmlFor="ep_mas" className={styles.admin__control_label}>
-                  EP (Микс.)
+                  EP (Мас.)
                 </label>
                 <input
                   type="text"
@@ -245,7 +245,7 @@ const AdminPricesUpdate: React.FC = () => {
                   style={
                     errors["ep_mas"] ? { border: "1px solid #EB001B" } : {}
                   }
-                  placeholder="EP (Микс.)"
+                  placeholder="EP (Мас.)"
                   {...register("ep_mas", { required: `Це поле обов'язкове!` })}
                 />
                 {errors["ep_mas"] && (
@@ -285,7 +285,7 @@ const AdminPricesUpdate: React.FC = () => {
                   htmlFor="album_mix"
                   className={styles.admin__control_label}
                 >
-                  Альбом (Мас.)
+                  Альбом (Микс.)
                 </label>
                 <input
                   type="text"
@@ -293,7 +293,7 @@ const AdminPricesUpdate: React.FC = () => {
                   style={
                     errors["album_mix"] ? { border: "1px solid #EB001B" } : {}
                   }
-                  placeholder="Альбом (Мас.)"
+                  placeholder="Альбом (Микс.)"
                   {...register("album_mix", {
                     required: `Це поле обов'язкове!`,
                   })}
@@ -309,7 +309,7 @@ const AdminPricesUpdate: React.FC = () => {
                   htmlFor="album_mas"
                   className={styles.admin__control_label}
                 >
-                  Альбом (Микс.)
+                  Альбом (Мас.)
                 </label>
                 <input
                   type="text"
@@ -317,7 +317,7 @@ const AdminPricesUpdate: React.FC = () => {
                   style={
                     errors["album_mas"] ? { border: "1px solid #EB001B" } : {}
                   }
-                  placeholder="Альбом (Микс.)"
+                  placeholder="Альбом (Мас.)"
                   {...register("album_mas", {
                     required: `Це поле обов'язкове!`,
                   })}

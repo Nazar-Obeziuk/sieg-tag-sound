@@ -53,15 +53,15 @@ const HomeTable: React.FC = () => {
                 </tr>
                 <tr>
                   <td>{t("home.homeTable.homeTableColumn2")}</td>
-                  <td>{prices[0]?.track_mas}</td>
-                  <td>{prices[0]?.ep_mas}</td>
-                  <td>{prices[0]?.album_mas}</td>
-                </tr>
-                <tr>
-                  <td>{t("home.homeTable.homeTableColumn3")}</td>
                   <td>{prices[0]?.track_mix}</td>
                   <td>{prices[0]?.ep_mix}</td>
                   <td>{prices[0]?.album_mix}</td>
+                </tr>
+                <tr>
+                  <td>{t("home.homeTable.homeTableColumn3")}</td>
+                  <td>{prices[0]?.track_mas}</td>
+                  <td>{prices[0]?.ep_mas}</td>
+                  <td>{prices[0]?.album_mas}</td>
                 </tr>
               </tbody>
             </table>
