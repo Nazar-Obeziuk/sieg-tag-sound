@@ -22,6 +22,10 @@ const HomeBlogItems: React.FC<Props> = ({ blogs }) => {
     navigate(`/blog/${_id}`);
   };
 
+  const truncateText = (text: string, maxLength: number) => {
+    return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+  };
+
   return (
     <>
       <div className={styles.home__blog_content}>
@@ -59,8 +63,12 @@ const HomeBlogItems: React.FC<Props> = ({ blogs }) => {
                   className={styles.home__blog_image}
                 />
                 <div className={styles.home__blog_info}>
-                  <h3 className={styles.home__blog_name}>{blog.title}</h3>
-                  <p className={styles.home__blog_description}>{blog.text}</p>
+                  <div className={styles.home__info_wrapper}>
+                    <h3 className={styles.home__blog_name}>{blog.title}</h3>
+                    <p className={styles.home__blog_description}>
+                      {truncateText(blog.text, 150)}
+                    </p>
+                  </div>
                   <div className={styles.home__info_action}>
                     <Button
                       type={"button"}

@@ -41,6 +41,15 @@
   line-height: 30px;
   margin-bottom: 20px;
 }
+.blog__wrapper_content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.blog__details_text:nth-child(odd) {
+  font-weight: bold;
+}
 .blog__details_subtitle {
   color: var(--black);
   font-size: 22px;

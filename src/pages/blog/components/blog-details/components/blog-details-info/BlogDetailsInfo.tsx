@@ -53,11 +53,13 @@ const BlogDetailsInfo: React.FC<Props> = ({ blog }) => {
           <div className={styles.blog__details_wrapper}>
             <h2 className={styles.blog__details_title}>{blog?.title}</h2>
             <h3 className={styles.blog__details_subtitle}>{blog?.subtitle}</h3>
-            {blog?.descriptions.map((description: string, index: number) => (
-              <p className={styles.blog__details_text} key={index}>
-                {description}
-              </p>
-            ))}
+            <div className={styles.blog__wrapper_content}>
+              {blog?.descriptions.map((description: string, index: number) => (
+                <p className={styles.blog__details_text} key={index}>
+                  {description}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
       </section>
