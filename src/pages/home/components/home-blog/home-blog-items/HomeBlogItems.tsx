@@ -66,7 +66,7 @@ const HomeBlogItems: React.FC<Props> = ({ blogs }) => {
                   <div className={styles.home__info_wrapper}>
                     <h3 className={styles.home__blog_name}>{blog.title}</h3>
                     <p className={styles.home__blog_description}>
-                      {truncateText(blog.text, 150)}
+                      {truncateText(blog.subtitle, 150)}
                     </p>
                   </div>
                   <div className={styles.home__info_action}>

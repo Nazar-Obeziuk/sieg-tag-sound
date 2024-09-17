@@ -28,7 +28,7 @@ const BlogItem: React.FC<Props> = ({ blog }) => {
       </div>
       <div className={styles.blog__item_info}>
         <h3 className={styles.blog__info_title}>{blog.title}</h3>
-        <p className={styles.blog__info_description}>{blog.text}</p>
+        <p className={styles.blog__info_description}>{blog.subtitle}</p>
         <Button handleClick={() => handleNavigate(blog.langID)} type={"button"}>
           {t("blog.blogItemButtonText")}
         </Button>
