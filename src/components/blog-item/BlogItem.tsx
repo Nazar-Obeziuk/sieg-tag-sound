@@ -17,6 +17,10 @@ const BlogItem: React.FC<Props> = ({ blog }) => {
     navigate(`/blog/${langID}`);
   };
 
+  const truncateText = (text: string, maxLength: number) => {
+    return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+  };
+
   return (
     <li className={styles.blog__list_item}>
       <div className={styles.blog__item_banner}>
@@ -27,8 +31,12 @@ const BlogItem: React.FC<Props> = ({ blog }) => {
         />
       </div>
       <div className={styles.blog__item_info}>
-        <h3 className={styles.blog__info_title}>{blog.title}</h3>
-        <p className={styles.blog__info_description}>{blog.subtitle}</p>
+        <div className={styles.blog__info_wrapper}>
+          <h3 className={styles.blog__info_title}>{blog.title}</h3>
+          <p className={styles.blog__info_description}>
+            {truncateText(blog.subtitle, 150)}
+          </p>
+        </div>
         <Button handleClick={() => handleNavigate(blog.langID)} type={"button"}>
           {t("blog.blogItemButtonText")}
         </Button>
