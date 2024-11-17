@@ -1,9 +1,8 @@
 .home__blog_section {
   width: 100%;
   padding-top: 60px;
-  padding-bottom: 60px;
   background: var(--black);
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
 .home__blog_wrapper {
   width: 100%;
@@ -32,7 +31,7 @@
 
 @media (max-width: 600px) {
   .home__blog_section {
-    margin-bottom: 60px;
+    padding-bottom: 60px;
   }
   .home__blog_title {
     font-size: 26px;

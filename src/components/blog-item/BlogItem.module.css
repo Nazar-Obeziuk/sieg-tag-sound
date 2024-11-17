@@ -1,9 +1,11 @@
 .blog__list_item {
   width: calc(33.33% - 12px);
-  height: 560px;
+  height: 580px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  background: var(--card-gray);
+  border-radius: 12px;
 }
 .blog__item_banner {
   width: 100%;
@@ -13,7 +15,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 12px 12px 0 0;
 }
 .blog__item_info {
   width: 100%;
@@ -21,6 +23,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 12px;
 }
 .blog__info_wrapper {
   display: flex;
@@ -48,10 +51,16 @@
   .blog__list_item {
     width: calc(50% - 9px);
   }
+  .blog__list_item {
+    height: 740px;
+  }
 }
 
 @media (max-width: 500px) {
   .blog__list_item {
     width: 100%;
+  }
+  .blog__list_item {
+    height: 600px;
   }
 }

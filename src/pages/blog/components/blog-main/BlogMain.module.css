@@ -45,4 +45,8 @@
   .blog__main_wrapper {
     gap: 28px;
   }
+
+  .blog__block_list {
+    row-gap: 40px;
+  }
 }
