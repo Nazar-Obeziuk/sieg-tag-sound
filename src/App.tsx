@@ -20,8 +20,8 @@ import AdminPricesUpdate from "./pages/admin/components/admin-prices/components/
 import AdminFullPricesUpload from "./pages/admin/components/admin-full-prices/components/admin-full-prices-update/AdminFullPricesUpload";
 import ScrollToTop from "./components/sroll-to-top/ScrollToTop";
 import RefundPolicy from "./pages/refund-policy/RefundPolicy";
-import QuickContacts from "./components/quick-contacts/QuickContacts";
 import FormPopup from "./components/form-popup/FormPopup";
+import QuickContacts from "./components/quick-contacts/QuickContacts";
 
 function App() {
   return (
