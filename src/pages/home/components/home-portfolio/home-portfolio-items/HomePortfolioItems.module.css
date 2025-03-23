@@ -61,11 +61,11 @@
   border-radius: 12px;
   cursor: grab;
 }
-.home__portfolio_work > li {
+.home__portfolio_work > div {
   flex-direction: column;
 }
 
-.home__portfolio_work > li > div {
+.home__portfolio_work > div > div {
   width: 100%;
 }
 

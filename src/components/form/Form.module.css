@@ -188,6 +188,9 @@
   box-shadow: 0 2px 32px 0 var(--primary);
   transition: 0.4s;
 }
+.form__button:hover {
+  transform: scale(1.05);
+}
 
 @media (max-width: 1060px) {
   .form__block::before {

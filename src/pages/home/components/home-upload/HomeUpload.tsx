@@ -21,32 +21,62 @@ const HomeUpload: React.FC = () => {
           <Card>
             <h3>{t("home.homeUpload.homeUploadFirstTitle")}</h3>
             <div>
-              <img src="../../images/circle-list.svg" alt="circle list icon" />
+              <img 
+                width={28}
+                height={28}
+                src="../../images/circle-list.svg" 
+                alt="circle list icon" 
+              />
               <p>{t("home.homeUpload.homeUploadFirstText")}</p>
             </div>
             <h3>{t("home.homeUpload.homeUploadSecondTitle")}</h3>
             <div>
-              <img src="../../images/circle-list.svg" alt="circle list icon" />
+              <img 
+                width={28}
+                height={28}
+                src="../../images/circle-list.svg" 
+                alt="circle list icon" 
+              />
               <p>{t("home.homeUpload.homeUploadSecondText")}</p>
             </div>
             <h3>{t("home.homeUpload.homeUploadThirdTitle")}</h3>
             <div>
-              <img src="../../images/circle-list.svg" alt="circle list icon" />
+              <img 
+                width={28}
+                height={28}
+                src="../../images/circle-list.svg" 
+                alt="circle list icon" 
+              />
               <p>{t("home.homeUpload.homeUploadThirdText")}</p>
             </div>
             <h3>{t("home.homeUpload.homeUploadFourthTitle")}</h3>
             <div>
-              <img src="../../images/circle-list.svg" alt="circle list icon" />
+              <img 
+                width={28}
+                height={28}
+                src="../../images/circle-list.svg" 
+                alt="circle list icon" 
+              />
               <p>{t("home.homeUpload.homeUploadFourthText")}</p>
             </div>
             <h3>{t("home.homeUpload.homeUploadFifthTitle")}</h3>
             <div>
-              <img src="../../images/circle-list.svg" alt="circle list icon" />
+              <img 
+                width={28}
+                height={28}
+                src="../../images/circle-list.svg" 
+                alt="circle list icon" 
+              />
               <p>{t("home.homeUpload.homeUploadFifthText")}</p>
             </div>
             <h3>{t("home.homeUpload.homeUploadSixthTitle")}</h3>
             <div>
-              <img src="../../images/circle-list.svg" alt="circle list icon" />
+              <img 
+                width={28}
+                height={28}
+                src="../../images/circle-list.svg" 
+                alt="circle list icon" 
+              />
               <p>{t("home.homeUpload.homeUploadSixthText")}</p>
             </div>
           </Card>

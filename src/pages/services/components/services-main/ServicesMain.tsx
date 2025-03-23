@@ -39,7 +39,7 @@ const ServicesMain: React.FC = () => {
               </div>
               <div className={styles.services__item_banner}>
                 <img
-                  src="../../images/services-item-1.jpg"
+                  src="../../images/services-item-1.webp"
                   alt="services item img"
                   className={styles.services__banner_image}
                 />
@@ -50,7 +50,7 @@ const ServicesMain: React.FC = () => {
                 className={`${styles.services__item_banner} ${styles.services__banner_special}`}
               >
                 <img
-                  src="../../images/services-item-2.jpg"
+                  src="../../images/services-item-2.webp"
                   alt="services item img"
                   className={styles.services__banner_image}
                 />
@@ -97,7 +97,7 @@ const ServicesMain: React.FC = () => {
               </div>
               <div className={styles.services__item_banner}>
                 <img
-                  src="../../images/services-item-3.jpg"
+                  src="../../images/services-item-3.webp"
                   alt="services item img"
                   className={styles.services__banner_image}
                 />

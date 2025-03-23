@@ -24,7 +24,7 @@ const HomePayment: React.FC = () => {
               </Card>
               <div className={styles.home__payment_banner}>
                 <img
-                  src="../../images/payment-image.jpeg"
+                  src="../../images/payment-image.webp"
                   alt=""
                   className={styles.home__banner_image}
                 />

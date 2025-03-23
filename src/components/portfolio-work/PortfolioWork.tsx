@@ -71,7 +71,7 @@ const PortfolioWork: React.FC<Props> = ({
   const formattedIndex = (index + 1).toString().padStart(2, "0");
 
   return (
-    <li className={styles.portfolio__work_item}>
+    <div className={styles.portfolio__work_item}>
       <div className={styles.portfolio__work_block}>
         <span className={styles.portfolio__work_count}>{formattedIndex}.</span>
         <p className={styles.portfolio__work_text}>
@@ -79,6 +79,8 @@ const PortfolioWork: React.FC<Props> = ({
         </p>
         {!isAudioPlayingBefore ? (
           <img
+            width={14}
+            height={17}
             src="../../images/play-icon.svg"
             alt="play icon"
             className={styles.portfolio__play_icon}
@@ -90,6 +92,8 @@ const PortfolioWork: React.FC<Props> = ({
           />
         ) : index === activeBlock ? (
           <img
+            width={14}
+            height={17}
             src="../../images/pause-icon.svg"
             alt="pause icon"
             className={styles.portfolio__play_icon}
@@ -100,6 +104,8 @@ const PortfolioWork: React.FC<Props> = ({
           />
         ) : (
           <img
+            width={14}
+            height={17}
             src="../../images/play-icon.svg"
             alt="play icon"
             className={styles.portfolio__play_icon}
@@ -119,6 +125,8 @@ const PortfolioWork: React.FC<Props> = ({
         </p>
         {!isAudioPlayingAfter ? (
           <img
+            width={14}
+            height={17}
             src="../../images/play-icon.svg"
             alt="play icon"
             className={styles.portfolio__play_icon}
@@ -130,6 +138,8 @@ const PortfolioWork: React.FC<Props> = ({
           />
         ) : index === activeBlock ? (
           <img
+            width={14}
+            height={17}
             src="../../images/pause-icon.svg"
             alt="pause icon"
             className={styles.portfolio__play_icon}
@@ -140,6 +150,8 @@ const PortfolioWork: React.FC<Props> = ({
           />
         ) : (
           <img
+            width={14}
+            height={17}
             src="../../images/play-icon.svg"
             alt="play icon"
             className={styles.portfolio__play_icon}
@@ -153,7 +165,7 @@ const PortfolioWork: React.FC<Props> = ({
 
         <audio ref={audioRefAfter} src={portfolio.track_after} />
       </div>
-    </li>
+    </div>
   );
 };
 

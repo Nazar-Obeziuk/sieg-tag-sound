@@ -74,6 +74,8 @@
 .footer__wrapper_footer {
   width: 100%;
   display: flex;
+  flex-direction: column-reverse;
+  grid-gap: 26px;
   align-items: center;
   justify-content: space-between;
   padding: 32px 0;
@@ -106,7 +108,6 @@
 }
 
 @media (max-width: 1000px) {
-  .footer__wrapper_footer,
   .footer__wrapper_header {
     flex-direction: column;
     gap: 26px;

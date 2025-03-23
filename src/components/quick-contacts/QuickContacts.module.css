@@ -1,0 +1,101 @@
+.quick__block {
+    position: fixed;
+    left: 25px;
+    bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+}
+.quick__block_list {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+    transition: 0.5s;
+    transform: translateY(40px) scaleY(0);
+    transform-origin: bottom;
+    opacity: 0;
+}
+.quick__block_list.open {
+    transform: translateY(0) scaleY(1);
+    opacity: 1;
+}
+.quick__list_item {
+    display: inline-block;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 16px 24px 0 rgb(73 104 126 / 16%);
+}
+.quick__list_item > a {
+    border: none;
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none;
+    display: block;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    min-width: unset;
+}
+.quick__item_icon {
+    display: block;
+    width: 54px;
+    height: 54px;
+}
+.quick__icon_instagram {
+    border-radius: 50%;
+    overflow: hidden;
+}
+.quick__item_icon > svg {
+    width: 100%;
+    height: 100%;
+}
+.quick__icon_instagram > svg,
+.quick__icon_telegram > svg {
+    transform: scale(1.16);
+}
+.quick__block_handler > button {
+    box-shadow: none;
+    border: none;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    min-width: unset;
+    max-width: unset;
+    background: 0 0;
+    background-color: #86CD91;
+    width: 54px;
+    height: 54px;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+.quick__block_handler > button:hover{
+    transform: scale(1.1);
+}
+.quick__block_handler > button > span {
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    outline: 0;
+    min-width: unset;
+    display: block;
+    width: 54px;
+    height: 54px;
+}
+.quick__block_handler > button > span > svg {
+    width: 100%;
+    height: 100%;
+}
+.chaty_sts4_0{
+    fill: #ffffff;
+}
+.chaty_st0{
+    fill: #808080;
+}

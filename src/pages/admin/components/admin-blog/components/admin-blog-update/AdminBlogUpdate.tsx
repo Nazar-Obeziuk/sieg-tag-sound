@@ -42,7 +42,7 @@ const AdminBlogUpdate: React.FC = () => {
   const navigate = useNavigate();
 
   const acceptType: Accept = {
-    "image/*": [".jpeg", ".jpg", ".png", ".gif"],
+    "image/*": [".jpeg", ".jpg", ".png", ".gif", ".webp"],
   };
 
   const onDropMainImage = useCallback((acceptedFiles: File[]) => {

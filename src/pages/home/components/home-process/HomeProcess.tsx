@@ -24,6 +24,8 @@ const HomeProcess: React.FC = () => {
                 <h3>{t("home.homeProcess.homeProcessFirstTitle")}</h3>
                 <div>
                   <img
+                    width={28}
+                    height={28}
                     src="../../images/circle-list.svg"
                     alt="circle list icon"
                   />
@@ -32,6 +34,8 @@ const HomeProcess: React.FC = () => {
                 <h3>{t("home.homeProcess.homeProcessSecondTitle")}</h3>
                 <div>
                   <img
+                    width={28}
+                    height={28}
                     src="../../images/circle-list.svg"
                     alt="circle list icon"
                   />
@@ -40,6 +44,8 @@ const HomeProcess: React.FC = () => {
                 <h3>{t("home.homeProcess.homeProcessThirdTitle")}</h3>
                 <div>
                   <img
+                    width={28}
+                    height={28}
                     src="../../images/circle-list.svg"
                     alt="circle list icon"
                   />
@@ -48,6 +54,8 @@ const HomeProcess: React.FC = () => {
                 <h3>{t("home.homeProcess.homeProcessFourthTitle")}</h3>
                 <div>
                   <img
+                    width={28}
+                    height={28}
                     src="../../images/circle-list.svg"
                     alt="circle list icon"
                   />
@@ -58,7 +66,7 @@ const HomeProcess: React.FC = () => {
             <div className={styles.home__process_banner}>
               <img
                 className={styles.home__banner_image}
-                src="../../images/home-process.jpg"
+                src="../../images/home-process.webp"
                 alt="process img"
               />
             </div>

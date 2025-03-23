@@ -40,7 +40,7 @@ const AdminBlogForm: React.FC<Props> = ({ toggleBlogsForm, getAll }) => {
   });
 
   const acceptType: Accept = {
-    "image/*": [".jpeg", ".jpg", ".png", ".gif"],
+    "image/*": [".jpeg", ".jpg", ".png", ".gif", ".webp"],
   };
 
   const onDropMainImage = useCallback((acceptedFiles: File[]) => {

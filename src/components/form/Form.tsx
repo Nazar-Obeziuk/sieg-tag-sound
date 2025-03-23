@@ -308,6 +308,7 @@ const Form: React.FC = () => {
                 styles={customStyles}
                 onChange={handleSelectChange}
                 value={formData.service}
+                aria-label={t("form.service")}
               />
             </div>
             <div className={styles.form__fields_control}>
@@ -328,6 +329,7 @@ const Form: React.FC = () => {
                 styles={customStyles}
                 onChange={handleSelectSocialsChange}
                 value={formData.socials}
+                aria-label={t("form.social")}
               />
             </div>
             <div className={styles.form__fields_control}>
@@ -362,6 +364,7 @@ const Form: React.FC = () => {
                 type="checkbox"
                 name="agreeToTerms"
                 onChange={handleChange}
+                id="agreeToTerms"
               />
               <label htmlFor="agreeToTerms">{t("form.agreeToTerms")}</label>
             </div>

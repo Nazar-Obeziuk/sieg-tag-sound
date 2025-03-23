@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import styles from "./CartUpload.module.css";
 import CartUploadService from "./components/cart-upload-service/CartUploadService";
 import CartUploadArea from "./components/cart-upload-area/CartUploadArea";
+import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import { IFullPrices } from "../../../services/full-prices/fullPrices.interface";
 import { getAllFullPrices } from "../../../services/full-prices/fullPrices";
 import { useNavigate } from "react-router-dom";
@@ -18,6 +20,9 @@ declare global {
 
 const CartUpload: React.FC = () => {
   const { t } = useTranslation();
+  const location = useLocation();
+  const currentUrl = `${window.location.origin}${location.pathname}`;
+
   const [blocks, setBlocks] = useState<
     Array<{ file: File | null; description: string }>
   >([]);
@@ -221,36 +226,47 @@ const CartUpload: React.FC = () => {
   }
 
   return (
-    <section className={styles.cart__upload_section}>
-      <div className="container">
-        <div className={styles.cart__upload_wrapper}>
-          <CartUploadService onServiceChange={handleServiceChange} />
-          <CartUploadArea
-            onBlocksChange={handleBlocksChange}
-            onDriveLinkChange={handleDriveLinkChange}
-            selectedService={selectedService}
-            onValidityChange={setIsFormValid}
-          />
-          <div className={styles.cart__actions}>
-            <button
-              className={`${styles.cart__button} ${
-                !isFormValid ? styles.error : ""
-              }`}
-              disabled={!isFormValid}
-              onClick={handleButtonClick}
-              type="button"
-            >
-              {t("cartUpload.cartUploadButtonText")}
-            </button>
-            {!isFormValid && (
-              <p className={styles.cart__fields_error}>
-                {t("cartUpload.cartUploadFillFieldsText")}
-              </p>
-            )}
+    <>
+      <Helmet>
+        <title>{t("cartUpload.cartUploadMeta.cartUploadTitle")}</title>
+        <meta name="description" content={t("cartUpload.cartUploadMeta.cartUploadDescription")} />
+        <meta name="keywords" content={t("cartUpload.cartUploadMeta.cartUploadKeywords")} />
+        <meta property="og:title" content={t("cartUpload.cartUploadMeta.cartUploadTitle")} />
+        <meta property="og:description" content={t("cartUpload.cartUploadMeta.cartUploadDescription")} />
+        <meta property="og:image" content="https://siegtagsound.com/images/home-about.webp" />
+        <meta property="og:url" content={currentUrl} />
+      </Helmet>
+      <section className={styles.cart__upload_section}>
+        <div className="container">
+          <div className={styles.cart__upload_wrapper}>
+            <CartUploadService onServiceChange={handleServiceChange} />
+            <CartUploadArea
+              onBlocksChange={handleBlocksChange}
+              onDriveLinkChange={handleDriveLinkChange}
+              selectedService={selectedService}
+              onValidityChange={setIsFormValid}
+            />
+            <div className={styles.cart__actions}>
+              <button
+                className={`${styles.cart__button} ${
+                  !isFormValid ? styles.error : ""
+                }`}
+                disabled={!isFormValid}
+                onClick={handleButtonClick}
+                type="button"
+              >
+                {t("cartUpload.cartUploadButtonText")}
+              </button>
+              {!isFormValid && (
+                <p className={styles.cart__fields_error}>
+                  {t("cartUpload.cartUploadFillFieldsText")}
+                </p>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

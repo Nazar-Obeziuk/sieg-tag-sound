@@ -13,7 +13,12 @@ const Footer: React.FC = () => {
           <div className={styles.footer__wrapper}>
             <div className={styles.footer__wrapper_header}>
               <NavLink to={""} className={styles.footer__header_logo}>
-                <img src="../../images/logo.svg" alt="footer logo" />
+                <img 
+                  width={120}
+                  height={25}
+                  src="../../images/logo.svg"
+                  alt="footer logo" 
+                />
               </NavLink>
               <nav className={styles.footer__header_nav}>
                 <ul className={styles.footer__nav_list}>
@@ -50,6 +55,7 @@ const Footer: React.FC = () => {
                   to={"https://t.me/SiegTagSound1"}
                   target="_blank"
                   className={styles.footer__socials_item}
+                  aria-label="Telegram"
                 >
                   <svg
                     width="30"
@@ -68,6 +74,7 @@ const Footer: React.FC = () => {
                   to={"https://www.facebook.com/profile.php?id=61558798857255"}
                   target="_blank"
                   className={styles.footer__socials_item}
+                  aria-label="Facebook"
                 >
                   <svg
                     width="30"
@@ -88,6 +95,7 @@ const Footer: React.FC = () => {
                   }
                   target="_blank"
                   className={styles.footer__socials_item}
+                  aria-label="Instagram"
                 >
                   <svg
                     width="30"
@@ -106,6 +114,7 @@ const Footer: React.FC = () => {
                   to={"mailto:siegtagprod@hotmail.com"}
                   target="_blank"
                   className={styles.footer__socials_item}
+                  aria-label="Email"
                 >
                   <svg
                     width="30"

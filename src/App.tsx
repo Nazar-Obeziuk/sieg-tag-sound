@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Layout from "./layout/Layout";
+import { HelmetProvider } from 'react-helmet-async';
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Services from "./pages/services/Services";
@@ -19,40 +20,46 @@ import AdminPricesUpdate from "./pages/admin/components/admin-prices/components/
 import AdminFullPricesUpload from "./pages/admin/components/admin-full-prices/components/admin-full-prices-update/AdminFullPricesUpload";
 import ScrollToTop from "./components/sroll-to-top/ScrollToTop";
 import RefundPolicy from "./pages/refund-policy/RefundPolicy";
+import QuickContacts from "./components/quick-contacts/QuickContacts";
+import FormPopup from "./components/form-popup/FormPopup";
 
 function App() {
   return (
-    <Layout>
-      <ScrollToTop />
-      <Routes>
-        <Route path="*" element={<Home />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/blogs" element={<Blog />} />
-        <Route path="/blog/:id" element={<BlogDetails />} />
-        <Route path="/cookies" element={<Cookies />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/refund-policy" element={<RefundPolicy />} />
-        <Route path="/cart-upload" element={<CartUpload />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin-blog-update/:id" element={<AdminBlogUpdate />} />
-        <Route
-          path="/admin-portfolio-update/:id"
-          element={<AdminPortfolioUpdate />}
-        />
-        <Route
-          path="/admin-promocode-update/:id"
-          element={<AdminCodeUpdate />}
-        />
-        <Route path="/admin-price-update/:id" element={<AdminPricesUpdate />} />
-        <Route
-          path="/admin-full-price-update/:id"
-          element={<AdminFullPricesUpload />}
-        />
-      </Routes>
-    </Layout>
+    <HelmetProvider>
+      <Layout>
+        <ScrollToTop />
+        <Routes>
+          <Route path="*" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/blogs" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogDetails />} />
+          <Route path="/cookies" element={<Cookies />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
+          <Route path="/cart-upload" element={<CartUpload />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin-blog-update/:id" element={<AdminBlogUpdate />} />
+          <Route
+            path="/admin-portfolio-update/:id"
+            element={<AdminPortfolioUpdate />}
+          />
+          <Route
+            path="/admin-promocode-update/:id"
+            element={<AdminCodeUpdate />}
+          />
+          <Route path="/admin-price-update/:id" element={<AdminPricesUpdate />} />
+          <Route
+            path="/admin-full-price-update/:id"
+            element={<AdminFullPricesUpload />}
+          />
+        </Routes>
+        <FormPopup />
+        <QuickContacts />
+      </Layout>
+    </HelmetProvider>
   );
 }
 
