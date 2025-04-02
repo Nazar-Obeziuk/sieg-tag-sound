@@ -59,7 +59,9 @@
     "uploadFiles": "Download the files here",
     "submitText": "Order a service",
     "formFieldRequired": "This field is required!",
-    "agreeToTerms": "If your files are on the cloud, click here."
+    "agreeToTerms": "If your files are on the cloud, click here.",
+    "sendSuccess": "The message has been sent!",
+    "sendError": "Error while sending the message!"
   },
   "bannerForm": {
     "bannerFormFirstTitle": "Get started today - take a step towards success in the music industry",

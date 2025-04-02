@@ -57,9 +57,12 @@
     "linkOnDrive": "Link auf dem Laufwerk",
     "promoCode": "Promo-Code",
     "uploadFiles": "Laden Sie die Dateien hier herunter",
-    "submitText": "Bestellung einer Dienstleistung",
+    "submitText": "Senden Sie",
+    "submitTextPay": "Bezahlen für",
     "formFieldRequired": "Dieses Feld ist erforderlich!",
-    "agreeToTerms": "Wenn Ihre Dateien in der Cloud gespeichert sind, klicken Sie hier."
+    "agreeToTerms": "Wenn Ihre Dateien in der Cloud gespeichert sind, klicken Sie hier.",
+    "sendSuccess": "Die Nachricht ist abgeschickt worden! ",
+    "sendError": "Fehler beim Senden der Nachricht!"
   },
   "bannerForm": {
     "bannerFormFirstTitle": "Starten Sie noch heute – machen Sie einen Schritt zum Erfolg in der Musikbranche",

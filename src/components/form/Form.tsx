@@ -17,6 +17,115 @@ interface FormValues {
   agreeToTerms: boolean;
 }
 
+const prices: Record<string, Record<number, number>> = {
+  "Mixing&Mastering": {
+    2: 250,
+    3: 375,
+    4: 500,
+    5: 625,
+    6: 750,
+    7: 875,
+    8: 1000,
+    9: 1125,
+    10: 1250,
+    11: 1375,
+    12: 1500,
+    13: 1625,
+    14: 1750,
+    15: 1875,
+    16: 2000,
+    17: 2125,
+    18: 2250,
+    19: 2375,
+    20: 2500,
+    21: 2625,
+    22: 2750,
+    23: 2875,
+    24: 3000,
+    25: 3125,
+  },
+  Mixing: {
+    2: 200,
+    3: 300,
+    4: 400,
+    5: 500,
+    6: 600,
+    7: 700,
+    8: 800,
+    9: 900,
+    10: 1000,
+    11: 1100,
+    12: 1200,
+    13: 1300,
+    14: 1400,
+    15: 1500,
+    16: 1600,
+    17: 1700,
+    18: 1800,
+    19: 1900,
+    20: 2000,
+    21: 2100,
+    22: 2200,
+    23: 2300,
+    24: 2400,
+    25: 2500,
+  },
+  Mastering: {
+    2: 75,
+    3: 112,
+    4: 150,
+    5: 187,
+    6: 225,
+    7: 350,
+    8: 400,
+    9: 450,
+    10: 500,
+    11: 550,
+    12: 600,
+    13: 650,
+    14: 700,
+    15: 750,
+    16: 800,
+    17: 850,
+    18: 900,
+    19: 950,
+    20: 1000,
+    21: 1050,
+    22: 1100,
+    23: 1150,
+    24: 1200,
+    25: 1250,
+  },
+};
+
+const optionsSocials = [
+  { value: "1", label: "1" },
+  { value: "2", label: "2" },
+  { value: "3", label: "3" },
+  { value: "4", label: "4" },
+  { value: "5", label: "5" },
+  { value: "6", label: "6" },
+  { value: "7", label: "7" },
+  { value: "8", label: "8" },
+  { value: "9", label: "9" },
+  { value: "10", label: "10" },
+  { value: "11", label: "11" },
+  { value: "12", label: "12" },
+  { value: "13", label: "13" },
+  { value: "14", label: "14" },
+  { value: "15", label: "15" },
+  { value: "16", label: "16" },
+  { value: "17", label: "17" },
+  { value: "18", label: "18" },
+  { value: "19", label: "19" },
+  { value: "20", label: "20" },
+  { value: "21", label: "21" },
+  { value: "22", label: "22" },
+  { value: "23", label: "23" },
+  { value: "24", label: "24" },
+  { value: "25", label: "25" },
+];
+
 const customStyles = {
   control: (provided: any) => ({
     ...provided,
@@ -41,25 +150,19 @@ const Form: React.FC = () => {
     phone: "",
     email: "",
     service: { value: "track", label: "Mixing&Mastering" },
-    socials: { value: "whatsapp", label: "WhatsApp" },
+    socials: { value: "1", label: "1" },
     promocode: "",
     agreeToTerms: false,
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [submitAction, setSubmitAction] = useState<"send" | "pay" | null>(null);
 
   const options = [
     { value: "track", label: "Mixing&Mastering" },
     { value: "ep", label: "Mixing" },
     { value: "album", label: "Mastering" },
-  ];
-
-  const optionsSocials = [
-    { value: "whatsapp", label: "WhatsApp" },
-    { value: "telegram", label: "Telegram" },
-    { value: "instagram", label: "Instagram" },
-    { value: "facebook", label: "Facebook" },
   ];
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -142,6 +245,12 @@ const Form: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    const newErrors = validateForm();
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
     const {
       firstName,
       phone,
@@ -152,48 +261,128 @@ const Form: React.FC = () => {
       agreeToTerms,
     } = formData;
 
-    const newErrors = validateForm();
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
-
-    let data: any = {
-      firstName,
-      phone,
-      email,
-      service,
-      socials,
-      promocode,
-      agreeToTerms,
-      countOfFiles: 0,
-      discount: 0,
-    };
+    // const serviceName = service.label;
+    // const quantity = parseInt(socials.label);
+    // const basePrice = prices[serviceName]?.[quantity] || 0;
 
     const foundPromocodeByCategory = promocodes.find(
       (p) => p.category === service.label
     );
 
-    if (foundPromocodeByCategory?.promocode === promocode.trim()) {
-      data = {
-        ...data,
-        discount: foundPromocodeByCategory.discount || 0,
-      };
-      setIsPromocode(true);
-    } else {
-      setIsPromocode(false);
+    const quantity = parseInt(socials.label, 10);
+    const serviceName = service.label;
+    const basePrice = prices[serviceName]?.[quantity] || 0;
+    const discount =
+      foundPromocodeByCategory?.promocode === promocode.trim()
+        ? Number(foundPromocodeByCategory?.discount) || 0
+        : 0;
+
+    const finalPrice = basePrice - (basePrice * discount) / 100;
+
+    const message = `
+  📩Нова заявка: \n\n
+  👤Ім'я: ${firstName}\n
+  📞Телефон: ${phone}\n
+  📧Email: ${email}\n
+  💶 Сума: ${finalPrice}€\n
+  🛠Послуга: ${service.label}\n
+  🛒Кількість: ${socials.label}\n
+  🎁Промокод: ${promocode || "—"}\n
+  ✅Погодився з умовами: ${agreeToTerms ? "Так" : "Ні"}
+    `;
+
+    console.log(discount);
+    console.log(foundPromocodeByCategory);
+    console.log(message);
+    console.log(finalPrice);
+
+    if (submitAction === "send") {
+      // Надсилання в Telegram
+      try {
+        await sendMessage(message);
+        alert(t("form.sendSuccess"));
+        window.location.reload();
+      } catch (error) {
+        console.error(error);
+        alert(t("form.sendError"));
+        window.location.reload();
+      }
     }
 
-    localStorage.setItem("cart", JSON.stringify(data));
+    if (submitAction === "pay") {
+      const paymentData = {
+        merchantAccount: "185_233_117_23",
+        merchantDomainName: "185.233.117.23:3000",
+        orderReference: `ORD-${Date.now()}`,
+        orderDate: Math.floor(Date.now() / 1000),
+        amount: finalPrice,
+        currency: "EUR",
+        productName: [`Оплата за ${service.label}`],
+        productCount: [1],
+        productPrice: [finalPrice],
+        clientFirstName: firstName.split(" ")[0],
+        clientLastName: firstName.split(" ")[1] || "",
+        clientEmail: email,
+        clientPhone: phone,
+        language: "DE",
+        cartData: JSON.stringify({
+          firstName,
+          phone,
+          email,
+          service,
+          socials,
+          promocode,
+          discount,
+          agreeToTerms,
+        }),
+      };
 
-    navigate("/cart-upload");
+      try {
+        const response = await fetch(
+          "https://siegtagsound.com/api/api/payment/initiate-payment",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(paymentData),
+          }
+        );
 
+        const result = await response.json();
+
+        if (result.actionUrl && result.paymentData) {
+          const form = document.createElement("form");
+          form.method = "POST";
+          form.action = result.actionUrl;
+          form.acceptCharset = "utf-8";
+
+          for (const key in result.paymentData) {
+            if (result.paymentData.hasOwnProperty(key)) {
+              const input = document.createElement("input");
+              input.type = "hidden";
+              input.name = key;
+              input.value = result.paymentData[key];
+              form.appendChild(input);
+            }
+          }
+
+          document.body.appendChild(form);
+          await sendMessage(message);
+          form.submit();
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    // Очистка форми
     setFormData({
       firstName: "",
       phone: "",
       email: "",
       service: { value: "track", label: "Mixing&Mastering" },
-      socials: { value: "whatsapp", label: "WhatsApp" },
+      socials: { value: "1", label: "1" },
       promocode: "",
       agreeToTerms: false,
     });
@@ -370,8 +559,19 @@ const Form: React.FC = () => {
             </div>
           </div>
           <div className={styles.form__item_actions}>
-            <button className={styles.form__button} type="submit">
+            <button
+              className={styles.form__button}
+              type="submit"
+              onClick={() => setSubmitAction("send")}
+            >
               {t("form.submitText")}
+            </button>
+            <button
+              className={styles.form__button_pay}
+              type="submit"
+              onClick={() => setSubmitAction("pay")}
+            >
+              {t("form.submitTextPay")}
             </button>
           </div>
         </form>
