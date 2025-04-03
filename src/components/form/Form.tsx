@@ -279,25 +279,20 @@ const Form: React.FC = () => {
 
     const finalPrice = basePrice - (basePrice * discount) / 100;
 
-    const message = `
-  📩Нова заявка: \n\n
-  👤Ім'я: ${firstName}\n
-  📞Телефон: ${phone}\n
-  📧Email: ${email}\n
-  💶 Сума: ${finalPrice}€\n
-  🛠Послуга: ${service.label}\n
-  🛒Кількість: ${socials.label}\n
-  🎁Промокод: ${promocode || "—"}\n
-  ✅Погодився з умовами: ${agreeToTerms ? "Так" : "Ні"}
-    `;
-
-    console.log(discount);
-    console.log(foundPromocodeByCategory);
-    console.log(message);
-    console.log(finalPrice);
-
     if (submitAction === "send") {
       // Надсилання в Telegram
+      const message = `
+      📩Нова заявка: \n\n
+      👤Ім'я: ${firstName}\n
+      📞Телефон: ${phone}\n
+      📧Email: ${email}\n
+      💶 Сума: ${finalPrice}€\n
+      🛠Послуга: ${service.label}\n
+      🛒Кількість: ${socials.label}\n
+      🎁Промокод: ${promocode || "—"}\n
+      ✅Погодився з умовами: ${agreeToTerms ? "Так" : "Ні"}
+        `;
+
       try {
         await sendMessage(message);
         alert(t("form.sendSuccess"));
@@ -366,6 +361,19 @@ const Form: React.FC = () => {
               form.appendChild(input);
             }
           }
+
+          const message = `
+          📩Нова заявка: \n\n
+          👤Ім'я: ${firstName}\n
+          📞Телефон: ${phone}\n
+          📧Email: ${email}\n
+          💶 Сума: ${finalPrice}€\n
+          🛠Послуга: ${service.label}\n
+          🛒Кількість: ${socials.label}\n
+          🎁Промокод: ${promocode || "—"}\n
+          ✅Погодився з умовами: ${agreeToTerms ? "Так" : "Ні"}\n
+          💰Користувач оплатив суму ${finalPrice}
+            `;
 
           document.body.appendChild(form);
           await sendMessage(message);
