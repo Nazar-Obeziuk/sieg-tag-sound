@@ -19,6 +19,7 @@ interface FormValues {
 
 const prices: Record<string, Record<number, number>> = {
   "Mixing&Mastering": {
+    1: 125,
     2: 250,
     3: 375,
     4: 500,
@@ -45,6 +46,7 @@ const prices: Record<string, Record<number, number>> = {
     25: 3125,
   },
   Mixing: {
+    1: 100,
     2: 200,
     3: 300,
     4: 400,
@@ -71,6 +73,7 @@ const prices: Record<string, Record<number, number>> = {
     25: 2500,
   },
   Mastering: {
+    1: 50,
     2: 75,
     3: 112,
     4: 150,
